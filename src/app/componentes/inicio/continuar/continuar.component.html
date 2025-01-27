@@ -1,0 +1,16 @@
+<p>** Continuar partida **</p>
+
+<form [formGroup]="formulario" (ngSubmit)="continuarPartida()">
+
+    <label>¿Cómo te llamaban?</label>
+    <input formControlName="nombre">
+    
+    <label>¿A qué tenías miedo?</label>
+    <input formControlName="miedo">
+
+    <button type="submit">Continuar</button>
+
+</form>
+
+
+<button (click)="volverAMenu()">Volver</button>

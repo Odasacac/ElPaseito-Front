@@ -1,0 +1,23 @@
+<form [formGroup]="formulario" (ngSubmit)="crearPersonaje()">
+
+    <label>¿Cómo te llaman?</label>
+    <input formControlName="nombre">
+    
+    <label>¿Qué temes?</label>
+    <select formControlName="miedo">
+      <option *ngFor="let opcion of opcionesCampoMiedo" [value]="opcion.id">
+        {{ opcion.nombre }}
+      </option>
+    </select>
+  
+    <label>¿Qué tiendes a olvidar?</label>
+    <select formControlName="olvido">
+      <option *ngFor="let opcion of opcionesCampoOlvido" [value]="opcion.id">
+        {{ opcion.nombre }}
+      </option>
+    </select>
+
+    <button type="submit">Continuar</button>
+
+</form>
+
