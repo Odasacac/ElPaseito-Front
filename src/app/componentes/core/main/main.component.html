@@ -1,5 +1,11 @@
 <app-header></app-header>
 
+@if(visible())
+{
 <router-outlet></router-outlet>
-
+}
+@else 
+{
+    <app-ruta-nopermitida></app-ruta-nopermitida>
+}
 <app-footer></app-footer>

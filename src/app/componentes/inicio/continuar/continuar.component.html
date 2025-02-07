@@ -6,7 +6,11 @@
     <input formControlName="nombre">
     
     <label>¿A qué tenías miedo?</label>
-    <input formControlName="miedo">
+    <select formControlName="miedo">
+        <option *ngFor="let opcion of opcionesCampoMiedo" [value]="opcion.id">
+          {{ opcion.valor }}
+        </option>
+    </select>
 
     <button type="submit">Continuar</button>
 
