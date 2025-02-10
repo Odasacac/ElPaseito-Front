@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ConfiguracionService } from '../../../servicios/configuracion.service';
+import { Campo } from '../../../interfaces/campos';
 
 @Component({
   selector: 'app-base-inicio',
@@ -8,6 +10,15 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './base-inicio.component.html',
   styleUrl: './base-inicio.component.css'
 })
-export class BaseInicioComponent {
+export class BaseInicioComponent 
+{
+  configuracionService = inject(ConfiguracionService);
+
+  ngOnInit()
+  {
+    this.configuracionService.generarConfiguracion();
+  }
+
+  
 
 }

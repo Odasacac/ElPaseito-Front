@@ -6,7 +6,7 @@ export interface NuevoPersonaje
     suerte: number;
     nivelDeMiedo: number;
     nivelDeTranquilidad: number;
-    numeroDeImpactos: number;
+    impactos: number;
     master: boolean;
     
 }
