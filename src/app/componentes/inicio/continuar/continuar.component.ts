@@ -88,7 +88,7 @@ export class ContinuarComponent
 
             error: (error: any) =>
             {
-              this.textoError = "";
+              this.textoError = "No se ha podido recuperar esta historia." ;
             }
         }
 

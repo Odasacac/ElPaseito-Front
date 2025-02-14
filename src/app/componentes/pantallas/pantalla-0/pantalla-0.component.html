@@ -24,3 +24,10 @@
 
 <p>{{textoError}}</p>
 
+@if (verNoConexion)
+{
+  <p>{{textoContinuarSinGuardado}}</p>
+  <button (click)="irAPantalla1()">Sí</button>
+  <button (click)="irAMenu()">No</button>
+}
+

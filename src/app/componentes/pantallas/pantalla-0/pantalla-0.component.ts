@@ -7,6 +7,7 @@ import { PantallasService } from '../../../servicios/pantallas.service';
 import { Router } from '@angular/router';
 import { ApiService } from '../../../servicios/api.service';
 import { PersonajeService } from '../../../servicios/personaje.service';
+import { NuevoPersonaje } from '../../../interfaces/NuevoPersonaje';
 
 @Component({
   selector: 'app-pantalla-0',
@@ -26,6 +27,8 @@ export class Pantalla0Component
   opcionesCampoMiedo = this.configuracionService.getCamposMiedo();
   opcionesCampoOlvido = this.configuracionService.getCamposOlvido();
   textoError: String ="";
+  verNoConexion: Boolean = false;
+  textoContinuarSinGuardado: String ="¿Continuar de todas formas? No podrás guardar tu avance.";
 
   paraNuevoPersonaje: ParaNuevoPersonaje =
   {
@@ -61,6 +64,8 @@ export class Pantalla0Component
 
   crearPersonaje()
   {
+    this.verNoConexion = false;
+
     if(this.formulario.valid)
     {
       this.textoError="";
@@ -81,14 +86,29 @@ export class Pantalla0Component
             next: (respuesta:any) =>
             {
               this.personajeService.setPersonaje(respuesta.personaje);
-              this.pantallasService.setPantalla1(true);
-              this.pantallasService.setPantalla0(false);
-              this.router.navigate(['/game/1']);
+              this.irAPantalla1();
             },
 
             error: (error: any) =>
             {
-              //Preguntar si aunque no se haya podido guardar el personaje quiere continuar
+              this.verNoConexion = true;
+              this.textoError = "No se ha podido guardar el personaje.";
+              
+              const personajeVolatil: NuevoPersonaje =
+              {
+                nombre: "",
+                miedo: 0,
+                olvido: 0,
+                suerte: 5,
+                nivelDeMiedo: 0,
+                nivelDeTranquilidad: 0,
+                impactos: 0,
+                master: false,
+                capitulo: 1,
+                exploracion: 0,
+              }
+
+              this.personajeService.setPersonaje(personajeVolatil);
             }
         }
 
@@ -144,6 +164,19 @@ export class Pantalla0Component
           }
         }
     }
+  }
+
+
+  irAPantalla1()
+  {
+    this.pantallasService.setPantalla1(true);
+    this.pantallasService.setPantalla0(false);
+    this.router.navigate(['/game/1']);
+  }
+
+  irAMenu()
+  {
+    this.router.navigate(['inicio/menu/']);
   }
 
 }
