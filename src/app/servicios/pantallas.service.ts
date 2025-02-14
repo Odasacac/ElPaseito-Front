@@ -6,6 +6,19 @@ import { Injectable, Signal, signal } from '@angular/core';
 export class PantallasService 
 {
   visible = signal<Boolean>(false);
+  rutaImagen = signal<String>("");
+  textosPantalla = signal<String[]>([]);
+  pantallaActiva = signal<Number>(0);
+
+  getPantallaActiva(): Signal<Number>
+  {
+    return this.pantallaActiva;
+  }
+
+  setPantallaActiva(pantalla: Number)
+  {
+    this.pantallaActiva.set(pantalla);
+  }
 
   getVisible(): Signal<Boolean>
   {
@@ -17,13 +30,29 @@ export class PantallasService
     this.visible.set(valor)
   }
 
-  setAllPantallas()
+  getRutaImagen(): Signal<String>
   {
-    this.setPantalla0(true);
-    this.setPantalla1(true);
+    return this.rutaImagen;
   }
 
+  setRutaImagen(ruta: String)
+  {
+    this.rutaImagen.set(ruta);
+  }
+
+  setTextos(textos: String[]) 
+  {
+    this.textosPantalla.set(textos);
+  }
+
+  getTextos(): Signal<String[]>
+  {
+    return this.textosPantalla;
+  }
+
+  //Pantalla 0
   pantalla0: Boolean=false;
+  
   getPantalla0(): Boolean
   {
     return this.pantalla0;
@@ -33,7 +62,9 @@ export class PantallasService
     this.pantalla0=valor;
   }
 
+  //Pantalla 1
   pantalla1: Boolean=false;
+
   getPantalla1(): Boolean
   {
     return this.pantalla1;
@@ -43,6 +74,29 @@ export class PantallasService
     this.pantalla1=valor;
   }
 
+  //Pantalla 2
+  pantalla2: Boolean=false;
+
+  getPantalla2(): Boolean
+  {
+    return this.pantalla2;
+  }
+  setPantalla2(valor: Boolean)
+  {
+    this.pantalla2=valor;
+  }
+
+   //Pantalla 3
+   pantalla3: Boolean=false;
+
+   getPantalla3(): Boolean
+   {
+     return this.pantalla3;
+   }
+   setPantalla3(valor: Boolean)
+   {
+     this.pantalla3=valor;
+   }
 
 
 

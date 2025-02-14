@@ -8,6 +8,8 @@ import { MainComponent } from './componentes/core/main/main.component';
 import { Pantalla1Component } from './componentes/pantallas/pantalla-1/pantalla-1.component';
 import { RutaIncorrectaComponent } from './componentes/otros/ruta-incorrecta/ruta-incorrecta.component';
 import { Pantalla0Component } from './componentes/pantallas/pantalla-0/pantalla-0.component';
+import { RutaNopermitidaComponent } from './componentes/otros/ruta-nopermitida/ruta-nopermitida.component';
+import { Pantalla2Component } from './componentes/pantallas/pantalla-2/pantalla-2.component';
 
 export const routes: Routes = 
 [
@@ -30,12 +32,15 @@ export const routes: Routes =
         children:
         [
             { path: "0", component: Pantalla0Component },
-            { path: "1", component: Pantalla1Component }
+            { path: "1", component: Pantalla1Component },
+            { path: "2", component: Pantalla2Component }
         ]
     },
 
 
     {path: "", redirectTo: "/inicio/bienvenida", pathMatch: "full"},
+
+    {path: "nopermitida", component: RutaNopermitidaComponent},
 
     {path: "**", component: RutaIncorrectaComponent}
 
