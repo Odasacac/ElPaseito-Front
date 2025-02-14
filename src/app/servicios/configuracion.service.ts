@@ -19,10 +19,10 @@ export class ConfiguracionService
   {
     const CamposMiedo: Campo[] =
     [
-      { id: 1, valor: 'El dolor' },
-      { id: 2, valor: 'El fracaso' },
-      { id: 3, valor: 'La soledad' },
-      { id: 4, valor: 'Lo desconocido' },
+      { id: 1, valor: 'Al dolor' },
+      { id: 2, valor: 'Al fracaso' },
+      { id: 3, valor: 'A la soledad' },
+      { id: 4, valor: 'A lo desconocido' },
     ]; 
     this.setCamposMiedo(CamposMiedo);
 

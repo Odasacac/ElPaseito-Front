@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class RutaNopermitidaComponent 
 {
     router = inject(Router);
+    rutaNoPermitidaTexto: String = "No puedes acceder de esta forma a este momento.";
       
     salir()
     {

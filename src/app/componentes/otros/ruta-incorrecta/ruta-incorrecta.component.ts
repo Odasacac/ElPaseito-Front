@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
 export class RutaIncorrectaComponent 
 {
   router = inject(Router);
-    
+  rutaIncorrectaTexto: String = "Aún no existe el momento que buscas.";
+
   salir()
   {
     this.router.navigate(['/inicio/bienvenida']);

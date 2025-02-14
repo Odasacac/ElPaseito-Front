@@ -10,6 +10,9 @@ import { RutaIncorrectaComponent } from './componentes/otros/ruta-incorrecta/rut
 import { Pantalla0Component } from './componentes/pantallas/pantalla-0/pantalla-0.component';
 import { RutaNopermitidaComponent } from './componentes/otros/ruta-nopermitida/ruta-nopermitida.component';
 import { Pantalla2Component } from './componentes/pantallas/pantalla-2/pantalla-2.component';
+import { Pantalla3Component } from './componentes/pantallas/pantalla-3/pantalla-3.component';
+import { AbandonoComponent } from './componentes/pantallas/abandono/abandono.component';
+import { Pantalla4Component } from './componentes/pantallas/pantalla-4/pantalla-4.component';
 
 export const routes: Routes = 
 [
@@ -33,7 +36,10 @@ export const routes: Routes =
         [
             { path: "0", component: Pantalla0Component },
             { path: "1", component: Pantalla1Component },
-            { path: "2", component: Pantalla2Component }
+            { path: "2", component: Pantalla2Component },
+            { path: "3", component: Pantalla3Component },
+            { path: "4", component: Pantalla4Component },
+            { path: "abandono", component: AbandonoComponent }
         ]
     },
 

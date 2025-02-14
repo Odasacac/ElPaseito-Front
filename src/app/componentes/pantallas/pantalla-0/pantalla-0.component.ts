@@ -6,7 +6,6 @@ import { ConfiguracionService } from '../../../servicios/configuracion.service';
 import { PantallasService } from '../../../servicios/pantallas.service';
 import { Router } from '@angular/router';
 import { ApiService } from '../../../servicios/api.service';
-import { NuevoPersonaje } from '../../../interfaces/NuevoPersonaje';
 import { PersonajeService } from '../../../servicios/personaje.service';
 
 @Component({

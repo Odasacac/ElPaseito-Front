@@ -34,9 +34,10 @@ export class Pantalla1Component
   prepararPantalla()
   {
     this.pantallasService.setVisible(true);
-    this.pantallasService.setRutaImagen("/images/1/1.jpg");
     this.pantallasService.setPantallaActiva(1);
 
+    this.pantallasService.setRutaImagen("/images/1/1.jpg");
+    
     const paratexto: String []=[];
     const linea1: String = "Tras salir a pasear, llegas a este lugar."
     paratexto.push(linea1);

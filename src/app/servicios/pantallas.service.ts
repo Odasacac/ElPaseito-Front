@@ -8,7 +8,18 @@ export class PantallasService
   visible = signal<Boolean>(false);
   rutaImagen = signal<String>("");
   textosPantalla = signal<String[]>([]);
+  rutasParaDecision = signal<String[]>([]);
   pantallaActiva = signal<Number>(0);
+
+  getRutasParaDecision(): Signal<String[]>
+  {
+    return this.rutasParaDecision
+  }
+
+  setRutasParaDecision(rutas: String[])
+  {
+    this.rutasParaDecision.set(rutas);
+  }
 
   getPantallaActiva(): Signal<Number>
   {
@@ -48,6 +59,18 @@ export class PantallasService
   getTextos(): Signal<String[]>
   {
     return this.textosPantalla;
+  }
+
+  //Pantalla Abandono
+  pantallaAbandono: Boolean=false;
+
+  getPantallaAbandono(): Boolean
+  {
+    return this.pantallaAbandono;
+  }
+  setPantallaAbandono(valor: Boolean)
+  {
+    this.pantallaAbandono=valor;
   }
 
   //Pantalla 0
@@ -97,6 +120,19 @@ export class PantallasService
    {
      this.pantalla3=valor;
    }
+
+   //Pantalla 4
+   pantalla4: Boolean=false;
+
+   getPantalla4(): Boolean
+   {
+     return this.pantalla4;
+   }
+   setPantalla4(valor: Boolean)
+   {
+     this.pantalla4=valor;
+   }
+
 
 
 

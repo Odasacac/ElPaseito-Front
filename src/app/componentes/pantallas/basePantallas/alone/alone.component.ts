@@ -29,11 +29,18 @@ export class AloneComponent
         case 1:
           this.irAPantalla2();
           break;
+
         case 2:
           this.irAPantalla3();
           break;
+
+        case 99:
+          this.irAMenu();
+          break;
+          
         default:
-          this.irARutaNoPermitida()
+          this.irARutaNoPermitida();
+          break;
     }
   }
 
@@ -47,7 +54,7 @@ export class AloneComponent
 
   irAPantalla3()
   {
-    this.pantallasService.setPantalla3(false);
+    this.pantallasService.setPantalla2(false);
     this.pantallasService.setPantalla3(true);
     this.router.navigate(['/game/3']);
   }
@@ -57,6 +64,9 @@ export class AloneComponent
     this.router.navigate(['nopermitida']);
   }
 
-
+  irAMenu()
+  {
+    this.router.navigate(['/inicio/menu']);
+  }
 
 }

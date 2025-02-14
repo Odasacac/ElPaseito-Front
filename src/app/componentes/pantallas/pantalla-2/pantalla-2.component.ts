@@ -11,7 +11,7 @@ import { PantallasService } from '../../../servicios/pantallas.service';
 })
 export class Pantalla2Component 
 {
-pantallasService = inject(PantallasService);
+  pantallasService = inject(PantallasService);
 
   ngOnInit()
   {
@@ -29,9 +29,10 @@ pantallasService = inject(PantallasService);
   prepararPantalla()
   {
     this.pantallasService.setVisible(true);
-    this.pantallasService.setRutaImagen("/images/1/2.jpg");
     this.pantallasService.setPantallaActiva(2);
 
+    this.pantallasService.setRutaImagen("/images/1/2.jpg");
+    
     const paratexto: String []=[];
     const linea1: String = "Al darte la vuelta, ves esto."
     paratexto.push(linea1);
