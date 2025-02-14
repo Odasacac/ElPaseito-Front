@@ -72,10 +72,10 @@ export class ConfiguracionService
       nivelDeTranquilidad: 0,
       impactos: 0,
       master: true,
+      capitulo: 0,
+      exploracion: 0
     }
     this.personajeService.setPersonaje(master);
-
-   //this.pantallasService.setAllPantallas();
 
   }
 

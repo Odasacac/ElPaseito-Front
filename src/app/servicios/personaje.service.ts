@@ -15,8 +15,10 @@ export class PersonajeService
       suerte: 0,
       nivelDeMiedo: 0,
       nivelDeTranquilidad: 0,
-      numeroDeImpactos: 0,
+      impactos: 0,
       master: false,
+      capitulo: 1,
+      exploracion: 0
     }
   )
 
@@ -62,7 +64,7 @@ export class PersonajeService
 
   getNumeroDeImpactos(): number
   {
-    return this.personaje.numeroDeImpactos;
+    return this.personaje.impactos;
   }
 
   setMiedo(valor: number)
@@ -97,7 +99,7 @@ export class PersonajeService
 
   aumentarImpactos()
   {
-      this.personaje.numeroDeImpactos = this.personaje.numeroDeImpactos+1;
+      this.personaje.impactos = this.personaje.impactos+1;
   }
 
 }

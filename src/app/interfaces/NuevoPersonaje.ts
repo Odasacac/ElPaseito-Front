@@ -8,5 +8,6 @@ export interface NuevoPersonaje
     nivelDeTranquilidad: number;
     impactos: number;
     master: boolean;
-    
+    capitulo: number;
+    exploracion: number;
 }

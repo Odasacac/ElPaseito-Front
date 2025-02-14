@@ -4,6 +4,9 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular
 import { ParaContinuar } from '../../../interfaces/paraContinuar';
 import { ConfiguracionService } from '../../../servicios/configuracion.service';
 import { CommonModule } from '@angular/common';
+import { PantallasService } from '../../../servicios/pantallas.service';
+import { ApiService } from '../../../servicios/api.service';
+import { PersonajeService } from '../../../servicios/personaje.service';
 
 @Component({
   selector: 'app-continuar',
@@ -14,11 +17,16 @@ import { CommonModule } from '@angular/common';
 })
 export class ContinuarComponent 
 {
-  router = inject(Router)
+    pantallasService = inject(PantallasService);
+    personajeService = inject(PersonajeService)
+    configuracionService = inject(ConfiguracionService);
+    apiService = inject(ApiService);
+    router = inject(Router);
   
-  configuracionService = inject(ConfiguracionService);
-  
+
   opcionesCampoMiedo = this.configuracionService.getCamposMiedo();
+
+  textoError: String ="";
 
   camposFormulario =
   {
@@ -29,7 +37,7 @@ export class ContinuarComponent
   paraContinuar: ParaContinuar =
   {
     nombre: '',
-    miedo: ''
+    miedo: 0
   }
 
   formulario = new FormGroup(this.camposFormulario);
@@ -42,16 +50,90 @@ export class ContinuarComponent
 
   continuarPartida()
   {
-    console.log("Recuperando personaje");
+    if(this.formulario.valid)
+    {
+      this.textoError="";
 
-    /*
-      Se llama a un personaje guardado en la base de datos:
+      const datosFormulario = this.formulario.value;
 
-        1 - Ese personaje se guarda en el PersonajeService
-        2 - Se va a la pantalla 1
-          this.pantallasService.setPantalla1(true);
-          this.pantallasService.setPantalla0(false);
-          this.router.navigate(['/game/1']);  
-    */
+      if (datosFormulario.nombre && datosFormulario.miedo) 
+      {
+        const continuarPersonaje: ParaContinuar = 
+        {
+          nombre: datosFormulario.nombre,
+          miedo: Number(datosFormulario.miedo),
+        }
+
+        const observerContinuarPersonaje =
+        {
+            next: (respuesta:any) =>
+            {
+              this.personajeService.setPersonaje(respuesta.personaje);
+              this.pantallasService.setVisible(true);
+              const capitulo: Number = respuesta.personaje.capitulo
+
+              switch (capitulo)
+              {
+                case 1:
+                  this.pantallasService.setPantalla1(true);
+                  this.router.navigate(['/game/1']);
+                  break;
+
+                default:
+                  this.pantallasService.setVisible(false);
+                  this.router.navigate(['inicio/menu']);
+              }
+
+            },
+
+            error: (error: any) =>
+            {
+              this.textoError = "";
+            }
+        }
+
+        this.apiService.continuarPersonaje(continuarPersonaje).subscribe(observerContinuarPersonaje);
+      }
+      else
+      {
+        this.textoError = "Error inesperado: Formulario válido, pero hay algún valor nulo."
+      }
+
+    }
+    else
+    {
+      const nombreControl = this.formulario.get("nombre");
+
+      if (nombreControl)
+      {
+        if (nombreControl.hasError("required"))
+        {
+          this.textoError = "El nombre es obligatorio.";
+        }
+
+        else if (nombreControl.hasError("minlength") || nombreControl.hasError("maxlength"))
+        {
+          let longitudActual: Number = 0;
+
+          if (nombreControl.value)
+          {
+            longitudActual = nombreControl.value.length;
+          }
+            
+          this.textoError = "El nombre debe tener una longitud entre 2 y 20 carácteres y actualmente tiene: " + longitudActual + ".";
+        }
+      }
+
+
+      const miedoControl = this.formulario.get("miedo");
+
+      if (miedoControl)
+      {
+        if (miedoControl.hasError("required"))
+        {
+          this.textoError = "Indicar a qué temías es obligatorio.";
+        }
+      }
+    }
   }
 }

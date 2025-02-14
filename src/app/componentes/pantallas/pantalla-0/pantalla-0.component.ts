@@ -6,6 +6,8 @@ import { ConfiguracionService } from '../../../servicios/configuracion.service';
 import { PantallasService } from '../../../servicios/pantallas.service';
 import { Router } from '@angular/router';
 import { ApiService } from '../../../servicios/api.service';
+import { NuevoPersonaje } from '../../../interfaces/NuevoPersonaje';
+import { PersonajeService } from '../../../servicios/personaje.service';
 
 @Component({
   selector: 'app-pantalla-0',
@@ -17,18 +19,20 @@ import { ApiService } from '../../../servicios/api.service';
 export class Pantalla0Component 
 {
   pantallasService = inject(PantallasService);
-  router = inject(Router);
+  personajeService = inject(PersonajeService)
   configuracionService = inject(ConfiguracionService);
   apiService = inject(ApiService);
+  router = inject(Router);
 
   opcionesCampoMiedo = this.configuracionService.getCamposMiedo();
   opcionesCampoOlvido = this.configuracionService.getCamposOlvido();
+  textoError: String ="";
 
   paraNuevoPersonaje: ParaNuevoPersonaje =
   {
     nombre: '',
-    miedo: '',
-    olvido:''
+    miedo: 0,
+    olvido: 0
   }
 
   
@@ -58,34 +62,89 @@ export class Pantalla0Component
 
   crearPersonaje()
   {
-    console.log("Creando personaje");
+    if(this.formulario.valid)
+    {
+      this.textoError="";
 
-    /*
-      Se crea un personaje nuevo con todos los atributos:
-        
-      paraNuevoPersonaje =
+      const datosFormulario = this.formulario.value;
+
+      if (datosFormulario.nombre && datosFormulario.miedo && datosFormulario.olvido) 
       {
+        const nuevoPersonaje: ParaNuevoPersonaje = 
+        {
+          nombre: datosFormulario.nombre,
+          miedo: Number(datosFormulario.miedo),
+          olvido: Number(datosFormulario.olvido)
+        }
+
+        const observerParaNuevoPersonaje =
+        {
+            next: (respuesta:any) =>
+            {
+              this.personajeService.setPersonaje(respuesta.personaje);
+              this.pantallasService.setPantalla1(true);
+              this.pantallasService.setPantalla0(false);
+              this.router.navigate(['/game/1']);
+            },
+
+            error: (error: any) =>
+            {
+              //Preguntar si aunque no se haya podido guardar el personaje quiere continuar
+            }
+        }
+
+        this.apiService.guardarNuevoPersonaje(nuevoPersonaje).subscribe(observerParaNuevoPersonaje);
+      }
+      else
+      {
+        this.textoError = "Error inesperado: Formulario válido, pero hay algún valor nulo."
+      }
+    }
+    else
+    {
+      const nombreControl = this.formulario.get("nombre");
+
+      if (nombreControl)
+      {
+        if (nombreControl.hasError("required"))
+        {
+          this.textoError = "El nombre es obligatorio.";
+        }
+
+        else if (nombreControl.hasError("minlength") || nombreControl.hasError("maxlength"))
+        {
+          let longitudActual: Number = 0;
+
+          if (nombreControl.value)
+          {
+            longitudActual = nombreControl.value.length;
+          }
+            
+          this.textoError = "El nombre debe tener una longitud entre 2 y 20 carácteres y actualmente tiene: " + longitudActual + ".";
+        }
       }
 
-      Y se hacen tres cosas:
 
-        1 - Ese personaje se guarda en la base de datos
+      const miedoControl = this.formulario.get("miedo");
 
-          const observerSavePJ=
+      if (miedoControl)
+        {
+          if (miedoControl.hasError("required"))
           {
+            this.textoError = "Indicar a qué temes es obligatorio.";
           }
+        }
 
-          this.apiService.savePJ(nuevoPersonaje).subscribe(observerSavePJ);
+      const olvidoControl = this.formulario.get("olvido");
 
-        2 - Ese personaje se guarda en el PersonajeService
-
-          this.personajeService.setPersonaje(nuevoPersonaje)
-
-        3 - Se va a la pantalla 1
-          this.pantallasService.setPantalla1(true);
-          this.pantallasService.setPantalla0(false);
-          this.router.navigate(['/game/1']);
-    */
+      if (olvidoControl)
+        {
+          if (olvidoControl.hasError("required"))
+          {
+            this.textoError = "Indicar qué tiendes a olvidar es obligatorio.";
+          }
+        }
+    }
   }
 
 }

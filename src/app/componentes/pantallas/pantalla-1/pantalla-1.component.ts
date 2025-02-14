@@ -15,7 +15,7 @@ import { PantallasService } from '../../../servicios/pantallas.service';
 export class Pantalla1Component 
 {
  /*
-    Aqui se llega desde ContinuarComponent o desde Pantalla0Component
+    Aqui se llega desde Pantalla0Component
 
     Es el inicio del juego, el personaje ya está creado y almacenado en PersonajeService
 
