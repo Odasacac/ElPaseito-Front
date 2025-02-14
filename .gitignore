@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 # Archivos pesados
-src/assets/images/**/*.mp4
+public/**/*.mp4
