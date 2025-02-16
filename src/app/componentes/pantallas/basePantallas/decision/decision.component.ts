@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { PantallasService } from '../../../../servicios/pantallas.service';
 import { Router } from '@angular/router';
+import { PantallasService } from '../../../../servicios/pantallas.service';
+
 
 @Component({
   selector: 'app-decision',
@@ -12,21 +13,35 @@ import { Router } from '@angular/router';
 export class DecisionComponent 
 {
   router = inject(Router);
-
   pantallasService = inject(PantallasService);
-  rutasImagenes = this.pantallasService.getRutasParaDecision();
 
-  textoDecision: String = "¿Qué decides?";
+  opciones = this.pantallasService.getOpcionesDesvio();
+  rutaImagen = this.pantallasService.getRutaImagen();
+  textos = this.pantallasService.getTextos();
 
-  clickEn(indice: Number)
+  textoDesvio: String = "¿Seguirás?";
+  si: String ="Sí";
+  no: String ="No";
+
+  pantallaActiva: Number = 0;
+
+  ngOnInit()
   {
-    let pantallaActiva = this.pantallasService.getPantallaActiva();
-    let valorPantallaActive = pantallaActiva();
+    this.pantallaActiva = this.pantallasService.getPantallaActiva()();
+  }
 
-    switch (valorPantallaActive)
+  clickEnSi()
+  {
+    switch (this.pantallaActiva)
     {
-        case 3:
-          this.seleccionEnPantalla3(indice);
+        case 9:
+          this.pantallasService.setPantalla9(false);
+          this.irAPantalla10();
+          break;
+
+        case 17:
+          this.pantallasService.setPantalla17(false);
+          this.irAPantalla18();
           break;
    
         default:
@@ -34,30 +49,43 @@ export class DecisionComponent
     }
   }
 
-
-  seleccionEnPantalla3(imagen: Number)
+  clickEnNo()
   {
-    this.pantallasService.setPantalla3(false);
-
-    switch (imagen)
+    switch (this.pantallaActiva)
     {
-      case 0:
-        this.irAPantallaRendirse();
-        break;
-      case 1:
-        this.irAPantalla4();
-        break;
-      default:
-        this.irARutaNoPermitida();
-        break;
+        case 9:
+          this.pantallasService.setPantalla9(false);
+          this.irAPantalla11();
+          break;
+
+        case 17:
+          this.pantallasService.setPantalla17(false);
+          this.irAPantallaRendirse();
+          break;
+   
+        default:
+          this.irARutaNoPermitida()
     }
   }
 
-  irAPantalla4()
+  irAPantalla10()
   {
-    this.pantallasService.setPantalla4(true);
-    this.router.navigate(['/game/4']);
+    this.pantallasService.setPantalla10(true);
+    this.router.navigate(['/game/10']);
   }
+
+  irAPantalla11()
+  {
+    this.pantallasService.setPantalla11(true);
+    this.router.navigate(['/game/11']);
+  }
+
+  irAPantalla18()
+  {
+    this.pantallasService.setPantalla17(true);
+    this.router.navigate(['/game/18']);
+  }
+
 
   irARutaNoPermitida()
   {
@@ -66,8 +94,9 @@ export class DecisionComponent
 
   irAPantallaRendirse()
   {
- 
     this.pantallasService.setPantallaAbandono(true);
     this.router.navigate(['/game/abandono']);
   }
+
+
 }

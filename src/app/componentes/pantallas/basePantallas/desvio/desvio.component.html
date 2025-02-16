@@ -7,6 +7,7 @@
 
 <p>{{textoDesvio}}</p>
 
-
-<button (click)="clickEnSi()">{{si}}</button>
-<button (click)="clickEnNo()">{{no}}</button>
+@for (opcion of opciones(); track opcion; let i = $index)
+{
+    <button (click)="clickEn(i)">{{opcion}}</button>
+}
