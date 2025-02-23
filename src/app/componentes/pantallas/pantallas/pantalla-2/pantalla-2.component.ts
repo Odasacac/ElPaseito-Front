@@ -13,33 +13,29 @@ export class Pantalla2Component
 {
   pantallasService = inject(PantallasService);
 
+  pantallaActual: Number = 2;
+
   ngOnInit()
   {
-    if (this.pantallasService.getPantalla2())
+    if(this.pantallasService.prepararPantalla(this.pantallaActual))
     {
       this.prepararPantalla();
     }
-    else
-    {
-      this.pantallasService.setVisible(false);
-    }
 
   }
-
   prepararPantalla()
   {
-    this.pantallasService.setVisible(true);
-    this.pantallasService.setPantallaActiva(2);
-
     this.pantallasService.setRutaImagen("/images/1/2.jpg");
     
     const paraTexto: String []=[];
-    const linea1: String = "Al darte la vuelta, ves esto."
+    const linea1: String = "Al darte la vuelta, ves la ciudad."
     paraTexto.push(linea1);
-    const linea2: String = "La ciudad."
+    const linea2: String = "Tu objetivo era y sigue siendo ver un atardecer bonito desde un lugar cómodo."
     paraTexto.push(linea2);
-    const linea3: String = "Te preguntas si es mejor volver."
+    const linea3: String = "No es tarde, pero tampoco tienes todo el tiempo del mundo."
     paraTexto.push(linea3);
+    const linea4: String = "Te preguntas si es mejor volver."
+    paraTexto.push(linea4);
     this.pantallasService.setTextos(paraTexto);
   }
 

@@ -11,26 +11,21 @@ import { PantallasService } from '../../../../servicios/pantallas.service';
 })
 export class Pantalla8Component 
 {
- pantallasService = inject(PantallasService);
+  pantallasService = inject(PantallasService);
+
+  pantallaActual: Number = 8;
 
   ngOnInit()
   {
-    if (this.pantallasService.getPantalla8())
+    if(this.pantallasService.prepararPantalla(this.pantallaActual))
     {
       this.prepararPantalla();
-    }
-    else
-    {
-      this.pantallasService.setVisible(false);
     }
 
   }
 
   prepararPantalla()
   {
-    this.pantallasService.setVisible(true);
-    this.pantallasService.setPantallaActiva(8);
-
     this.pantallasService.setRutaImagen("/images/1/6.jpg");
     
     const paraTexto: String []=[];

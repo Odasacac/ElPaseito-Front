@@ -22,9 +22,34 @@ export class PersonajeService
     }
   )
 
+  getCapitulo(): number
+  {
+    return this.personaje.capitulo;
+  }
+
+  setCapitulo(capitulo: number)
+  {
+    this.personaje.capitulo=capitulo
+  }
+
+  getExploracion(): number
+  {
+    return this.personaje.exploracion
+  }
+
+  aumentarExploracion(exploracion: number)
+  {
+    this.personaje.exploracion=this.personaje.exploracion + exploracion
+  }
+
   setPersonaje(personaje: NuevoPersonaje)
   {
     this.personaje=personaje;
+  }
+
+  getPersonaje(): NuevoPersonaje
+  {
+    return this.personaje;
   }
 
   getMaster(): boolean

@@ -11,38 +11,34 @@ import { PantallasService } from '../../../../servicios/pantallas.service';
 })
 export class Pantalla6Component 
 {
-   pantallasService = inject(PantallasService);
-  
-    ngOnInit()
+  pantallasService = inject(PantallasService);
+
+  pantallaActual: Number = 6;
+
+  ngOnInit()
+  {
+    if(this.pantallasService.prepararPantalla(this.pantallaActual))
     {
-      if (this.pantallasService.getPantalla6())
-      {
-        this.prepararPantalla();
-      }
-      else
-      {
-        this.pantallasService.setVisible(false);
-      }
-  
+      this.prepararPantalla();
     }
+
+  }
+
+  prepararPantalla()
+  {
   
-    prepararPantalla()
-    {
-      this.pantallasService.setVisible(true);
-      this.pantallasService.setPantallaActiva(6);
-  
-      this.pantallasService.setRutaImagen("/images/1/4.jpg");
+    this.pantallasService.setRutaImagen("/images/1/4.jpg");
       
-      const paraTexto: String []=[];
-      const linea1: String = "Hace un buen día, se ve el mar."
-      paraTexto.push(linea1);
-      const linea2: String = "Es curioso que incluso desde aquí aún se oiga el ruido de la ciudad."
-      paraTexto.push(linea2);
-      const linea3: String = "¿A cuánto ruido nos habremos acostumbrado que sólo lo notamos cuando nos alejamos?"
-      paraTexto.push(linea3);
-      const linea4: String = "Entre vagos pensamientos sigues el camino que se acaba adentrando en el bosque."
-      paraTexto.push(linea4);
-      this.pantallasService.setTextos(paraTexto);
-    }
+    const paraTexto: String []=[];
+    const linea1: String = "Hace un buen día, se ve el mar."
+    paraTexto.push(linea1);
+    const linea2: String = "Es curioso que incluso desde aquí aún se oiga el ruido de la ciudad."
+    paraTexto.push(linea2);
+    const linea3: String = "¿A cuánto ruido nos habremos acostumbrado que sólo lo notamos cuando nos alejamos?"
+    paraTexto.push(linea3);
+    const linea4: String = "Entre vagos pensamientos sigues el camino que se acaba adentrando en el bosque."
+    paraTexto.push(linea4);
+    this.pantallasService.setTextos(paraTexto);
+  }
 
 }

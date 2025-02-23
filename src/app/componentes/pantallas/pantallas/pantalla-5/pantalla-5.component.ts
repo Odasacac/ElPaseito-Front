@@ -13,23 +13,18 @@ export class Pantalla5Component
 {
   pantallasService = inject(PantallasService);
 
+  pantallaActual: Number = 5;
+
   ngOnInit()
   {
-    if (this.pantallasService.getPantalla5())
+    if(this.pantallasService.prepararPantalla(this.pantallaActual))
     {
       this.prepararPantalla();
     }
-    else
-    {
-      this.pantallasService.setVisible(false);
-    }
 
   }
-
   prepararPantalla()
   {
-    this.pantallasService.setVisible(true);
-    this.pantallasService.setPantallaActiva(5);
 
     this.pantallasService.setRutaImagen("/images/1/3.jpg");
     

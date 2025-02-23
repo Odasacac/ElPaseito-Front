@@ -12,35 +12,30 @@ import { AloneComponent } from "../../basePantallas/alone/alone.component";
 })
 export class Pantalla13Component 
 {
-pantallasService = inject(PantallasService);
-  
-    ngOnInit()
+  pantallasService = inject(PantallasService);
+
+  pantallaActual: Number = 13;
+
+  ngOnInit()
+  {
+    if(this.pantallasService.prepararPantalla(this.pantallaActual))
     {
-      if (this.pantallasService.getPantalla13())
-      {
-        this.prepararPantalla();
-      }
-      else
-      {
-        this.pantallasService.setVisible(false);
-      }
-  
+      this.prepararPantalla();
     }
+
+  }
   
-    prepararPantalla()
-    {
-      this.pantallasService.setVisible(true);
-      this.pantallasService.setPantallaActiva(13);
-  
-      this.pantallasService.setRutaImagen("/images/1/12.jpg");
+  prepararPantalla()
+  {
+    this.pantallasService.setRutaImagen("/images/1/12.jpg");
       
-      const paraTexto: String []=[];
-      const linea1: String = "El sendero no es tan fácil de seguir como parecía al principio."
-      paraTexto.push(linea1);
-      const linea2: String = "Pero a lo lejos se ve la luz del sol y la cima parece cercana."
-      paraTexto.push(linea2);
-      const linea3: String = "Decides abrirte paso entre las ramas."
-      paraTexto.push(linea3);
-      this.pantallasService.setTextos(paraTexto);
-    }
+    const paraTexto: String []=[];
+    const linea1: String = "El sendero no es tan fácil de seguir como parecía al principio."
+    paraTexto.push(linea1);
+    const linea2: String = "Pero a lo lejos se ve la luz del sol y la cima parece cercana."
+    paraTexto.push(linea2);
+    const linea3: String = "Decides abrirte paso entre las ramas."
+    paraTexto.push(linea3);
+    this.pantallasService.setTextos(paraTexto);
+  }
 }

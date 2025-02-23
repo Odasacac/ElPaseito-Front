@@ -29,7 +29,7 @@ export class MenuComponent
 
   nuevaPartida()
   {
-    this.pantallasService.setPantalla0(true);
+    this.pantallasService.setPantalla(0);
     this.pantallasService.setVisible(true);
     this.router.navigate(['/game/0']);
   }

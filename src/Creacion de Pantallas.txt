@@ -1,0 +1,163 @@
+¿Cómo crear pantallas?
+
+1 - Determinar qué tipo de pantalla será:
+
+- Capítulo: Título del capítulo que va a empezar.
+- Alone: Pantalla que sólo lleva a una pantalla.
+- Bifurcación: Da a elegir dos o más opciones.
+- Decisión: Si o no a avanzar, no hay opciones, o se sigue o no, y la consecuencia del no ya dependerá de la pantalla.
+- Desvío: Posibilidad de desviarse, es como una bifurcación, pero se desconoce la opción alternativa al desvío.
+- Video: Pantalla de video.
+
+2 - Crear el componente
+
+    ng g c componentes/pantallas/pantallas/pantalla-23
+
+3 - Customizar el componente
+
+    Las pantallas son en esencia similares, solo varían pequeños aspectos en función del tipo de pantalla.
+
+    3.1 - Partes comunes
+
+        Todas las pantallas tienen esta estructura en el TypeScript:
+
+            pantallasService = inject(PantallasService);
+
+            pantallaActual: Number = 1;
+
+            ngOnInit()
+            {
+                if(this.pantallasService.prepararPantalla(this.pantallaActual))
+                {
+                    this.prepararPantalla();
+                }
+            }
+
+            prepararPantalla()
+            {}
+        
+        Lo que ocurre en el ngOnInit es que se evalua si la pantalla actual ha sido habilitada.
+        Si lo ha sido, se permite mostrar las pantallas y se setea esta pantalla como pantalla activa, además, se ejecuta el prepararPantalla() de la propia pantalla
+        Si no lo ha sido, se mostrará Ruta No Permitida en el MainComponent
+
+    3.2 - Partes dependientes
+
+        Con esto me refiero a que, dependiendo de qué tipo de pantalla es la pantalla actual, necesitará setear una serie de valores:
+
+        3.2.1 - Alone component - Ejemplo: Pantalla 1
+
+            Si la pantalla es Alone, hay que setear en el TypeScript de la pantalla la ruta de la imagen y los textos:
+
+                prepararPantalla()
+                {
+                    //SETTEAR RUTA IMAGEN
+                    this.pantallasService.setRutaImagen("/images/1/1.jpg");
+    
+                    //SETTEAR TEXTOS
+                    const paraTexto: String []=[];
+                    const linea1: String = "Sin darte cuenta te encuentras en este lugar."
+                    paraTexto.push(linea1);
+                    const linea2: String = "Saliste pronto de trabajar y decidiste dar un paseo por la montaña."
+                    paraTexto.push(linea2);
+                    const linea3: String = "Tu objetivo era y sigue siendo ver un atardecer bonito desde un lugar cómodo."
+                    paraTexto.push(linea3);
+                    const linea4: String = "No es tarde, pero tampoco tienes todo el tiempo del mundo."
+                    paraTexto.push(linea4);
+    
+                    this.pantallasService.setTextos(paraTexto);
+                }
+
+            Además, en el propio AloneComponent, hay que añadir un case nuevo en el método siguiente().
+
+        3.2.2 - Bifurcación - Ejemplo: Pantalla 3
+
+            Si la pantalla es Bifurcación, hay que setear en el TypeScript de la pantalla las rutas de las imágenes a mostrar:
+
+                prepararPantalla()
+                {
+                    //SETTEAR RUTA IMAGENES
+                    const rutasImagenes: String[]=[];
+                    const rutaImagen1: String = "/images/1/2.jpg";
+                    rutasImagenes.push(rutaImagen1);
+                    const rutaImagen2: String = "/images/1/1.jpg";
+                    rutasImagenes.push(rutaImagen2);
+                    this.pantallasService.setRutasParaBifurcacion(rutasImagenes);
+                }
+
+            Además, en el propio BifurcacionComponent, hay que añadir un nuevo case en el método clickEn().
+            Primero se filtra por la pantalla activa y luego segun esa pantalla se indican las posibilidades.
+
+        3.2.3 - Desvio - Ejemplo: Pantalla 8
+
+            Si la pantalla es Desvío, hay que setear en el TypeScript de la pantalla la ruta de la imagen, los textos y las opciones:
+
+                prepararPantalla()
+                {
+                    //SETTEAR RUTA IMAGEN
+                    this.pantallasService.setRutaImagen("/images/1/6.jpg");
+    
+                    //SETTEAR TEXTOS
+                    const paraTexto: String []=[];
+                    const linea1: String = "En un momento, ves entre los árboles una pequeña cabaña hecha de hojas y ramas secas."
+                    paraTexto.push(linea1);
+                    const linea2: String = "Te preguntas si es buena idea acercarse a mirar."
+                    paraTexto.push(linea2);
+                    this.pantallasService.setTextos(paraTexto);
+
+                    //SETTEAR OPCIONES
+                    const paraOpciones: String []=[];
+                    const opcion1: String = "Prefiero seguir el camino"
+                    paraOpciones.push(opcion1);
+                    const opcion2: String = "Me acerco a mirar"
+                    paraOpciones.push(opcion2);
+                    this.pantallasService.setOpcionesDesvio(paraOpciones);
+
+                }
+            
+            Además, en el DesvioComponent hay que añadir un nuevo case en el método clickEn().
+            Primero se filtra por la pantalla activa y luego segun esa pantalla se indican las posibilidades.
+
+        3.2.4 - Decision - Ejemplo: Pantalla 9
+
+            Si la pantalla es Decision, hay que setear en el TypeScript de la pantalla la ruta de la imagen y los textos:
+
+                prepararPantalla()
+                {
+                    //SETTEAR RUTA IMAGEN
+                    this.pantallasService.setRutaImagen("/images/1/8.jpg");
+    
+                    //SETTEAR TEXTOS
+                    const paraTexto: String []=[];
+                    const linea1: String = "Te acercas a mirar."
+                    paraTexto.push(linea1);
+                    const linea2: String = "Es una cabaña hecha de ramas secas, bastante envuelta de matorrales."
+                    paraTexto.push(linea2);
+                    const linea3: String = "No hay nada reseñable, excepto lo que parece un camino al fondo."
+                    paraTexto.push(linea3);
+                    this.pantallasService.setTextos(paraTexto);
+                }
+
+            Además, en el DecisionComponent, hay que añadir los cases para los métodos clickEnSI() y clickEnNo().
+
+        3.2.5 - Capitulo - Ejemplo: Pantalla 4
+
+            Si la pantalla es Capitulo, hay que setear en el TypeScript de la pantalla el nombre del capítulo:
+
+                prepararPantalla()
+                {
+
+                    this.pantallasService.setNombreCapitulo("Capítulo 1 - La vida se abre paso");
+      
+                    const paraTexto: String []=[];
+                    const linea1: String = "";
+                    paraTexto.push(linea1);
+                    this.pantallasService.setTextos(paraTexto);
+                }
+
+            Además, en el CapituloComponent, hay que añadir los cases en el método siguiente().
+
+        3.2.6 - Video - Ejemplo: Pantalla 18
+
+            **EN CONSTRUCCION
+            
+            

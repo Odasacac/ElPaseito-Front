@@ -35,12 +35,12 @@ export class DecisionComponent
     switch (this.pantallaActiva)
     {
         case 9:
-          this.pantallasService.setPantalla9(false);
+          this.pantallasService.resetPantalla(9);
           this.irAPantalla10();
           break;
 
         case 17:
-          this.pantallasService.setPantalla17(false);
+          this.pantallasService.resetPantalla(17);
           this.irAPantalla18();
           break;
    
@@ -54,12 +54,12 @@ export class DecisionComponent
     switch (this.pantallaActiva)
     {
         case 9:
-          this.pantallasService.setPantalla9(false);
+          this.pantallasService.resetPantalla(9);
           this.irAPantalla11();
           break;
 
         case 17:
-          this.pantallasService.setPantalla17(false);
+          this.pantallasService.resetPantalla(17);
           this.irAPantallaRendirse();
           break;
    
@@ -70,19 +70,19 @@ export class DecisionComponent
 
   irAPantalla10()
   {
-    this.pantallasService.setPantalla10(true);
+    this.pantallasService.setPantalla(10);
     this.router.navigate(['/game/10']);
   }
 
   irAPantalla11()
   {
-    this.pantallasService.setPantalla11(true);
+    this.pantallasService.setPantalla(11);
     this.router.navigate(['/game/11']);
   }
 
   irAPantalla18()
   {
-    this.pantallasService.setPantalla17(true);
+    this.pantallasService.setPantalla(17);
     this.router.navigate(['/game/18']);
   }
 

@@ -11,33 +11,30 @@ import { AloneComponent } from "../../basePantallas/alone/alone.component";
 })
 export class Pantalla16Component 
 {
-pantallasService = inject(PantallasService);
-  
-    ngOnInit()
+  pantallasService = inject(PantallasService);
+
+  pantallaActual: Number = 16;
+
+  ngOnInit()
+  {
+    if(this.pantallasService.prepararPantalla(this.pantallaActual))
     {
-      if (this.pantallasService.getPantalla16())
-      {
-        this.prepararPantalla();
-      }
-      else
-      {
-        this.pantallasService.setVisible(false);
-      }
-  
+      this.prepararPantalla();
     }
+  }
   
-    prepararPantalla()
-    {
-      this.pantallasService.setVisible(true);
-      this.pantallasService.setPantallaActiva(16);
+  prepararPantalla()
+  {
+    this.pantallasService.setVisible(true);
+    this.pantallasService.setPantallaActiva(16);
   
-      this.pantallasService.setRutaImagen("/images/1/15.jpg");
+    this.pantallasService.setRutaImagen("/images/1/15.jpg");
       
-      const paraTexto: String []=[];
-      const linea1: String = "Pero nada, incluso bordeando es imposible."
-      paraTexto.push(linea1);
-      const linea2: String = "Hay mucha vegetación y ningún camino marcado."
-      paraTexto.push(linea2);
-      this.pantallasService.setTextos(paraTexto);
-    }
+    const paraTexto: String []=[];
+    const linea1: String = "Pero nada, incluso bordeando es imposible."
+    paraTexto.push(linea1);
+    const linea2: String = "Hay mucha vegetación y ningún camino marcado."
+    paraTexto.push(linea2);
+    this.pantallasService.setTextos(paraTexto);
+  }
 }

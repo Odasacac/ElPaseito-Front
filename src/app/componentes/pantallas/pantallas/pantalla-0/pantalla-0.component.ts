@@ -23,6 +23,7 @@ export class Pantalla0Component
   configuracionService = inject(ConfiguracionService);
   apiService = inject(ApiService);
   router = inject(Router);
+  pantallaActual: Number = 0;
 
   opcionesCampoMiedo = this.configuracionService.getCamposMiedo();
   opcionesCampoOlvido = this.configuracionService.getCamposOlvido();
@@ -51,7 +52,7 @@ export class Pantalla0Component
 
   ngOnInit()
   {
-    if (this.pantallasService.getPantalla0())
+    if (this.pantallasService.getPantalla(this.pantallaActual))
     {
       this.pantallasService.setVisible(true);
     }
@@ -169,8 +170,8 @@ export class Pantalla0Component
 
   irAPantalla1()
   {
-    this.pantallasService.setPantalla1(true);
-    this.pantallasService.setPantalla0(false);
+    this.pantallasService.setPantalla(1);
+    this.pantallasService.resetPantalla(this.pantallaActual);
     this.router.navigate(['/game/1']);
   }
 

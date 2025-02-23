@@ -87,85 +87,85 @@ export class AloneComponent
 
   irAPantalla2()
   {
-    this.pantallasService.setPantalla1(false);
-    this.pantallasService.setPantalla2(true);
+    this.pantallasService.resetPantalla(1);
+    this.pantallasService.setPantalla(2);
     this.router.navigate(['/game/2']);
   }
 
   irAPantalla3()
   {
-    this.pantallasService.setPantalla2(false);
-    this.pantallasService.setPantalla3(true);
+    this.pantallasService.resetPantalla(2);
+    this.pantallasService.setPantalla(3);
     this.router.navigate(['/game/3']);
   }
 
   irAPantalla6()
   {
-    this.pantallasService.setPantalla5(false);
-    this.pantallasService.setPantalla6(true);
+    this.pantallasService.resetPantalla(5);
+    this.pantallasService.setPantalla(6);
     this.router.navigate(['/game/6']);
   }
 
   irAPantalla7()
   {
-    this.pantallasService.setPantalla6(false);
-    this.pantallasService.setPantalla7(true);
+    this.pantallasService.resetPantalla(6);
+    this.pantallasService.setPantalla(7);
     this.router.navigate(['/game/7']);
   }
 
   irAPantalla8()
   {
-    this.pantallasService.setPantalla7(false);
-    this.pantallasService.setPantalla8(true);
+    this.pantallasService.resetPantalla(7);
+    this.pantallasService.setPantalla(8);
     this.router.navigate(['/game/8']);
   }
 
   irAPantalla11()
   {
-    this.pantallasService.setPantalla10(false);
-    this.pantallasService.setPantalla11(true);
+    this.pantallasService.resetPantalla(10);
+    this.pantallasService.setPantalla(11);
     this.router.navigate(['/game/11']);
   }
 
   irAPantalla12()
   {
-    this.pantallasService.setPantalla11(false);
-    this.pantallasService.setPantalla12(true);
+    this.pantallasService.resetPantalla(11);
+    this.pantallasService.setPantalla(12);
     this.router.navigate(['/game/12']);
   }
 
   irAPantalla13()
   {
-    this.pantallasService.setPantalla12(false);
-    this.pantallasService.setPantalla13(true);
+    this.pantallasService.resetPantalla(12);
+    this.pantallasService.setPantalla(13);
     this.router.navigate(['/game/13']);
   }
 
   irAPantalla14()
   {
-    this.pantallasService.setPantalla13(false);
-    this.pantallasService.setPantalla14(true);
+    this.pantallasService.resetPantalla(13);
+    this.pantallasService.setPantalla(14);
     this.router.navigate(['/game/14']);
   }
 
   irAPantalla15()
   {
-    this.pantallasService.setPantalla14(false);
-    this.pantallasService.setPantalla15(true);
+    this.pantallasService.resetPantalla(14);
+    this.pantallasService.setPantalla(15);
     this.router.navigate(['/game/15']);
   }
 
   irAPantalla16()
   {
-    this.pantallasService.setPantalla15(false);
-    this.pantallasService.setPantalla16(true);
+    this.pantallasService.resetPantalla(15);
+    this.pantallasService.setPantalla(16);
     this.router.navigate(['/game/16']);
   }
 
   irAPantalla17()
   {
-    this.pantallasService.setPantalla16(false);
-    this.pantallasService.setPantalla17(true);
+    this.pantallasService.resetPantalla(16);
+    this.pantallasService.setPantalla(17);
     this.router.navigate(['/game/17']);
   }
 

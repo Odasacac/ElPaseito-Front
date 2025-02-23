@@ -36,7 +36,7 @@ export class BifurcacionComponent
 
   seleccionEnPantalla3(imagen: Number)
   {
-    this.pantallasService.setPantalla3(false);
+    this.pantallasService.resetPantalla(3);
 
     switch (imagen)
     {
@@ -54,7 +54,7 @@ export class BifurcacionComponent
 
   irAPantalla4()
   {
-    this.pantallasService.setPantalla4(true);
+    this.pantallasService.setPantalla(4);
     this.router.navigate(['/game/4']);
   }
 

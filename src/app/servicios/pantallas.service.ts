@@ -6,6 +6,7 @@ import { Injectable, Signal, signal } from '@angular/core';
 export class PantallasService 
 {
   visible = signal<Boolean>(false);
+
   pantallaActiva = signal<Number>(0);
 
   rutaImagen = signal<String>("");
@@ -99,294 +100,409 @@ export class PantallasService
     this.pantallaAbandono=valor;
   }
 
-  //Pantalla 0
+
   pantalla0: Boolean=false;
-  
-  getPantalla0(): Boolean
-  {
-    return this.pantalla0;
-  }
-  setPantalla0(valor: Boolean)
-  {
-    this.pantalla0=valor;
-  }
-
-  //Pantalla 1
   pantalla1: Boolean=false;
-
-  getPantalla1(): Boolean
-  {
-    return this.pantalla1;
-  }
-  setPantalla1(valor: Boolean)
-  {
-    this.pantalla1=valor;
-  }
-
-  //Pantalla 2
   pantalla2: Boolean=false;
-
-  getPantalla2(): Boolean
-  {
-    return this.pantalla2;
-  }
-  setPantalla2(valor: Boolean)
-  {
-    this.pantalla2=valor;
-  }
-
-  //Pantalla 3
   pantalla3: Boolean=false;
-
-  getPantalla3(): Boolean
-  {
-    return this.pantalla3;
-  }
-  setPantalla3(valor: Boolean)
-  {
-    this.pantalla3=valor;
-  }
-
-  //Pantalla 4
   pantalla4: Boolean=false;
-
-  getPantalla4(): Boolean
-  {
-    return this.pantalla4;
-  }
-  setPantalla4(valor: Boolean)
-  {
-    this.pantalla4=valor;
-  }
-
-  //Pantalla 5
   pantalla5: Boolean=false;
-
-  getPantalla5(): Boolean
-  {
-    return this.pantalla5;
-  }
-  setPantalla5(valor: Boolean)
-  {
-    this.pantalla5=valor;
-  }
-
-  //Pantalla 6
   pantalla6: Boolean=false;
-
-  getPantalla6(): Boolean
-  {
-    return this.pantalla6;
-  }
-  setPantalla6(valor: Boolean)
-  {
-     this.pantalla6=valor;
-  }
-
-  //Pantalla 7
   pantalla7: Boolean=false;
-
-  getPantalla7(): Boolean
-  {
-    return this.pantalla7;
-  }
-  setPantalla7(valor: Boolean)
-  {
-     this.pantalla7=valor;
-  }
-
-  //Pantalla 8
   pantalla8: Boolean=false;
-
-  getPantalla8(): Boolean
-  {
-    return this.pantalla8;
-  }
-  setPantalla8(valor: Boolean)
-  {
-     this.pantalla8=valor;
-  }  
-
-  //Pantalla 9
   pantalla9: Boolean=false;
-
-  getPantalla9(): Boolean
-  {
-    return this.pantalla9;
-  }
-  setPantalla9(valor: Boolean)
-  {
-     this.pantalla9=valor;
-  }
-
-  //Pantalla 10
   pantalla10: Boolean=false;
-
-  getPantalla10(): Boolean
-  {
-    return this.pantalla10;
-  }
-  setPantalla10(valor: Boolean)
-  {
-     this.pantalla10=valor;
-  }
-
-  //Pantalla 11
   pantalla11: Boolean=false;
+  pantalla12: Boolean = false;
+  pantalla13: Boolean = false;
+  pantalla14: Boolean = false;
+  pantalla15: Boolean = false;
+  pantalla16: Boolean = false;
+  pantalla17: Boolean = false;
+  pantalla18: Boolean = false; //TO DO
+  pantalla19: Boolean = false;
+  pantalla20: Boolean = false;
+  pantalla21: Boolean = false;
+  pantalla22: Boolean = false;
+  pantalla23: Boolean = false;
 
-  getPantalla11(): Boolean
+  getPantalla(pantalla: Number): Boolean
   {
-    return this.pantalla11;
+    switch (pantalla) 
+    {
+      case 0:
+
+        return this.pantalla0;
+
+      case 1:
+
+        return this.pantalla1;
+
+      case 2:
+
+        return this.pantalla2;
+
+      case 3:
+
+        return this.pantalla3;
+
+      case 4:
+
+        return this.pantalla4;
+
+      case 5:
+
+        return this.pantalla5;
+
+      case 6:
+
+        return this.pantalla6;
+
+      case 7:
+
+        return this.pantalla7;
+
+      case 8:
+
+        return this.pantalla8;
+
+      case 9:
+
+        return this.pantalla9;
+
+      case 10:
+
+        return this.pantalla10;
+
+      case 11:
+
+        return this.pantalla11;
+
+      case 12:
+
+        return this.pantalla12;
+
+      case 13:
+
+        return this.pantalla13;
+
+      case 14:
+
+        return this.pantalla14;
+
+      case 15:
+
+        return this.pantalla15;
+
+      case 16:
+
+        return this.pantalla16;
+
+      case 17:
+
+        return this.pantalla17;
+
+      case 18:
+
+        return this.pantalla18;
+
+      case 19:
+
+        return this.pantalla19;
+
+      case 20:
+
+        return this.pantalla20;
+
+      case 21:
+
+        return this.pantalla21;
+
+      case 22:
+
+        return this.pantalla22;
+
+      case 23:
+
+        return this.pantalla23;
+
+      default:
+
+        return false; 
+    }
   }
-  setPantalla11(valor: Boolean)
+
+  setPantalla(pantalla: number): void 
   {
-     this.pantalla11=valor;
+    switch (pantalla) 
+    {
+      case 0:
+
+        this.pantalla0 = true;
+        break;
+
+      case 1:
+
+        this.pantalla1 = true;
+        break;
+
+      case 2:
+
+        this.pantalla2 = true;
+        break;
+
+      case 3:
+
+        this.pantalla3 = true;
+        break;
+
+      case 4:
+
+        this.pantalla4 = true;
+        break;
+
+      case 5:
+
+        this.pantalla5 = true;
+        break;
+
+      case 6:
+
+        this.pantalla6 = true;
+        break;
+
+      case 7:
+
+        this.pantalla7 = true;
+        break;
+
+      case 8:
+
+        this.pantalla8 = true;
+        break;
+
+      case 9:
+
+        this.pantalla9 = true;
+        break;
+
+      case 10:
+
+        this.pantalla10 = true;
+        break;
+
+      case 11:
+
+        this.pantalla11 = true;
+        break;
+
+      case 12:
+
+        this.pantalla12 = true;
+        break;
+
+      case 13:
+
+        this.pantalla13 = true;
+        break;
+
+      case 14:
+        this.pantalla14 = true;
+        break;
+      case 15:
+
+        this.pantalla15 = true;
+        break;
+
+      case 16:
+
+        this.pantalla16 = true;
+        break;
+
+      case 17:
+
+        this.pantalla17 = true;
+        break;
+
+      case 18:
+
+        this.pantalla18 = true;
+        break;
+
+      case 19:
+
+        this.pantalla19 = true;
+        break;
+
+      case 20:
+
+        this.pantalla20 = true;
+        break;
+
+      case 21:
+
+        this.pantalla21 = true;
+        break;
+
+      case 22:
+
+        this.pantalla22 = true;
+        break;
+
+      case 23:
+
+        this.pantalla23 = true;
+        break;
+
+      default:
+
+        break;
+    }
   }
 
-    //Pantalla 12
-pantalla12: Boolean = false;
+  resetPantalla(pantalla: Number): void 
+  {
+    switch (pantalla) 
+    {
+      case 0:
 
-getPantalla12(): Boolean 
-{
-  return this.pantalla12;
-}
-setPantalla12(valor: Boolean) 
-{
-  this.pantalla12 = valor;
-}
+        this.pantalla0 = false;
+        break;
 
-//Pantalla 13
-pantalla13: Boolean = false;
+      case 1:
 
-getPantalla13(): Boolean 
-{
-  return this.pantalla13;
-}
-setPantalla13(valor: Boolean) 
-{
-  this.pantalla13 = valor;
-}
+        this.pantalla1 = false;
+        break;
 
-//Pantalla 14
-pantalla14: Boolean = false;
+      case 2:
 
-getPantalla14(): Boolean 
-{
-  return this.pantalla14;
-}
-setPantalla14(valor: Boolean) 
-{
-  this.pantalla14 = valor;
-}
+        this.pantalla2 = false;
+        break;
 
-//Pantalla 15
-pantalla15: Boolean = false;
+      case 3:
 
-getPantalla15(): Boolean 
-{
-  return this.pantalla15;
-}
-setPantalla15(valor: Boolean) 
-{
-  this.pantalla15 = valor;
-}
+        this.pantalla3 = false;
+        break;
 
-//Pantalla 16
-pantalla16: Boolean = false;
+      case 4:
 
-getPantalla16(): Boolean 
-{
-  return this.pantalla16;
-}
-setPantalla16(valor: Boolean) 
-{
-  this.pantalla16 = valor;
-}
+        this.pantalla4 = false;
+        break;
 
-//Pantalla 17
-pantalla17: Boolean = false;
+      case 5:
 
-getPantalla17(): Boolean 
-{
-  return this.pantalla17;
-}
-setPantalla17(valor: Boolean) 
-{
-  this.pantalla17 = valor;
-}
+        this.pantalla5 = false;
+        break;
 
-//Pantalla 18
-pantalla18: Boolean = false;
+      case 6:
 
-getPantalla18(): Boolean 
-{
-  return this.pantalla18;
-}
-setPantalla18(valor: Boolean) 
-{
-  this.pantalla18 = valor;
-}
+        this.pantalla6 = false;
+        break;
 
-//Pantalla 19
-pantalla19: Boolean = false;
+      case 7:
 
-getPantalla19(): Boolean 
-{
-  return this.pantalla19;
-}
-setPantalla19(valor: Boolean) 
-{
-  this.pantalla19 = valor;
-}
+        this.pantalla7 = false;
+        break;
 
-//Pantalla 20
-pantalla20: Boolean = false;
+      case 8:
 
-getPantalla20(): Boolean 
-{
-  return this.pantalla20;
-}
-setPantalla20(valor: Boolean) 
-{
-  this.pantalla20 = valor;
-}
+        this.pantalla8 = false;
+        break;
 
-//Pantalla 21
-pantalla21: Boolean = false;
+      case 9:
 
-getPantalla21(): Boolean 
-{
-  return this.pantalla21;
-}
-setPantalla21(valor: Boolean) 
-{
-  this.pantalla21 = valor;
-}
+        this.pantalla9 = false;
+        break;
 
-//Pantalla 22
-pantalla22: Boolean = false;
+      case 10:
 
-getPantalla22(): Boolean 
-{
-  return this.pantalla22;
-}
-setPantalla22(valor: Boolean) 
-{
-  this.pantalla22 = valor;
-}
+        this.pantalla10 = false;
+        break;
 
-//Pantalla 23
-pantalla23: Boolean = false;
+      case 11:
 
-getPantalla23(): Boolean 
-{
-  return this.pantalla23;
-}
-setPantalla23(valor: Boolean) 
-{
-  this.pantalla23 = valor;
-}
+        this.pantalla11 = false;
+        break;
 
+      case 12:
 
+        this.pantalla12 = false;
+        break;
+
+      case 13:
+
+        this.pantalla13 = false;
+        break;
+
+      case 14:
+        this.pantalla14 = false;
+        break;
+      case 15:
+
+        this.pantalla15 = false;
+        break;
+
+      case 16:
+
+        this.pantalla16 = false;
+        break;
+
+      case 17:
+
+        this.pantalla17 = false;
+        break;
+
+      case 18:
+
+        this.pantalla18 = false;
+        break;
+
+      case 19:
+
+        this.pantalla19 = false;
+        break;
+
+      case 20:
+
+        this.pantalla20 = false;
+        break;
+
+      case 21:
+
+        this.pantalla21 = false;
+        break;
+
+      case 22:
+
+        this.pantalla22 = false;
+        break;
+
+      case 23:
+
+        this.pantalla23 = false;
+        break;
+
+      default:
+
+        break;
+    }
+  }
+
+  prepararPantalla(pantalla: Number): Boolean
+  {
+    if (this.getPantalla(pantalla))
+    {
+      this.setVisible(true);
+      this.setPantallaActiva(pantalla);
+      return true;
+    }
+    else
+    {
+      this.setVisible(false);
+      return false;
+    }
+  
+  }
+  
 
 }

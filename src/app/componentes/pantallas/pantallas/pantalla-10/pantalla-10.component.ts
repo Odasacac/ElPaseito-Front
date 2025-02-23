@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { AloneComponent } from "../../basePantallas/alone/alone.component";
 import { PantallasService } from '../../../../servicios/pantallas.service';
+import { PersonajeService } from '../../../../servicios/personaje.service';
 
 @Component({
   selector: 'app-pantalla-10',
@@ -11,34 +12,32 @@ import { PantallasService } from '../../../../servicios/pantallas.service';
 })
 export class Pantalla10Component 
 {
-   pantallasService = inject(PantallasService);
-  
-    ngOnInit()
+  pantallasService = inject(PantallasService);
+  personajeService = inject(PersonajeService);
+
+  pantallaActual: Number = 10;
+ 
+  ngOnInit()
+  {
+    if(this.pantallasService.prepararPantalla(this.pantallaActual))
     {
-      if (this.pantallasService.getPantalla10())
-      {
-        this.prepararPantalla();
-      }
-      else
-      {
-        this.pantallasService.setVisible(false);
-      }
-  
+      this.prepararPantalla();
     }
+ 
+  }
   
-    prepararPantalla()
-    {
-      this.pantallasService.setVisible(true);
-      this.pantallasService.setPantallaActiva(10);
-  
-      this.pantallasService.setRutaImagen("/images/1/9.jpg");
+  prepararPantalla()
+  {
+    this.pantallasService.setRutaImagen("/images/1/9.jpg");
       
-      const paraTexto: String []=[];
-      const linea1: String = "Hay muchas zarzas y habría que pasar prácticamente agachado."
-      paraTexto.push(linea1);
-      const linea2: String = "Decides volver por donde habías venido y seguir por donde ibas."
-      paraTexto.push(linea2);
-      this.pantallasService.setTextos(paraTexto);
-    }
+    const paraTexto: String []=[];
+    const linea1: String = "Hay muchas zarzas y habría que pasar prácticamente agachado."
+    paraTexto.push(linea1);
+    const linea2: String = "Decides volver por donde habías venido y seguir por donde ibas."
+    paraTexto.push(linea2);
+    this.pantallasService.setTextos(paraTexto);
+
+    this.personajeService.aumentarExploracion(1);
+  }
 
 }

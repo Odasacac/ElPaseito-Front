@@ -39,7 +39,7 @@ export class DesvioComponent
 
   seleccionEnPantalla8(imagen: Number)
   {
-    this.pantallasService.setPantalla8(false);
+    this.pantallasService.resetPantalla(8);
 
     switch (imagen)
     {
@@ -57,13 +57,13 @@ export class DesvioComponent
 
   irAPantalla9()
   {
-    this.pantallasService.setPantalla9(true);
+    this.pantallasService.setPantalla(9);
     this.router.navigate(['/game/9']);
   }
 
   irAPantalla11()
   {
-    this.pantallasService.setPantalla11(true);
+    this.pantallasService.setPantalla(11);
     this.router.navigate(['/game/11']);
   }
 

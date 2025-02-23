@@ -12,33 +12,26 @@ import { PantallasService } from '../../../../servicios/pantallas.service';
 export class Pantalla3Component 
 {
   pantallasService = inject(PantallasService);
-  
+
+  pantallaActual: Number = 3;
+
   ngOnInit()
   {
-    if (this.pantallasService.getPantalla3())
+    if(this.pantallasService.prepararPantalla(this.pantallaActual))
     {
       this.prepararPantalla();
-    }
-    else
-    {
-      this.pantallasService.setVisible(false);
     }
 
   }
 
   prepararPantalla()
   {
-    this.pantallasService.setVisible(true);
-    this.pantallasService.setPantallaActiva(3);
-
     const rutasImagenes: String[]=[];
     const rutaImagen1: String = "/images/1/2.jpg";
     rutasImagenes.push(rutaImagen1);
     const rutaImagen2: String = "/images/1/1.jpg";
     rutasImagenes.push(rutaImagen2);
     this.pantallasService.setRutasParaBifurcacion(rutasImagenes);
-
-    
   }
 
 }

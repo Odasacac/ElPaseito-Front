@@ -36,8 +36,8 @@ export class CapituloComponent
   
   irAPantalla5()
   {
-    this.pantallasService.setPantalla4(false);
-    this.pantallasService.setPantalla5(true);
+    this.pantallasService.resetPantalla(4);
+    this.pantallasService.setPantalla(5);
     this.router.navigate(['/game/5']);
   }
   

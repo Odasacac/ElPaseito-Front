@@ -75,7 +75,7 @@ export class ContinuarComponent
               switch (capitulo)
               {
                 case 1:
-                  this.pantallasService.setPantalla1(true);
+                  this.pantallasService.setPantalla(1);
                   this.router.navigate(['/game/1']);
                   break;
 

@@ -12,35 +12,30 @@ import { AloneComponent } from "../../basePantallas/alone/alone.component";
 export class Pantalla15Component 
 {
   pantallasService = inject(PantallasService);
-  
-    ngOnInit()
+
+  pantallaActual: Number = 15;
+
+  ngOnInit()
+  {
+    if(this.pantallasService.prepararPantalla(this.pantallaActual))
     {
-      if (this.pantallasService.getPantalla15())
-      {
-        this.prepararPantalla();
-      }
-      else
-      {
-        this.pantallasService.setVisible(false);
-      }
-  
+      this.prepararPantalla();
     }
-  
-    prepararPantalla()
-    {
-      this.pantallasService.setVisible(true);
-      this.pantallasService.setPantallaActiva(15);
-  
-      this.pantallasService.setRutaImagen("/images/1/14.jpg");
+
+  }
+
+  prepararPantalla()
+  {
+    this.pantallasService.setRutaImagen("/images/1/14.jpg");
       
-      const paraTexto: String []=[];
-      const linea1: String = "Sin embargo, llegas a un momento en el que seguir subiendo es realmente difícil."
-      paraTexto.push(linea1);
-      const linea2: String = "La vegetación es abundante y el suelo algo resbaldizo debido a las lluvias de los últimos días."
-      paraTexto.push(linea2);
-      const linea3: String = "Pruebas a bordear en busca de un acceso más seguro."
-      paraTexto.push(linea3);
-      this.pantallasService.setTextos(paraTexto);
-    }
+    const paraTexto: String []=[];
+    const linea1: String = "Sin embargo, llegas a un momento en el que seguir subiendo es realmente difícil."
+    paraTexto.push(linea1);
+    const linea2: String = "La vegetación es abundante y el suelo algo resbaldizo debido a las lluvias de los últimos días."
+    paraTexto.push(linea2);
+    const linea3: String = "Pruebas a bordear en busca de un acceso más seguro."
+    paraTexto.push(linea3);
+    this.pantallasService.setTextos(paraTexto);
+  }
 
 }

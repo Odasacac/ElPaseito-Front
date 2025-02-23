@@ -12,26 +12,21 @@ import { AloneComponent } from "../../basePantallas/alone/alone.component";
 })
 export class Pantalla7Component 
 {
-pantallasService = inject(PantallasService);
+  pantallasService = inject(PantallasService);
+
+  pantallaActual: Number = 7;
 
   ngOnInit()
   {
-    if (this.pantallasService.getPantalla7())
+    if(this.pantallasService.prepararPantalla(this.pantallaActual))
     {
       this.prepararPantalla();
-    }
-    else
-    {
-      this.pantallasService.setVisible(false);
     }
 
   }
 
   prepararPantalla()
   {
-    this.pantallasService.setVisible(true);
-    this.pantallasService.setPantallaActiva(7);
-
     this.pantallasService.setRutaImagen("/images/1/7.jpg");
     
     const paraTexto: String []=[];
