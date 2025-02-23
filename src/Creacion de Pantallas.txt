@@ -194,5 +194,9 @@
             }
 
         Y ya esto intentará guardar la partida, si la guarda bien, si no la guarda bien también.
+
+4 - Añadir esa Pantalla a los métodos getPantalla(), setPantalla() y resetPantalla() del PantallasService.
+
+5 - Añadir esa Pantalla al app-routes.
             
             

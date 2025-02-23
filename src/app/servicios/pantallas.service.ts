@@ -162,6 +162,20 @@ export class PantallasService
     this.pantallaAbandono=valor;
   }
 
+  //Pantalla Indefinida
+  pantallaIndefinida: Boolean=false;
+  getPantallaIndefinida(): Boolean
+  {
+    return this.pantallaIndefinida;
+  }
+  setPantallaIndefinida(valor: Boolean)
+  {
+    this.pantallaAbandono=valor;
+  }
+
+  
+  //Pantallas
+
   pantalla0: Boolean=false;
   pantalla1: Boolean=false;
   pantalla2: Boolean=false;
@@ -182,10 +196,11 @@ export class PantallasService
   pantalla17: Boolean = false;
   pantalla18: Boolean = false; 
   pantalla19: Boolean = false; 
-  pantalla20: Boolean = false; //TO DO
+  pantalla20: Boolean = false; 
   pantalla21: Boolean = false;
   pantalla22: Boolean = false;
   pantalla23: Boolean = false;
+  pantalla24: Boolean = false;
 
   getPantalla(pantalla: Number): Boolean
   {
@@ -286,6 +301,10 @@ export class PantallasService
       case 23:
 
         return this.pantalla23;
+
+      case 24:
+
+        return this.pantalla24;
 
       default:
 
@@ -417,6 +436,11 @@ export class PantallasService
         this.pantalla23 = true;
         break;
 
+      case 24:
+
+        this.pantalla24 = true;
+        break;
+
       default:
 
         break;
@@ -543,6 +567,11 @@ export class PantallasService
       case 23:
 
         this.pantalla23 = false;
+        break;
+
+      case 24:
+
+        this.pantalla24 = false;
         break;
 
       default:

@@ -34,6 +34,8 @@ import { Pantalla21Component } from './componentes/pantallas/pantallas/pantalla-
 import { Pantalla22Component } from './componentes/pantallas/pantallas/pantalla-22/pantalla-22.component';
 import { Pantalla23Component } from './componentes/pantallas/pantallas/pantalla-23/pantalla-23.component';
 import { AbandonoComponent } from './componentes/pantallas/pantallas/abandono/abandono.component';
+import { Pantalla24Component } from './componentes/pantallas/pantallas/pantalla-24/pantalla-24.component';
+import { NotdefinedComponent } from './componentes/pantallas/pantallas/notdefined/notdefined.component';
 
 
 export const routes: Routes = 
@@ -80,7 +82,9 @@ export const routes: Routes =
             { path: "21", component: Pantalla21Component },
             { path: "22", component: Pantalla22Component },
             { path: "23", component: Pantalla23Component },
-            { path: "abandono", component: AbandonoComponent }
+            { path: "24", component: Pantalla24Component },
+            { path: "abandono", component: AbandonoComponent },
+            { path: "notdefined", component: NotdefinedComponent}
         ]
     },
 

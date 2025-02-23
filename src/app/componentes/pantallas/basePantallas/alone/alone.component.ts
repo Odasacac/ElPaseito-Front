@@ -73,6 +73,18 @@ export class AloneComponent
         case 16:
           this.irAPantalla17();
           break;
+        
+        case 20:
+          this.irAPantalla21();
+          break;
+
+        case 21:
+          this.irAPantalla22();
+          break;
+
+        case 22:
+          this.irAPantalla23();
+          break;
 
         case 99:
           this.irAMenu();
@@ -84,6 +96,16 @@ export class AloneComponent
     }
   }
 
+  
+  irARutaNoPermitida()
+  {
+    this.router.navigate(['nopermitida']);
+  }
+
+  irAMenu()
+  {
+    this.router.navigate(['/inicio/menu']);
+  }
 
   irAPantalla2()
   {
@@ -169,17 +191,27 @@ export class AloneComponent
     this.router.navigate(['/game/17']);
   }
 
-
-
-
-  irARutaNoPermitida()
+  irAPantalla21()
   {
-    this.router.navigate(['nopermitida']);
+    this.pantallasService.resetPantalla(20);
+    this.pantallasService.setPantalla(21);
+    this.router.navigate(['/game/21']);
   }
 
-  irAMenu()
+  irAPantalla22()
   {
-    this.router.navigate(['/inicio/menu']);
+    this.pantallasService.resetPantalla(21);
+    this.pantallasService.setPantalla(22);
+    this.router.navigate(['/game/22']);
   }
+
+  irAPantalla23()
+  {
+    this.pantallasService.resetPantalla(22);
+    this.pantallasService.setPantalla(23);
+    this.router.navigate(['/game/23']);
+  }
+
+
 
 }
