@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { PantallasService } from '../../../../servicios/pantallas.service';
-import { AbandonoComponent } from "../../abandono/abandono.component";
 import { AloneComponent } from "../../basePantallas/alone/alone.component";
 
 @Component({

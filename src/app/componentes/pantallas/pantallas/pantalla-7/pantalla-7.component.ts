@@ -34,7 +34,7 @@ export class Pantalla7Component
     paraTexto.push(linea1);
     const linea2: String = "Y además, el camino se fusiona con el entorno y es algo difícil mantenerse en él."
     paraTexto.push(linea2);
-    const linea3: String = "No obstante, oyes cantar algún pajarito y eso te alegra."
+    const linea3: String = "No obstante, oyes cantar algún pajarito y eso te anima."
     paraTexto.push(linea3);
     this.pantallasService.setTextos(paraTexto);
   }

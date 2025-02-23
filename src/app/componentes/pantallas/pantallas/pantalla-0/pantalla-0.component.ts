@@ -29,6 +29,7 @@ export class Pantalla0Component
   opcionesCampoOlvido = this.configuracionService.getCamposOlvido();
   textoError: String ="";
   verNoConexion: Boolean = false;
+  pulsado: Boolean = false;
   textoContinuarSinGuardado: String ="¿Continuar de todas formas? No podrás guardar tu avance.";
 
   paraNuevoPersonaje: ParaNuevoPersonaje =
@@ -66,6 +67,7 @@ export class Pantalla0Component
   crearPersonaje()
   {
     this.verNoConexion = false;
+    this.pulsado = true;
 
     if(this.formulario.valid)
     {

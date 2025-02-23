@@ -67,6 +67,8 @@
                     this.pantallasService.setTextos(paraTexto);
                 }
 
+            Y en el HTML del componente hay que añadir <app-alone></app-alone>
+
             Además, en el propio AloneComponent, hay que añadir un case nuevo en el método siguiente().
 
         3.2.2 - Bifurcación - Ejemplo: Pantalla 3
@@ -84,8 +86,11 @@
                     this.pantallasService.setRutasParaBifurcacion(rutasImagenes);
                 }
 
+            Y en el HTML del componente hay que añadir <app-bifurcacion></app-bifurcacion>
+
             Además, en el propio BifurcacionComponent, hay que añadir un nuevo case en el método clickEn().
             Primero se filtra por la pantalla activa y luego segun esa pantalla se indican las posibilidades.
+
 
         3.2.3 - Desvio - Ejemplo: Pantalla 8
 
@@ -113,6 +118,8 @@
                     this.pantallasService.setOpcionesDesvio(paraOpciones);
 
                 }
+
+            Y en el HTML del componente hay que añadir <app-desvio></app-desvio>
             
             Además, en el DesvioComponent hay que añadir un nuevo case en el método clickEn().
             Primero se filtra por la pantalla activa y luego segun esa pantalla se indican las posibilidades.
@@ -137,6 +144,8 @@
                     this.pantallasService.setTextos(paraTexto);
                 }
 
+            Y en el HTML del componente hay que añadir <app-decision></app-decision>
+
             Además, en el DecisionComponent, hay que añadir los cases para los métodos clickEnSI() y clickEnNo().
 
         3.2.5 - Capitulo - Ejemplo: Pantalla 4
@@ -145,19 +154,45 @@
 
                 prepararPantalla()
                 {
-
-                    this.pantallasService.setNombreCapitulo("Capítulo 1 - La vida se abre paso");
-      
-                    const paraTexto: String []=[];
-                    const linea1: String = "";
-                    paraTexto.push(linea1);
-                    this.pantallasService.setTextos(paraTexto);
+                    this.pantallasService.setNumeroCapitulo(1);
+                    this.pantallasService.setNombreCapitulo("La vida se abre paso");
                 }
+
+            Y en el HTML del componente hay que añadir <app-capitulo></app-capitulo>
 
             Además, en el CapituloComponent, hay que añadir los cases en el método siguiente().
 
         3.2.6 - Video - Ejemplo: Pantalla 18
 
-            **EN CONSTRUCCION
+            Si la pantalla es Video, hay que setear en el TypeScript de la pantalla la ruta del video:
+
+                prepararPantalla()
+                {
+                    //SETTEAR RUTA VIDEO
+                    this.pantallasService.setRutaVideo("/videos/17.mp4");
+                }
+
+            Y en el HTML del componente hay que añadir <app-video></app-video>
+
+            Además, en el VideoComponent, hay que añadir los cases en el método siguiente().
+
+    3.3 - Guardar Partida - Ejemplo: Pantalla 18
+
+        En la última Pantalla de un capítulo, se intentará guardar la partida, para ello simplemente hay que añadir en ngOnInit de la pantalla:
+
+            this.pantallasService.guardarPartida();
+
+        Por ejemplo:
+
+            ngOnInit()
+            {
+                if(this.pantallasService.prepararPantalla(this.pantallaActual))
+                {
+                    this.prepararPantalla();
+                    this.pantallasService.guardarPartida();
+                }
+            }
+
+        Y ya esto intentará guardar la partida, si la guarda bien, si no la guarda bien también.
             
             

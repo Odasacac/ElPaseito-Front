@@ -13,7 +13,9 @@ export class CapituloComponent
 {
   pantallasService = inject(PantallasService);
 
+  numeroCapitulo = this.pantallasService.getNumeroCapitulo();
   nombreCapitulo = this.pantallasService.getNombreCapitulo();
+  tituloCapitulo: String = "Capítulo - ";
 
   router = inject(Router);
 
@@ -25,6 +27,10 @@ export class CapituloComponent
     {
         case 4:
           this.irAPantalla5();
+          break;
+
+        case 19:
+          this.irAPantalla20();
           break;
           
         default:
@@ -40,6 +46,14 @@ export class CapituloComponent
     this.pantallasService.setPantalla(5);
     this.router.navigate(['/game/5']);
   }
+
+  irAPantalla20()
+  {
+    this.pantallasService.resetPantalla(19);
+    this.pantallasService.setPantalla(20);
+    this.router.navigate(['/game/20']);
+  }
+  
   
   irARutaNoPermitida()
   {

@@ -39,7 +39,7 @@ export class Pantalla1Component
     const paraTexto: String []=[];
     const linea1: String = "Saliste pronto de trabajar y decidiste dar un paseo por la montaña."
     paraTexto.push(linea1);
-    const linea2: String = "Sin darte cuenta te encuentras en este lugar."
+    const linea2: String = "Sin saber muy bien cómo, llegaste a este lugar."
     paraTexto.push(linea2);
     
     this.pantallasService.setTextos(paraTexto);

@@ -79,6 +79,11 @@ export class ContinuarComponent
                   this.router.navigate(['/game/1']);
                   break;
 
+                case 2:
+                  this.pantallasService.setPantalla(19);
+                  this.router.navigate(['/game/19']);
+                  break;
+
                 default:
                   this.pantallasService.setVisible(false);
                   this.router.navigate(['inicio/menu']);

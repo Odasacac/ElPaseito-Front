@@ -7,7 +7,6 @@ import { OpcionesComponent } from './componentes/inicio/opciones/opciones.compon
 import { MainComponent } from './componentes/core/main/main.component';
 
 import { RutaIncorrectaComponent } from './componentes/otros/ruta-incorrecta/ruta-incorrecta.component';
-import { AbandonoComponent } from './componentes/pantallas/abandono/abandono.component';
 import { RutaNopermitidaComponent } from './componentes/otros/ruta-nopermitida/ruta-nopermitida.component';
 
 import { Pantalla0Component } from './componentes/pantallas/pantallas/pantalla-0/pantalla-0.component';
@@ -34,6 +33,7 @@ import { Pantalla20Component } from './componentes/pantallas/pantallas/pantalla-
 import { Pantalla21Component } from './componentes/pantallas/pantallas/pantalla-21/pantalla-21.component';
 import { Pantalla22Component } from './componentes/pantallas/pantallas/pantalla-22/pantalla-22.component';
 import { Pantalla23Component } from './componentes/pantallas/pantallas/pantalla-23/pantalla-23.component';
+import { AbandonoComponent } from './componentes/pantallas/pantallas/abandono/abandono.component';
 
 
 export const routes: Routes = 

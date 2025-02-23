@@ -28,13 +28,8 @@ export class Pantalla4Component
 
   prepararPantalla()
   {
-
-    this.pantallasService.setNombreCapitulo("Capítulo 1 - La vida se abre paso");
-      
-    const paraTexto: String []=[];
-    const linea1: String = "";
-    paraTexto.push(linea1);
-    this.pantallasService.setTextos(paraTexto);
+    this.pantallasService.setNumeroCapitulo(1);
+    this.pantallasService.setNombreCapitulo("La vida se abre paso");
   }
 
 }

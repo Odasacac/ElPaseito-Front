@@ -1,1 +1,6 @@
-<p>video works!</p>
+<video width="600" controls>
+    <source [src]="rutaVideo()" type="video/mp4">
+    Tu navegador no soporta el elemento de video.
+</video>
+  
+<button (click)="siguiente()">Siguiente</button>

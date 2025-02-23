@@ -30,14 +30,12 @@ export class Pantalla6Component
     this.pantallasService.setRutaImagen("/images/1/4.jpg");
       
     const paraTexto: String []=[];
-    const linea1: String = "Hace un buen día, se ve el mar."
+    const linea1: String = "Hace un buen día, se llega a ver el mar."
     paraTexto.push(linea1);
-    const linea2: String = "Es curioso que incluso desde aquí aún se oiga el ruido de la ciudad."
+    const linea2: String = "Desde aquí aún se oye el ruido de la ciudad."
     paraTexto.push(linea2);
-    const linea3: String = "¿A cuánto ruido nos habremos acostumbrado que sólo lo notamos cuando nos alejamos?"
+    const linea3: String = "Entre vagos pensamientos sigues el camino y te adentras en el bosque."
     paraTexto.push(linea3);
-    const linea4: String = "Entre vagos pensamientos sigues el camino que se acaba adentrando en el bosque."
-    paraTexto.push(linea4);
     this.pantallasService.setTextos(paraTexto);
   }
 

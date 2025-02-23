@@ -27,8 +27,6 @@ button:disabled:hover
     border-color: inherit;
 
 }
-  
-
 
 .imagen 
 {
@@ -65,4 +63,14 @@ form
     }
 }
 
+
+video
+{
+    display: block;
+    margin: 0 auto;
+    border: 5px solid black; /* Borde negro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para un borde más elegante */
+    margin-bottom: 20px;
+}
   

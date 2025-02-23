@@ -1,10 +1,16 @@
-import { Injectable, Signal, signal } from '@angular/core';
+import { inject, Injectable, Signal, signal } from '@angular/core';
+import { PersonajeService } from './personaje.service';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PantallasService 
 {
+  personajeService = inject(PersonajeService);
+  apiService = inject(ApiService);
+
+
   visible = signal<Boolean>(false);
 
   pantallaActiva = signal<Number>(0);
@@ -14,9 +20,23 @@ export class PantallasService
 
   rutasParaBifurcacion = signal<String[]>([]);
  
+  numeroCapitulo = signal<Number>(0);
   nombreCapitulo = signal<String>("");
 
   opcionesDesvio = signal<String[]>([]);
+
+  rutaVideo = signal<String>("");
+
+  
+  getRutaVideo(): Signal<String>
+  {
+    return this.rutaVideo;
+  }
+
+  setRutaVideo(ruta: String)
+  {
+    this.rutaVideo.set(ruta);
+  }
 
   getOpcionesDesvio(): Signal<String []>
   {
@@ -26,6 +46,16 @@ export class PantallasService
   setOpcionesDesvio(opciones: String[])
   {
     this.opcionesDesvio.set(opciones)
+  }
+
+  getNumeroCapitulo(): Signal<Number>
+  {
+    return this.numeroCapitulo;
+  }
+
+  setNumeroCapitulo(titulo: Number)
+  {
+    this.numeroCapitulo.set(titulo);
   }
 
   getNombreCapitulo(): Signal<String>
@@ -88,9 +118,41 @@ export class PantallasService
     return this.textosPantalla;
   }
 
+  //Métodos útiles
+
+  prepararPantalla(pantalla: Number): Boolean
+  {
+    if (this.getPantalla(pantalla))
+    {
+      this.setVisible(true);
+      return true;
+    }
+    else
+    {
+      this.setVisible(false);
+      return false;
+    }
+  }
+
+  guardarPartida()
+  {
+    const observadorGuardarPartida =
+    {
+      next: (respuesta:any) =>
+      {
+
+      }
+
+    }
+
+    this.apiService.guardarProgreso(this.personajeService.getPersonaje()).subscribe(observadorGuardarPartida);
+
+  }
+
+  //Métodos de las pantallas
+
   //Pantalla Abandono
   pantallaAbandono: Boolean=false;
-
   getPantallaAbandono(): Boolean
   {
     return this.pantallaAbandono;
@@ -99,7 +161,6 @@ export class PantallasService
   {
     this.pantallaAbandono=valor;
   }
-
 
   pantalla0: Boolean=false;
   pantalla1: Boolean=false;
@@ -119,9 +180,9 @@ export class PantallasService
   pantalla15: Boolean = false;
   pantalla16: Boolean = false;
   pantalla17: Boolean = false;
-  pantalla18: Boolean = false; //TO DO
-  pantalla19: Boolean = false;
-  pantalla20: Boolean = false;
+  pantalla18: Boolean = false; 
+  pantalla19: Boolean = false; 
+  pantalla20: Boolean = false; //TO DO
   pantalla21: Boolean = false;
   pantalla22: Boolean = false;
   pantalla23: Boolean = false;
@@ -234,6 +295,8 @@ export class PantallasService
 
   setPantalla(pantalla: number): void 
   {
+    this.setPantallaActiva(pantalla);
+
     switch (pantalla) 
     {
       case 0:
@@ -486,23 +549,6 @@ export class PantallasService
 
         break;
     }
-  }
-
-  prepararPantalla(pantalla: Number): Boolean
-  {
-    if (this.getPantalla(pantalla))
-    {
-      this.setVisible(true);
-      this.setPantallaActiva(pantalla);
-      return true;
-    }
-    else
-    {
-      this.setVisible(false);
-      return false;
-    }
-  
-  }
-  
+  } 
 
 }

@@ -28,7 +28,7 @@ export class Pantalla2Component
     this.pantallasService.setRutaImagen("/images/1/2.jpg");
     
     const paraTexto: String []=[];
-    const linea1: String = "Al darte la vuelta, ves la ciudad."
+    const linea1: String = "Al girarte, ves la ciudad."
     paraTexto.push(linea1);
     const linea2: String = "Tu objetivo era y sigue siendo ver un atardecer bonito desde un lugar cómodo."
     paraTexto.push(linea2);

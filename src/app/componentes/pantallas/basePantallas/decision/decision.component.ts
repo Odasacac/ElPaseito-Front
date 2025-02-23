@@ -82,7 +82,7 @@ export class DecisionComponent
 
   irAPantalla18()
   {
-    this.pantallasService.setPantalla(17);
+    this.pantallasService.setPantalla(18);
     this.router.navigate(['/game/18']);
   }
 
