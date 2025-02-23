@@ -1,24 +1,30 @@
 
 <form [formGroup]="formulario" (ngSubmit)="crearPersonaje()">
 
-    <label>¿Cómo te llaman?</label>
-    <input formControlName="nombre">
-    
-    <label>¿A qué temes?</label>
-    <select formControlName="miedo">
-      <option *ngFor="let opcion of opcionesCampoMiedo" [value]="opcion.id">
-        {{ opcion.valor }}
-      </option>
-    </select>
-  
-    <label>¿Qué tiendes a olvidar?</label>
-    <select formControlName="olvido">
-      <option *ngFor="let opcion of opcionesCampoOlvido" [value]="opcion.id">
-        {{ opcion.valor }}
-      </option>
-    </select>
+    <div class="campo">
+      <label>¿Cómo te llaman?</label>
+      <input formControlName="nombre">
+    </div>
 
-    <button type="submit">Continuar</button>
+    <div class="campo">
+      <label>¿A qué temes?</label>
+      <select formControlName="miedo">
+        <option *ngFor="let opcion of opcionesCampoMiedo" [value]="opcion.id">
+          {{ opcion.valor }}
+        </option>
+      </select>
+    </div>
+  
+    <div class="campo">
+      <label>¿Qué tiendes a olvidar?</label>
+      <select formControlName="olvido">
+        <option *ngFor="let opcion of opcionesCampoOlvido" [value]="opcion.id">
+          {{ opcion.valor }}
+        </option>
+      </select>
+    </div>
+
+    <button type="submit" [disabled]="verNoConexion">Continuar</button>
 
 </form>
 

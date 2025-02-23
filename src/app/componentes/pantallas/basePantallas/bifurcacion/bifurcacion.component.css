@@ -3,20 +3,13 @@
     width: 30%;
     display: inline-block;
     margin: 20px; /* Agrega separación entre imágenes */
-    border: 5px solid black; /* Borde negro */
     border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para un borde más elegante */
     transition: transform 0.3s ease-in-out; /* Suaviza la animación al agrandar */
     cursor: pointer;
 }
 
 .imagen:hover {
     transform: scale(1.1); /* Agranda la imagen al pasar el cursor */
-}
-
-p 
-{
-    text-align: center; /* Centra el texto de los párrafos */
 }
 
 .contenedor 
