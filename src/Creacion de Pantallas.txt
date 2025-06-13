@@ -44,7 +44,7 @@
 
         Con esto me refiero a que, dependiendo de qué tipo de pantalla es la pantalla actual, necesitará setear una serie de valores:
 
-        3.2.1 - Alone component - Ejemplo: Pantalla 1
+        3.2.1 - Alone
 
             Si la pantalla es Alone, hay que setear en el TypeScript de la pantalla la ruta de la imagen y los textos:
 
@@ -71,7 +71,36 @@
 
             Además, en el propio AloneComponent, hay que añadir un case nuevo en el método siguiente().
 
-        3.2.2 - Bifurcación - Ejemplo: Pantalla 3
+            Este método evalúa cuál es la pantalla actual y en función de la que sea habilitará e irá a la siguiente pantalla correspondiente.
+
+            siguiente()
+            {
+                let pantallaActiva = this.pantallasService.getPantallaActiva()();
+
+                switch (pantallaActiva)
+                {
+
+                    ...
+
+                    case X:
+                    this.irAPantallaB();
+                    break;
+
+                    ...
+
+                }
+            }
+
+
+            irAPantallaB()
+            {
+                this.pantallasService.resetPantalla(A);
+                this.pantallasService.setPantalla(B);
+                this.router.navigate(['/game/B']);
+            }
+            
+
+        3.2.2 - Bifurcación 
 
             Si la pantalla es Bifurcación, hay que setear en el TypeScript de la pantalla las rutas de las imágenes a mostrar:
 
@@ -91,8 +120,60 @@
             Además, en el propio BifurcacionComponent, hay que añadir un nuevo case en el método clickEn().
             Primero se filtra por la pantalla activa y luego segun esa pantalla se indican las posibilidades.
 
+                clickEn(indice: Number)
+                {
+                    let pantallaActiva = this.pantallasService.getPantallaActiva()();
 
-        3.2.3 - Desvio - Ejemplo: Pantalla 8
+                    switch (pantallaActiva)
+                    {
+                        ...
+
+                        case A:
+                        this.seleccionEnPantallaA();
+                        break;
+
+                        ...
+
+                    }
+
+                }
+
+                
+                seleccionEnPantallaA(imagen: Number)
+                {
+                    this.pantallasService.resetPantalla(A);
+
+                    switch (imagen)
+                    {
+                        case 0:
+                        this.irAPantallaRendirse();
+                        break;
+
+                        case 1:
+                        this.irAPantallaB();
+                        break; 
+                    
+                        default:
+                        this.irARutaNoPermitida(); 
+                        break;
+                    }
+                }
+
+
+                 irAPantallaB()
+                {
+                    this.pantallasService.setPantalla(B);
+                    this.router.navigate(['/game/B']);
+                }
+
+            Se pueden ir a otras Pantallas, no solo a una del listado:
+
+                this.irANotDefined(); Cuando aun no se haya creado esa Pantalla
+                this.irARutaNoPermitida(); Cuando la Pantalla no esté Permitida y/o por defecto
+                this.irAPantallaRendirse(); Cuando sea para rendirse
+
+
+        3.2.3 - Desvio
 
             Si la pantalla es Desvío, hay que setear en el TypeScript de la pantalla la ruta de la imagen, los textos y las opciones:
 
@@ -124,7 +205,51 @@
             Además, en el DesvioComponent hay que añadir un nuevo case en el método clickEn().
             Primero se filtra por la pantalla activa y luego segun esa pantalla se indican las posibilidades.
 
-        3.2.4 - Decision - Ejemplo: Pantalla 9
+
+                clickEn(indice: Number)
+                {
+                    let pantallaActiva = this.pantallasService.getPantallaActiva()();
+
+                    switch (pantallaActiva)
+                    {
+                        ...
+
+                        case A:
+                        this.seleccionEnPantallaA(indice);
+                        break;
+
+                        ...
+                    }
+                }
+
+
+                seleccionEnPantallaA(imagen: Number)
+                {
+                    this.pantallasService.resetPantalla(A);
+
+                    switch (imagen)
+                    {
+                        case 0:
+                        this.irAPantallaB();
+                        break;
+
+                        case 1: 
+                        this.irAPantallaC();
+                        break;
+
+                        default:
+                        this.irARutaNoPermitida();
+                        break;
+                    }
+                }
+
+                irAPantallaB()
+                {
+                    this.pantallasService.setPantalla(B);
+                    this.router.navigate(['/game/B']);
+                }
+ 
+        3.2.4 - Decision
 
             Si la pantalla es Decision, hay que setear en el TypeScript de la pantalla la ruta de la imagen y los textos:
 
@@ -148,6 +273,44 @@
 
             Además, en el DecisionComponent, hay que añadir los cases para los métodos clickEnSI() y clickEnNo().
 
+                clickEnSi()
+                {
+                    switch (this.pantallaActiva)
+                    {
+                        ...
+
+                        case X:
+                        this.pantallasService.resetPantalla(X);
+                        this.irAPantallaA();
+                        break;
+   
+                        ...
+                    }
+                }
+
+                clickEnNo()
+                {
+                    switch (this.pantallaActiva)
+                    {
+                        ...
+
+                        case X:
+                        this.pantallasService.resetPantalla(X);
+                        this.irAPantallaB();
+                        break;
+   
+                        ...
+                    }
+                }
+  
+                irAPantallaB()
+                {
+                    this.pantallasService.setPantalla(B);
+                    this.router.navigate(['/game/B']);
+                }
+
+
+
         3.2.5 - Capitulo - Ejemplo: Pantalla 4
 
             Si la pantalla es Capitulo, hay que setear en el TypeScript de la pantalla el nombre del capítulo:
@@ -161,6 +324,33 @@
             Y en el HTML del componente hay que añadir <app-capitulo></app-capitulo>
 
             Además, en el CapituloComponent, hay que añadir los cases en el método siguiente().
+
+            siguiente()
+            {
+                let pantallaActiva = this.pantallasService.getPantallaActiva()();
+
+                switch (pantallaActiva)
+                {
+
+                    ...
+
+                    case A:
+                    this.irAPantallaB();
+                    break;
+
+                    ...
+
+                }
+            }
+
+
+            irAPantallaY()
+            {
+                this.pantallasService.resetPantalla(A);
+                this.pantallasService.setPantalla(B);
+                this.router.navigate(['/game/B']);
+            }
+            
 
         3.2.6 - Video - Ejemplo: Pantalla 18
 
@@ -176,7 +366,34 @@
 
             Además, en el VideoComponent, hay que añadir los cases en el método siguiente().
 
-    3.3 - Guardar Partida - Ejemplo: Pantalla 18
+            siguiente()
+            {
+                let pantallaActiva = this.pantallasService.getPantallaActiva()();
+
+                switch (pantallaActiva)
+                {
+
+                    ...
+
+                    case A:
+                    this.irAPantallaB();
+                    break;
+
+                    ...
+
+                }
+            }
+
+
+            irAPantallaY()
+            {
+                this.pantallasService.resetPantalla(A);
+                this.pantallasService.setPantalla(B);
+                this.router.navigate(['/game/B']);
+            }
+            
+
+    3.3 - Guardar Partida
 
         En la última Pantalla de un capítulo, se intentará guardar la partida, para ello simplemente hay que añadir en ngOnInit de la pantalla:
 

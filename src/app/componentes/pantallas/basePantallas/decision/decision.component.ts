@@ -34,15 +34,26 @@ export class DecisionComponent
   {
     switch (this.pantallaActiva)
     {
-        case 9:
-          this.pantallasService.resetPantalla(9);
-          this.irAPantalla10();
-          break;
+        /*
+        Ir poniendo aquí los:
 
-        case 17:
-          this.pantallasService.resetPantalla(17);
-          this.irAPantalla18();
-          break;
+          case X:
+            this.pantallasService.resetPantalla(X);
+            this.irAPantallaB();
+            break;
+        */
+       
+        //-----------------------
+    
+
+
+
+
+
+
+
+
+        //----------------------
    
         default:
           this.irARutaNoPermitida()
@@ -53,38 +64,58 @@ export class DecisionComponent
   {
     switch (this.pantallaActiva)
     {
-        case 9:
-          this.pantallasService.resetPantalla(9);
-          this.irAPantalla11();
-          break;
+               /*
+        Ir poniendo aquí los:
 
-        case 17:
-          this.pantallasService.resetPantalla(17);
-          this.irAPantallaRendirse();
-          break;
+          case X:
+            this.pantallasService.resetPantalla(X);
+            this.irAPantallaB();
+            break;
+        */
+       
+        //-----------------------
+    
+
+
+
+
+
+
+
+
+        //----------------------
    
         default:
           this.irARutaNoPermitida()
     }
   }
 
-  irAPantalla10()
-  {
-    this.pantallasService.setPantalla(10);
-    this.router.navigate(['/game/10']);
-  }
+  
+  /*
+    Ir poniendo aquí los:
 
-  irAPantalla11()
-  {
-    this.pantallasService.setPantalla(11);
-    this.router.navigate(['/game/11']);
-  }
+      irAPantallaB()
+      {
+        this.pantallasService.setPantalla(B);
+        this.router.navigate(['/game/B']);
+      }            
+  
+    */
 
-  irAPantalla18()
-  {
-    this.pantallasService.setPantalla(18);
-    this.router.navigate(['/game/18']);
-  }
+  //-----------------------
+
+
+
+
+
+
+
+
+
+
+  
+
+  //-----------------------
 
 
   irARutaNoPermitida()

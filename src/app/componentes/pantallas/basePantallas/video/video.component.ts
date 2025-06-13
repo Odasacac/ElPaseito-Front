@@ -16,28 +16,55 @@ export class VideoComponent
   
   rutaVideo = this.pantallasService.getRutaVideo();
 
-  siguiente()
+ siguiente()
   {
     let pantallaActiva = this.pantallasService.getPantallaActiva()();
 
     switch (pantallaActiva)
     {
-      case 18:
-        this.irAPantalla19();
-        break;
-             
-      default:
-        this.irARutaNoPermitida();
-        break;
+        /*
+          Ir poniendo aquí los:
+
+            case X:
+              this.irAPantallaB();
+              break;
+        */
+       
+        //-----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //-----------------------
+
+        default:
+          this.irARutaNoPermitida();
+          break;
     }
   }
 
-  irAPantalla19()
-  {
-    this.pantallasService.resetPantalla(18);
-    this.pantallasService.setPantalla(19);
-    this.router.navigate(['/game/19']);
-  }
+
+  /*
+    Ir poniendo aquí los:
+
+       irAPantallaB()
+        {
+          this.pantallasService.resetPantalla(A);
+          this.pantallasService.setPantalla(B);
+          this.router.navigate(['/game/B']);
+        }            
+  
+    */
 
 
   irARutaNoPermitida()

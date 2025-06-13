@@ -25,13 +25,31 @@ export class CapituloComponent
 
     switch (pantallaActiva)
     {
-        case 4:
-          this.irAPantalla5();
-          break;
+        /*
+          Ir poniendo aquí los:
 
-        case 19:
-          this.irAPantalla20();
-          break;
+            case X:
+              this.irAPantallaB();
+              break;
+        */
+       
+        //-----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //-----------------------
+
           
         default:
           this.irARutaNoPermitida();
@@ -39,20 +57,18 @@ export class CapituloComponent
     }
   }
 
-  
-  irAPantalla5()
-  {
-    this.pantallasService.resetPantalla(4);
-    this.pantallasService.setPantalla(5);
-    this.router.navigate(['/game/5']);
-  }
 
-  irAPantalla20()
-  {
-    this.pantallasService.resetPantalla(19);
-    this.pantallasService.setPantalla(20);
-    this.router.navigate(['/game/20']);
-  }
+  /*
+    Ir poniendo aquí los:
+
+       irAPantallaB()
+        {
+          this.pantallasService.resetPantalla(A);
+          this.pantallasService.setPantalla(B);
+          this.router.navigate(['/game/B']);
+        }            
+  
+    */
   
   
   irARutaNoPermitida()

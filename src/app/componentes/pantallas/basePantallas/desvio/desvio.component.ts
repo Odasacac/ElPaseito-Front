@@ -27,44 +27,100 @@ export class DesvioComponent
 
     switch (pantallaActiva)
     {
-        case 8:
-          this.seleccionEnPantalla8(indice);
-          break;
+      /*
+        Ir poniendo aquí los:
+
+          case X:
+              this.seleccionEnPantallaX(indice);
+              break;
+      */
+      //-----------------------
+
+
+
+
+      
+
+       
+      //-----------------------
    
         default:
           this.irARutaNoPermitida()
     }
   }
 
+ /*
+    Ir aqui poniendo los:
 
-  seleccionEnPantalla8(imagen: Number)
+      seleccionEnPantallaA(imagen: Number)
+      {
+        this.pantallasService.resetPantalla(A);
+
+        switch (imagen)
+        {
+            case 0:
+            this.irAPantallaRendirse();
+            break;
+
+            case 1:
+            this.irAPantallaB();
+            break; 
+                    
+            default:
+              this.irARutaNoPermitida(); 
+            break;
+          }
+      }
+  */
+  //-----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //-----------------------
+
+
+
+  /*
+    Ir poniendo aquí los:
+
+      irAPantallaB()
+      {
+        this.pantallasService.setPantalla(B);
+        this.router.navigate(['/game/B']);
+      }            
+  
+    */
+
+  //-----------------------
+
+
+
+
+
+
+
+
+
+
+
+  //-----------------------
+
+  irAPantallaRendirse()
   {
-    this.pantallasService.resetPantalla(8);
-
-    switch (imagen)
-    {
-      case 0: //Sigue el camino
-        this.irAPantalla11();
-        break;
-      case 1: //Entra a la cueva
-        this.irAPantalla9();
-        break;
-      default:
-        this.irARutaNoPermitida();
-        break;
-    }
-  }
-
-  irAPantalla9()
-  {
-    this.pantallasService.setPantalla(9);
-    this.router.navigate(['/game/9']);
-  }
-
-  irAPantalla11()
-  {
-    this.pantallasService.setPantalla(11);
-    this.router.navigate(['/game/11']);
+    this.pantallasService.setPantallaAbandono(true);
+    this.router.navigate(['/game/abandono']);
   }
 
 

@@ -24,13 +24,27 @@ export class BifurcacionComponent
 
     switch (pantallaActiva)
     {
-        case 3:
-          this.seleccionEnPantalla3(indice);
-          break;
 
-        case 23:
-          this.seleccionEnPantalla23(indice);
-          break;
+      /*
+        Ir poniendo aquí los:
+
+          case X:
+              this.seleccionEnPantallaX(indice);
+              break;
+        */
+       
+        //-----------------------
+
+
+
+
+
+
+
+
+
+
+        //-----------------------
    
         default:
           this.irARutaNoPermitida()
@@ -38,53 +52,69 @@ export class BifurcacionComponent
   }
 
 
-  seleccionEnPantalla3(imagen: Number)
-  {
-    this.pantallasService.resetPantalla(3);
+  /*
+    Ir aqui poniendo los:
 
-    switch (imagen)
-    {
-      case 0:
-        this.irAPantallaRendirse();
-        break;
-      case 1:
-        this.irAPantalla4();
-        break;
-      default:
-        this.irARutaNoPermitida();
-        break;
-    }
-  }
+      seleccionEnPantallaA(imagen: Number)
+      {
+        this.pantallasService.resetPantalla(A);
 
-  seleccionEnPantalla23(imagen: Number)
-  {
-    this.pantallasService.resetPantalla(23);
+        switch (imagen)
+        {
+            case 0:
+            this.irAPantallaRendirse();
+            break;
 
-    switch (imagen)
-    {
-      case 0:
-        this.irAPantalla24();
-        break;
-      case 1:
-        this.irANotDefined();
-        break;
-      default:
-        this.irARutaNoPermitida();
-        break;
-    }
-  }
+            case 1:
+            this.irAPantallaB();
+            break; 
+                    
+            default:
+              this.irARutaNoPermitida(); 
+            break;
+          }
+      }
+  */
+  //-----------------------
 
-  irAPantalla4()
-  {
-    this.pantallasService.setPantalla(4);
-    this.router.navigate(['/game/4']);
-  }
 
-  irAPantalla24()
-  {
-    this.pantallasService.setPantalla(24);
-    this.router.navigate(['/game/24']);
-  }
+
+
+
+
+
+
+
+
+  //-----------------------
+
+
+
+  /*
+    Ir poniendo aquí los:
+
+      irAPantallaB()
+      {
+        this.pantallasService.setPantalla(B);
+        this.router.navigate(['/game/B']);
+      }            
+  
+    */
+
+  //-----------------------
+
+
+
+
+
+
+
+
+
+
+
+  //-----------------------
+
 
   irARutaNoPermitida()
   {
