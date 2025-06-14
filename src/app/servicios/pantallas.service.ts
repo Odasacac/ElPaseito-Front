@@ -177,30 +177,25 @@ export class PantallasService
   //Pantallas
 
   pantalla0: Boolean=false;
-  pantalla1: Boolean=false;
-  pantalla2: Boolean=false;
-  pantalla3: Boolean=false;
-  pantalla4: Boolean=false;
-  pantalla5: Boolean=false;
-  pantalla6: Boolean=false;
-  pantalla7: Boolean=false;
-  pantalla8: Boolean=false;
-  pantalla9: Boolean=false;
-  pantalla10: Boolean=false;
-  pantalla11: Boolean=false;
-  pantalla12: Boolean = false;
-  pantalla13: Boolean = false;
-  pantalla14: Boolean = false;
-  pantalla15: Boolean = false;
-  pantalla16: Boolean = false;
-  pantalla17: Boolean = false;
-  pantalla18: Boolean = false; 
-  pantalla19: Boolean = false; 
-  pantalla20: Boolean = false; 
-  pantalla21: Boolean = false;
-  pantalla22: Boolean = false;
-  pantalla23: Boolean = false;
-  pantalla24: Boolean = false;
+  
+  /*
+    Aqui ir poniendo:
+
+      pantallaA: Boolean=false;
+  */
+
+    //----------------
+
+
+
+
+
+
+
+
+
+    
+    //----------------
 
   getPantalla(pantalla: Number): Boolean
   {
@@ -210,101 +205,25 @@ export class PantallasService
 
         return this.pantalla0;
 
-      case 1:
+      /*
+        Aqui ir poniendo:
 
-        return this.pantalla1;
+       case A:
 
-      case 2:
+        return this.pantallaA;
+      */
 
-        return this.pantalla2;
+      //----------------
 
-      case 3:
 
-        return this.pantalla3;
+            
 
-      case 4:
 
-        return this.pantalla4;
 
-      case 5:
 
-        return this.pantalla5;
 
-      case 6:
-
-        return this.pantalla6;
-
-      case 7:
-
-        return this.pantalla7;
-
-      case 8:
-
-        return this.pantalla8;
-
-      case 9:
-
-        return this.pantalla9;
-
-      case 10:
-
-        return this.pantalla10;
-
-      case 11:
-
-        return this.pantalla11;
-
-      case 12:
-
-        return this.pantalla12;
-
-      case 13:
-
-        return this.pantalla13;
-
-      case 14:
-
-        return this.pantalla14;
-
-      case 15:
-
-        return this.pantalla15;
-
-      case 16:
-
-        return this.pantalla16;
-
-      case 17:
-
-        return this.pantalla17;
-
-      case 18:
-
-        return this.pantalla18;
-
-      case 19:
-
-        return this.pantalla19;
-
-      case 20:
-
-        return this.pantalla20;
-
-      case 21:
-
-        return this.pantalla21;
-
-      case 22:
-
-        return this.pantalla22;
-
-      case 23:
-
-        return this.pantalla23;
-
-      case 24:
-
-        return this.pantalla24;
+            
+      //----------------
 
       default:
 
@@ -323,123 +242,26 @@ export class PantallasService
         this.pantalla0 = true;
         break;
 
-      case 1:
+    /*
+      Aqui ir poniendo:
 
-        this.pantalla1 = true;
+       case A:
+
+        this.pantallaA = true;
         break;
+    */
 
-      case 2:
+      //----------------
 
-        this.pantalla2 = true;
-        break;
 
-      case 3:
+            
 
-        this.pantalla3 = true;
-        break;
 
-      case 4:
 
-        this.pantalla4 = true;
-        break;
 
-      case 5:
 
-        this.pantalla5 = true;
-        break;
-
-      case 6:
-
-        this.pantalla6 = true;
-        break;
-
-      case 7:
-
-        this.pantalla7 = true;
-        break;
-
-      case 8:
-
-        this.pantalla8 = true;
-        break;
-
-      case 9:
-
-        this.pantalla9 = true;
-        break;
-
-      case 10:
-
-        this.pantalla10 = true;
-        break;
-
-      case 11:
-
-        this.pantalla11 = true;
-        break;
-
-      case 12:
-
-        this.pantalla12 = true;
-        break;
-
-      case 13:
-
-        this.pantalla13 = true;
-        break;
-
-      case 14:
-        this.pantalla14 = true;
-        break;
-      case 15:
-
-        this.pantalla15 = true;
-        break;
-
-      case 16:
-
-        this.pantalla16 = true;
-        break;
-
-      case 17:
-
-        this.pantalla17 = true;
-        break;
-
-      case 18:
-
-        this.pantalla18 = true;
-        break;
-
-      case 19:
-
-        this.pantalla19 = true;
-        break;
-
-      case 20:
-
-        this.pantalla20 = true;
-        break;
-
-      case 21:
-
-        this.pantalla21 = true;
-        break;
-
-      case 22:
-
-        this.pantalla22 = true;
-        break;
-
-      case 23:
-
-        this.pantalla23 = true;
-        break;
-
-      case 24:
-
-        this.pantalla24 = true;
-        break;
+            
+      //----------------
 
       default:
 
@@ -456,123 +278,26 @@ export class PantallasService
         this.pantalla0 = false;
         break;
 
-      case 1:
+       /*
+      Aqui ir poniendo:
 
-        this.pantalla1 = false;
+       case A:
+
+        this.pantallaA = false;
         break;
+    */
 
-      case 2:
+      //----------------
 
-        this.pantalla2 = false;
-        break;
 
-      case 3:
+            
 
-        this.pantalla3 = false;
-        break;
 
-      case 4:
 
-        this.pantalla4 = false;
-        break;
 
-      case 5:
 
-        this.pantalla5 = false;
-        break;
-
-      case 6:
-
-        this.pantalla6 = false;
-        break;
-
-      case 7:
-
-        this.pantalla7 = false;
-        break;
-
-      case 8:
-
-        this.pantalla8 = false;
-        break;
-
-      case 9:
-
-        this.pantalla9 = false;
-        break;
-
-      case 10:
-
-        this.pantalla10 = false;
-        break;
-
-      case 11:
-
-        this.pantalla11 = false;
-        break;
-
-      case 12:
-
-        this.pantalla12 = false;
-        break;
-
-      case 13:
-
-        this.pantalla13 = false;
-        break;
-
-      case 14:
-        this.pantalla14 = false;
-        break;
-      case 15:
-
-        this.pantalla15 = false;
-        break;
-
-      case 16:
-
-        this.pantalla16 = false;
-        break;
-
-      case 17:
-
-        this.pantalla17 = false;
-        break;
-
-      case 18:
-
-        this.pantalla18 = false;
-        break;
-
-      case 19:
-
-        this.pantalla19 = false;
-        break;
-
-      case 20:
-
-        this.pantalla20 = false;
-        break;
-
-      case 21:
-
-        this.pantalla21 = false;
-        break;
-
-      case 22:
-
-        this.pantalla22 = false;
-        break;
-
-      case 23:
-
-        this.pantalla23 = false;
-        break;
-
-      case 24:
-
-        this.pantalla24 = false;
-        break;
+            
+      //----------------
 
       default:
 

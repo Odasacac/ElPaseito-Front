@@ -36,9 +36,9 @@ export class AloneComponent
        
         //-----------------------
 
-
-
-
+        case 1:
+          this.irAPantalla2();
+          break;
 
 
 
@@ -74,10 +74,15 @@ export class AloneComponent
   
     */
 
-    //-----------------------
+  //-----------------------
 
 
-
+  irAPantalla2()
+  {
+    this.pantallasService.resetPantalla(1);
+    this.pantallasService.setPantalla(2);
+    this.router.navigate(['/game/2']);
+  }  
 
 
 
@@ -90,7 +95,7 @@ export class AloneComponent
 
 
     
-    //-----------------------
+  //-----------------------
 
 
   
