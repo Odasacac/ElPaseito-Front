@@ -49,6 +49,8 @@ export class Pantalla0Component
 
   formulario = new FormGroup(this.camposFormulario);
 
+  formularioInvalido: Boolean = false;
+
   
 
   ngOnInit()
@@ -66,6 +68,7 @@ export class Pantalla0Component
 
   crearPersonaje()
   {
+    this.formularioInvalido=false;
     this.verNoConexion = false;
     this.pulsado = true;
 
@@ -124,6 +127,8 @@ export class Pantalla0Component
     }
     else
     {
+      this.pulsado = false;
+      this.formularioInvalido=true;
       const nombreControl = this.formulario.get("nombre");
 
       if (nombreControl)

@@ -14,6 +14,8 @@ export class BaseInicioComponent
 {
   configuracionService = inject(ConfiguracionService);
 
+  public tituloNovela: String = "Titulo De La Novela";
+
   ngOnInit()
   {
     this.configuracionService.generarConfiguracion();
