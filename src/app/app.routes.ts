@@ -9,10 +9,25 @@ import { MainComponent } from './componentes/core/main/main.component';
 import { RutaIncorrectaComponent } from './componentes/otros/ruta-incorrecta/ruta-incorrecta.component';
 import { RutaNopermitidaComponent } from './componentes/otros/ruta-nopermitida/ruta-nopermitida.component';
 
-import { Pantalla0Component } from './componentes/pantallas/pantallas/pantalla-0/pantalla-0.component';
-
-import { AbandonoComponent } from './componentes/pantallas/pantallas/abandono/abandono.component';
-import { NotdefinedComponent } from './componentes/pantallas/pantallas/notdefined/notdefined.component';
+import { Pantalla1Component } from './componentes/pantallas/listaPantallas/pantalla-1/pantalla-1.component';
+import { Pantalla0Component } from './componentes/pantallas/listaPantallas/pantalla-0/pantalla-0.component';
+import { AbandonoComponent } from './componentes/pantallas/listaPantallas/abandono/abandono.component';
+import { NotdefinedComponent } from './componentes/pantallas/listaPantallas/notdefined/notdefined.component';
+import { Pantalla2Component } from './componentes/pantallas/listaPantallas/pantalla-2/pantalla-2.component';
+import { Pantalla3Component } from './componentes/pantallas/listaPantallas/pantalla-3/pantalla-3.component';
+import { Pantalla4Component } from './componentes/pantallas/listaPantallas/pantalla-4/pantalla-4.component';
+import { Pantalla5Component } from './componentes/pantallas/listaPantallas/pantalla-5/pantalla-5.component';
+import { Pantalla6Component } from './componentes/pantallas/listaPantallas/pantalla-6/pantalla-6.component';
+import { Pantalla7Component } from './componentes/pantallas/listaPantallas/pantalla-7/pantalla-7.component';
+import { Pantalla8Component } from './componentes/pantallas/listaPantallas/pantalla-8/pantalla-8.component';
+import { Pantalla9Component } from './componentes/pantallas/listaPantallas/pantalla-9/pantalla-9.component';
+import { Pantalla10Component } from './componentes/pantallas/listaPantallas/pantalla-10/pantalla-10.component';
+import { Pantalla11Component } from './componentes/pantallas/listaPantallas/pantalla-11/pantalla-11.component';
+import { Pantalla12Component } from './componentes/pantallas/listaPantallas/pantalla-12/pantalla-12.component';
+import { Pantalla13Component } from './componentes/pantallas/listaPantallas/pantalla-13/pantalla-13.component';
+import { Pantalla14Component } from './componentes/pantallas/listaPantallas/pantalla-14/pantalla-14.component';
+import { Pantalla15Component } from './componentes/pantallas/listaPantallas/pantalla-15/pantalla-15.component';
+import { Pantalla16Component } from './componentes/pantallas/listaPantallas/pantalla-16/pantalla-16.component';
 
 
 export const routes: Routes = 
@@ -43,9 +58,22 @@ export const routes: Routes =
             */
 
             //----------------
-
-
-            
+            { path: "1", component: Pantalla1Component },
+            { path: "2", component: Pantalla2Component },
+            { path: "3", component: Pantalla3Component },
+            { path: "4", component: Pantalla4Component },
+            { path: "5", component: Pantalla5Component },
+            { path: "6", component: Pantalla6Component },
+            { path: "7", component: Pantalla7Component },
+            { path: "8", component: Pantalla8Component },
+            { path: "9", component: Pantalla9Component },
+            { path: "10", component: Pantalla10Component },
+            { path: "11", component: Pantalla11Component },
+            { path: "12", component: Pantalla12Component },
+            { path: "13", component: Pantalla13Component },
+            { path: "14", component: Pantalla14Component },
+            { path: "15", component: Pantalla15Component },
+            { path: "16", component: Pantalla16Component },
 
 
 

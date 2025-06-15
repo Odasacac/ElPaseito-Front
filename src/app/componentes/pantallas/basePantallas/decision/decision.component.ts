@@ -45,7 +45,10 @@ export class DecisionComponent
        
         //-----------------------
     
-
+        case 8:
+            this.pantallasService.resetPantalla(8);
+            this.irAPantalla9();
+            break;
 
 
 
@@ -76,6 +79,10 @@ export class DecisionComponent
         //-----------------------
     
 
+        case 8:
+            this.pantallasService.resetPantalla(8);
+            this.irAPantallaRendirse();
+            break;
 
 
 
@@ -104,7 +111,12 @@ export class DecisionComponent
 
   //-----------------------
 
-
+   irAPantalla9()
+      {
+        this.pantallasService.setPantalla(9);
+        this.router.navigate(['/game/9']);
+      }            
+  
 
 
 

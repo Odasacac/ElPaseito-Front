@@ -5,13 +5,13 @@
 - Capítulo: Título del capítulo que va a empezar.
 - Alone: Pantalla que sólo lleva a una pantalla.
 - Bifurcación: Da a elegir dos o más opciones.
-- Decisión: Si o no a avanzar, no hay opciones, o se sigue o no, y la consecuencia del no ya dependerá de la pantalla.
+- Decisión: Si o no a avanzar, no hay opciones, o se sigue o no, y la consecuencia del no ya dependerá de la pantalla. Tras una decision no hay marcha atras.
 - Desvío: Posibilidad de desviarse, es como una bifurcación, pero se desconoce la opción alternativa al desvío.
 - Video: Pantalla de video.
 
 2 - Crear el componente
 
-    ng g c componentes/pantallas/pantallas/pantalla-23
+    ng g c componentes/pantallas/listaPantallas/pantalla-23
 
 3 - Customizar el componente
 
@@ -20,7 +20,9 @@
     3.1 - Partes comunes
 
         Todas las pantallas tienen esta estructura en el TypeScript:
-
+        
+        export class Pantalla1Component 
+        {
             pantallasService = inject(PantallasService);
 
             pantallaActual: Number = 1;
@@ -34,7 +36,10 @@
             }
 
             prepararPantalla()
-            {}
+            {
+                // Ver apartado 3.2
+            }
+        }
         
         Lo que ocurre en el ngOnInit es que se evalua si la pantalla actual ha sido habilitada.
         Si lo ha sido, se permite mostrar las pantallas y se setea esta pantalla como pantalla activa, además, se ejecuta el prepararPantalla() de la propia pantalla
@@ -412,7 +417,7 @@
 
         Y ya esto intentará guardar la partida, si la guarda bien, si no la guarda bien también.
 
-4 - Añadir esa Pantalla a los métodos getPantalla(), setPantalla() y resetPantalla() del PantallasService.
+4 - Añadir esa Pantalla a los métodos getPantalla(), setPantalla() y resetPantalla() y a la lista de Booleanos de pantallas del PantallasService.
 
 5 - Añadir esa Pantalla al app-routes.
             

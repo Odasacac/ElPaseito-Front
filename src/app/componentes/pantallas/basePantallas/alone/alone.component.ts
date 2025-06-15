@@ -40,10 +40,29 @@ export class AloneComponent
           this.irAPantalla2();
           break;
 
+        case 2:
+          this.irAPantalla3();
+          break;
 
+        case 3:
+          this.irAPantalla4();
+          break;
 
+        case 4:
+          this.irAPantalla5();
+          break;
 
+        case 5:
+          this.irAPantalla6();
+          break;
 
+        case 6:
+          this.irAPantalla7();
+          break;
+
+        case 7:
+          this.irAPantalla8();
+          break;
 
 
 
@@ -84,9 +103,47 @@ export class AloneComponent
     this.router.navigate(['/game/2']);
   }  
 
+  irAPantalla3()
+  {
+    this.pantallasService.resetPantalla(2);
+    this.pantallasService.setPantalla(3);
+    this.router.navigate(['/game/3']);
+  } 
 
+  irAPantalla4()
+  {
+    this.pantallasService.resetPantalla(3);
+    this.pantallasService.setPantalla(4);
+    this.router.navigate(['/game/4']);
+  } 
 
+  irAPantalla5()
+  {
+    this.pantallasService.resetPantalla(4);
+    this.pantallasService.setPantalla(5);
+    this.router.navigate(['/game/5']);
+  }
 
+  irAPantalla6()
+  {
+    this.pantallasService.resetPantalla(5);
+    this.pantallasService.setPantalla(6);
+    this.router.navigate(['/game/6']);
+  } 
+
+  irAPantalla7()
+  {
+    this.pantallasService.resetPantalla(6);
+    this.pantallasService.setPantalla(7);
+    this.router.navigate(['/game/7']);
+  } 
+
+  irAPantalla8()
+  {
+    this.pantallasService.resetPantalla(7);
+    this.pantallasService.setPantalla(8);
+    this.router.navigate(['/game/8']);
+  } 
 
 
 

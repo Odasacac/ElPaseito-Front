@@ -1,0 +1,50 @@
+***** KYUM *****
+
+El protagonista tiene un sueño que le hace despertarse a media noche.
+Ha soñado con la muerte de un amigo suyo.
+
+Mira por la ventana, ve una profunda noche llena de estrellas.
+
+Se relaja un poco e intenta volver a dormir sin mucho éxito.
+
+A la mañana siguiente e intranquilo va a su casa y no lo encuentra ahí.
+Los vecinos dicen que llevan días sin verle y ningún familiar que conozcas ha sabido de él desde hace un tiempo.
+
+Algo te late en el pecho.
+
+En el sueño tu amigo chillaba dentro de una cueva por los azotes con los que una persona que le obligaba a bajar más profundo le profería,
+Él se resistía a ceder y prefería el dolor a la locura, pero le apuñalan en el cuello y cae al suelo entre sangre y lágrimas.
+
+El sueño se veía la luna llena, una amplia cordillera siendo golpeada por la tempestad y una torre con una fuerte luz roja en lo alto de un collado.
+
+La torre es muy similar a la que se encuentra en lo alto del valle, pero el entorno es mucho más escarpado en el sueño.
+
+Subir a la torre no está prohibido, y aunque está abandonada crees que es un buen lugar para empezar a buscar.
+
+Sales de casa
+
+Tres opciones:
+
+1 - Vuelves a casa, quizás no es tan buena idea, seguro que aparece en un par de días. --> Se rinde
+2 - Estás decidido, vas dirección a las montañas -> Empieza el juego
+
+Escenario 1: ¿Por donde subir a las montañas?
+
+    1 - Ir directo hacia el este donde esta la torre, aunque sea la zona más escarpada.
+    2 - Seguir hacia el norte atravesando la llanura, la subida es menos exigente desde ahí, pero igual de dura.
+    3 - Bordear por el oeste. Tomará más tiempo.
+    4 - Volver a la ciudad
+
+
+                     1111111
+             222222221XX1XX1
+    3333333332XX2XX2X11X11X1 
+
+    Zona 3: Se entra por el 3.1 y hay que hacer una por una
+    Zona 2: Se entra por 2.1, 2.4 o por 2.7, depende de por cual se suba sigue por ahi
+    Zona 1: Se entra por 1.1, 1.2, 1.4, 1.5, 1.7, pero 1.2 y 1.5 no van a ningun lado
+
+
+Si vuelve a Home, se descansa, se recuperan fuerzas y se pregunta: rendirse, montañas o zona acantilada
+
+
