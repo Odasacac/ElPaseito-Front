@@ -32,7 +32,7 @@ export class Pantalla4Component
       const paraTexto: String []=[];
       const linea1: String = "En el sueño, Kyum chillaba dentro de una cueva."
       paraTexto.push(linea1);
-      const linea2: String = "Alguien le golpeaba y le obligaba a adentrarse más profundo."
+      const linea2: String = "Era golpeado y forzado a adentrarse más profundo."
       paraTexto.push(linea2);
           
       this.pantallasService.setTextos(paraTexto);

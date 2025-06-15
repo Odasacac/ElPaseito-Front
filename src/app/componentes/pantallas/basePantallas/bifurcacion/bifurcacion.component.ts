@@ -15,6 +15,7 @@ export class BifurcacionComponent
   pantallasService = inject(PantallasService);
   
   rutasImagenes = this.pantallasService.getRutasParaBifurcacion();
+  textoImagenes = this.pantallasService.getTextos();
 
   textoBifurcacion: String = "¿Qué decides?";
 

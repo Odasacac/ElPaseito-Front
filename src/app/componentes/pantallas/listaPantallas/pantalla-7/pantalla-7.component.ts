@@ -36,9 +36,9 @@ export class Pantalla7Component
       paraTexto.push(linea1);
       const linea2: String = "Solo que el entorno es bastante distinto."
       paraTexto.push(linea2);
-      const linea3: String = "Subir a esa zona no está prohibido, pero hace años que nadie lo hace y hasta donde sabes la torre está abandonada."
+      const linea3: String = "Y aunque hace años que nadie lo hace, no está prohibido subir a esa zona."
       paraTexto.push(linea3);
-      const linea4: String = "Pero piensas que es un buen lugar desde el cual empezar a buscar."
+      const linea4: String = "Hasta donde sabes la torre está abandonada, pero piensas que es un buen lugar desde el cual comenzar a buscar."
       paraTexto.push(linea4);
           
       this.pantallasService.setTextos(paraTexto);

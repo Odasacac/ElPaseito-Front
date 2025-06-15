@@ -30,13 +30,13 @@ export class Pantalla6Component
           
       //SETTEAR TEXTOS
       const paraTexto: String []=[];
-      const linea1: String = "Aún había más."
+      const linea1: String = "Eso no es todo."
       paraTexto.push(linea1);
       const linea2: String = "En el sueño se veía la luna llena."
       paraTexto.push(linea2);
       const linea3: String = "Una amplia cordillera siendo golpeada por la tempestad."
       paraTexto.push(linea3);
-      const linea4: String = "Y una torre con una fuerte luz roja en lo alto de un collado."
+      const linea4: String = "Y una torre con una fuerte luz roja en lo alto de una pequeña elevación."
       paraTexto.push(linea4);
           
       this.pantallasService.setTextos(paraTexto);

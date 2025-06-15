@@ -30,11 +30,11 @@ export class Pantalla5Component
           
       //SETTEAR TEXTOS
       const paraTexto: String []=[];
-      const linea1: String = "Durante un buen rato se resistió y preferirió el dolor a la locura."
+      const linea1: String = "Durante un buen rato se resistió y prefirió el dolor a la locura."
       paraTexto.push(linea1);
       const linea2:String = "Pero cuando no pudo aguantar más, se desmayó y cayó al suelo entre sangre y lágrimas.";
       paraTexto.push(linea2);
-      const linea3:String = "Lo desnudaron, lo vistieron con una túnica blanca y lo dejaron ahí.";
+      const linea3:String = "Lo desnudaron, lo vistieron con una túnica blanca y lo dejaron donde cayó.";
       paraTexto.push(linea3);
       this.pantallasService.setTextos(paraTexto);
     }

@@ -1,8 +1,6 @@
 .imagen 
 {
-    width: 30%;
-    display: inline-block;
-    margin: 20px; /* Agrega separación entre imágenes */
+    width: 250px;
     border-radius: 10px; /* Bordes redondeados */
     transition: transform 0.3s ease-in-out; /* Suaviza la animación al agrandar */
     cursor: pointer;
@@ -14,5 +12,9 @@
 
 .contenedor 
 {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
 } 

@@ -3,7 +3,10 @@
 <div class="contenedor">
     @for (ruta of rutasImagenes(); track ruta; let i = $index)
     {
-        <img class="imagen" [src]="ruta" alt="Si no ves nada, avísame" (click)="clickEn(i)">
+        <div>
+            <img class="imagen" [src]="ruta" alt="Si no ves nada, avísame" (click)="clickEn(i)">
+            <p>{{textoImagenes()[i]}}</p>
+        </div>
     }
 </div>
 
