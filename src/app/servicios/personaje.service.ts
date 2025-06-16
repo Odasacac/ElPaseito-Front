@@ -1,5 +1,6 @@
 import { Injectable} from '@angular/core';
 import { NuevoPersonaje } from '../interfaces/NuevoPersonaje';
+import { Inventario } from '../interfaces/Inventario';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,24 @@ export class PersonajeService
       exploracion: 0
     }
   )
+  
+
+  inventario: Inventario =
+  (
+    {
+      botellaPlaya: 0 
+    }
+  )
+
+  getEstadoBotellaPlaya(): number
+  {
+    return this.inventario.botellaPlaya;
+  }
+
+  setEstadoBotellaPlaya (estado: number)
+  {
+    this.inventario.botellaPlaya = estado;
+  }
 
   getCapitulo(): number
   {
@@ -96,7 +115,7 @@ export class PersonajeService
   {
     for (let i = 0; i<valor; i++)
     {
-      if (this.getNivelDeTranquilidad() == 0)
+      if (this.getNivelDeTranquilidad() <= 0)
       {
         this.personaje.nivelDeMiedo = this.personaje.nivelDeMiedo +1
       }
@@ -111,7 +130,7 @@ export class PersonajeService
   {
     for (let i = 0; i<valor; i++)
     {
-      if (this.getNivelDeMiedo() == 0)
+      if (this.getNivelDeMiedo() <= 0)
       {
         this.personaje.nivelDeTranquilidad = this.personaje.nivelDeTranquilidad +1
       }

@@ -34,15 +34,15 @@ export class AbandonoComponent
       this.pantallasService.setRutaImagen("/images/abandono.png");
       
       const paratexto: String []=[];
-      const linea1: String = "Decides volver atrás.";
+      const linea1: String = "Decides abandonar.";
       paratexto.push(linea1);
-      const linea2: String = "Y así pasaron los días.";
+      const linea2: String = "Y así pasaron los días, las semanas y los años.";
       paratexto.push(linea2);
       const linea3: String = "Y Kyum no regresó.";
       paratexto.push(linea3);
       const linea4: String = "Quizás haya sido mejor así.";
       paratexto.push(linea4);
-      const linea5: String = "FIN.";
+      const linea5: String = "~FIN~";
       paratexto.push(linea5);
       this.pantallasService.setTextos(paratexto);
     }

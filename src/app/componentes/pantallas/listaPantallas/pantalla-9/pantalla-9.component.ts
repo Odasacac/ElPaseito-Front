@@ -32,7 +32,7 @@ export class Pantalla9Component
       const paraTexto: String []=[];
       const linea1: String = "Te acercas a las montañas y te encuentras con una señal que indica cuatro caminos:"
       paraTexto.push(linea1);
-      const linea2: String = "Puedes seguir recto hacia el norte y entrarás en la pradera."
+      const linea2: String = "Puedes seguir recto hacia el norte y entrarás en la pradera que hay a las faldas de la montaña."
       paraTexto.push(linea2);
       const linea3: String = "Puedes bordear la pradera por el oeste y llegar al extremo de las montañas donde la pendiente es menos pronunciada."
       paraTexto.push(linea3);

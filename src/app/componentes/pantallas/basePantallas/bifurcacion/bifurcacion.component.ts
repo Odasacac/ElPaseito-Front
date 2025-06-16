@@ -17,7 +17,7 @@ export class BifurcacionComponent
   rutasImagenes = this.pantallasService.getRutasParaBifurcacion();
   textoImagenes = this.pantallasService.getTextos();
 
-  textoBifurcacion: String = "¿Qué decides?";
+  textoBifurcacion: String = "¿Qué harás?";
 
   clickEn(indice: Number)
   {

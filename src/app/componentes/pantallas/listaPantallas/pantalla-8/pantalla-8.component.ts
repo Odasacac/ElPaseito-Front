@@ -36,6 +36,9 @@ export class Pantalla8Component
     paraTexto.push(linea2);
 
     this.pantallasService.setTextos(paraTexto);
+
+    const textoParaDecisionComponent: String = "¿Qué harás? ¿Irás en busca de Kyum?"
+    this.pantallasService.setTextoDecision(textoParaDecisionComponent);
   }
 
 }

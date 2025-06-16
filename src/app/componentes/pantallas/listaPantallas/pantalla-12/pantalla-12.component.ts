@@ -34,7 +34,7 @@ export class Pantalla12Component
     const paraTexto: String []=[];
     const linea1: String = "Vuelves a la aldea y aprovechas para descansar y recuperar fuerzas."
     paraTexto.push(linea1);
-    const linea2: String = "¿Qué harás ahora?"
+    const linea2: String = "Te sientes mejor, ¿qué harás ahora?"
     paraTexto.push(linea2);
     const linea3: String = "Al norte están las montañas."
     paraTexto.push(linea3);
@@ -44,7 +44,7 @@ export class Pantalla12Component
     paraTexto.push(linea5);
     const linea6: String = "Y al sur, el mar."
     paraTexto.push(linea6);
-    const linea7: String = "También puedes abandonar, seguramente Kyum acabe regresando."
+    const linea7: String = "También puedes abandonar, quizás Kyum acabe regresando."
     paraTexto.push(linea7);
 
     this.pantallasService.setTextos(paraTexto);
@@ -52,23 +52,27 @@ export class Pantalla12Component
 
     //SETTEAR VALORES DEL PERSONAJE
 
-    switch (this.personajeService.getNumeroDeImpactos())
-    {
-      case 0:
-        this.personajeService.setTranquilidad(10);
-        break;
+    if(this.personajeService.getNivelDeTranquilidad() < 3)
+    {    
+   
+      switch (this.personajeService.getNumeroDeImpactos())
+      {
+        case 0:
+          this.personajeService.setTranquilidad(3);
+          break;
 
-      case 1:
-        this.personajeService.setTranquilidad(7);
-        break;
+        case 1:
+          this.personajeService.setTranquilidad(2);
+          break;
 
-      case 2:
-        this.personajeService.setTranquilidad(5);
-        break;
+        case 2:
+          this.personajeService.setTranquilidad(1);
+          break;
 
-      default:
-        this.personajeService.setTranquilidad(10);
-        break;
+        default:
+          this.personajeService.setTranquilidad(5);
+          break;
+      }
     }
   }
 }

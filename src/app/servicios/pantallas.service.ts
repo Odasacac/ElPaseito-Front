@@ -10,6 +10,7 @@ export class PantallasService
   personajeService = inject(PersonajeService);
   apiService = inject(ApiService);
 
+  textoDecisionComponent: String ="";
 
   visible = signal<Boolean>(false);
 
@@ -27,7 +28,16 @@ export class PantallasService
 
   rutaVideo = signal<String>("");
 
-  
+  getTextoDecision(): String
+  {
+    return this.textoDecisionComponent;
+  }
+
+  setTextoDecision(texto: String)
+  {
+    this.textoDecisionComponent = texto;
+  }
+
   getRutaVideo(): Signal<String>
   {
     return this.rutaVideo;

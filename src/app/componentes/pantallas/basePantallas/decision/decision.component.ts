@@ -19,7 +19,7 @@ export class DecisionComponent
   rutaImagen = this.pantallasService.getRutaImagen();
   textos = this.pantallasService.getTextos();
 
-  textoDesvio: String = "¿Seguirás?";
+  textoDesvio: String = "";
   si: String ="Sí";
   no: String ="No";
 
@@ -28,6 +28,7 @@ export class DecisionComponent
   ngOnInit()
   {
     this.pantallaActiva = this.pantallasService.getPantallaActiva()();
+    this.textoDesvio = this.pantallasService.getTextoDecision();
   }
 
   clickEnSi()
