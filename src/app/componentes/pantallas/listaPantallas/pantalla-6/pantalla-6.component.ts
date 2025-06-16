@@ -13,7 +13,7 @@ export class Pantalla6Component
 {
     pantallasService = inject(PantallasService);
       
-    pantallaActual: Number = 6;
+    pantallaActual: number = 6;
       
     ngOnInit()
     {

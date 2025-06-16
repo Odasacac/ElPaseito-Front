@@ -33,6 +33,7 @@ import { Pantalla18Component } from './componentes/pantallas/listaPantallas/pant
 import { Pantalla19Component } from './componentes/pantallas/listaPantallas/pantalla-19/pantalla-19.component';
 import { Pantalla20Component } from './componentes/pantallas/listaPantallas/pantalla-20/pantalla-20.component';
 import { Pantalla21Component } from './componentes/pantallas/listaPantallas/pantalla-21/pantalla-21.component';
+import { Pantalla22Component } from './componentes/pantallas/listaPantallas/pantalla-22/pantalla-22.component';
 
 
 export const routes: Routes = 
@@ -84,6 +85,7 @@ export const routes: Routes =
             { path: "19", component: Pantalla19Component },
             { path: "20", component: Pantalla20Component },
             { path: "21", component: Pantalla21Component },
+            { path: "22", component: Pantalla22Component },
 
 
 

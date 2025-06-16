@@ -13,7 +13,7 @@ export class Pantalla8Component
 {
   pantallasService = inject(PantallasService);
 
-  pantallaActual: Number = 8;
+  pantallaActual: number = 8;
 
   ngOnInit()
   {
@@ -37,6 +37,7 @@ export class Pantalla8Component
 
     this.pantallasService.setTextos(paraTexto);
 
+    //SETTEAR EL TEXTO DE LA DECISION
     const textoParaDecisionComponent: String = "¿Qué harás? ¿Irás en busca de Kyum?"
     this.pantallasService.setTextoDecision(textoParaDecisionComponent);
   }

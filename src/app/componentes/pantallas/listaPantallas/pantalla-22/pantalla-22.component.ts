@@ -3,17 +3,17 @@ import { BifurcacionComponent } from "../../basePantallas/bifurcacion/bifurcacio
 import { PantallasService } from '../../../../servicios/pantallas.service';
 
 @Component({
-  selector: 'app-pantalla-13',
+  selector: 'app-pantalla-22',
   standalone: true,
   imports: [BifurcacionComponent],
-  templateUrl: './pantalla-13.component.html',
-  styleUrl: './pantalla-13.component.css'
+  templateUrl: './pantalla-22.component.html',
+  styleUrl: './pantalla-22.component.css'
 })
-export class Pantalla13Component 
+export class Pantalla22Component 
 {
-  pantallasService = inject(PantallasService);
+ pantallasService = inject(PantallasService);
 
-  pantallaActual: number = 13;
+  pantallaActual: number = 22;
 
     ngOnInit()
     {
@@ -30,30 +30,20 @@ export class Pantalla13Component
       const rutasImagenes: String[]=[];
       const textoImagenes: String []=[];
 
-      const rutaImagen1: String = "/images/8.png";
+      const rutaImagen1: String = "/images/23.png";
       rutasImagenes.push(rutaImagen1);
-      const linea1: String = "Ir a las montañas."
+      const linea1: String = "Ir campo a través."
       textoImagenes.push(linea1);
 
-      const rutaImagen2: String = "/images/14.png";
+      const rutaImagen2: String = "/images/24.png";
       rutasImagenes.push(rutaImagen2);
-      const linea2: String = "Ir a los acantilados."
+      const linea2: String = "Ir por el camino del lateral."
       textoImagenes.push(linea2);
 
-      const rutaImagen3: String = "/images/15.png";
-      rutasImagenes.push(rutaImagen3);
-      const linea3: String = "Ir al camino."
-      textoImagenes.push(linea3);
-
-      const rutaImagen4: String = "/images/16.png";
+      const rutaImagen4: String = "/images/21.png";
       rutasImagenes.push(rutaImagen4);
-      const linea4: String = "Ir al mar."
+      const linea4: String = "Volver por el desfiladero."
       textoImagenes.push(linea4);
-
-      const rutaImagen5: String = "/images/abandono.png";
-      rutasImagenes.push(rutaImagen5);
-      const linea5: String = "Abandonar."
-      textoImagenes.push(linea5);
 
       this.pantallasService.setRutasParaBifurcacion(rutasImagenes);
       this.pantallasService.setTextos(textoImagenes);

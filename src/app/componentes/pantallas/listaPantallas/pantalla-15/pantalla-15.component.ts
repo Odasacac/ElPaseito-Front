@@ -13,7 +13,7 @@ import { EstadoJuegoService } from '../../../../servicios/estado-juego.service';
 export class Pantalla15Component 
 {
     pantallasService = inject(PantallasService);  
-    pantallaActual: Number = 15;
+    pantallaActual: number = 15;
   
     ngOnInit()
     {

@@ -86,7 +86,7 @@ export class PersonajeService
     return this.personaje.olvido;
   }
 
-  getmiedo(): number 
+  getMiedo(): number 
   {
     return this.personaje.miedo;
   }
@@ -111,7 +111,7 @@ export class PersonajeService
     return this.personaje.impactos;
   }
 
-  setMiedo(valor: number)
+  aumentarMiedoEn(valor: number)
   {
     for (let i = 0; i<valor; i++)
     {
@@ -124,9 +124,16 @@ export class PersonajeService
         this.personaje.nivelDeTranquilidad = this.personaje.nivelDeTranquilidad -1;
       }
     }
+
+
+    if (this.getNivelDeMiedo() > 5)
+    {
+      this.aumentarImpactos();
+      this.aumentarTranquilidadEn(5);
+    }
   }
 
-  setTranquilidad(valor: number)
+  aumentarTranquilidadEn(valor: number)
   {
     for (let i = 0; i<valor; i++)
     {
@@ -143,7 +150,12 @@ export class PersonajeService
 
   aumentarImpactos()
   {
-      this.personaje.impactos = this.personaje.impactos+1;
+    this.personaje.impactos = this.personaje.impactos+1;
+    
+    if (this.getNumeroDeImpactos() > 3)
+    {
+      //Muerte por impactos
+    }
   }
 
 }

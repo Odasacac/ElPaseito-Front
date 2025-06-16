@@ -25,7 +25,7 @@
         {
             pantallasService = inject(PantallasService);
 
-            pantallaActual: Number = 1;
+            pantallaActual: number = 1;
 
             ngOnInit()
             {
@@ -111,13 +111,33 @@
 
                 prepararPantalla()
                 {
-                    //SETTEAR RUTA IMAGENES
+                    //SETTEAR RUTA IMAGENES CON SU TEXTO
+
                     const rutasImagenes: String[]=[];
-                    const rutaImagen1: String = "/images/1/2.jpg";
+                    const textoImagenes: String []=[];
+
+                    const rutaImagen1: String = "/images/11.png";
                     rutasImagenes.push(rutaImagen1);
-                    const rutaImagen2: String = "/images/1/1.jpg";
+                    const linea1: String = "Ir a la zona con menos pendiente."
+                    textoImagenes.push(linea1);
+
+                    const rutaImagen2: String = "/images/17.png";
                     rutasImagenes.push(rutaImagen2);
+                    const linea2: String = "Ir a la pradera."
+                    textoImagenes.push(linea2);
+
+                    const rutaImagen3: String = "/images/18.png";
+                    rutasImagenes.push(rutaImagen3);
+                    const linea3: String = "Ir a la zona más escarpada."
+                    textoImagenes.push(linea3);
+
+                    const rutaImagen4: String = "/images/12.png";
+                    rutasImagenes.push(rutaImagen4);
+                    const linea4: String = "Ir a la aldea."
+                    textoImagenes.push(linea4);
+
                     this.pantallasService.setRutasParaBifurcacion(rutasImagenes);
+                    this.pantallasService.setTextos(textoImagenes);
                 }
 
             Y en el HTML del componente hay que añadir <app-bifurcacion></app-bifurcacion>
@@ -272,6 +292,10 @@
                     const linea3: String = "No hay nada reseñable, excepto lo que parece un camino al fondo."
                     paraTexto.push(linea3);
                     this.pantallasService.setTextos(paraTexto);
+
+                    //SETTEAR EL TEXTO DE LA DECISION
+                    const textoParaDecisionComponent: String = "¿Qué harás? ¿Irás en busca de Kyum?"
+                    this.pantallasService.setTextoDecision(textoParaDecisionComponent);
                 }
 
             Y en el HTML del componente hay que añadir <app-decision></app-decision>
@@ -417,8 +441,6 @@
 
         Y ya esto intentará guardar la partida, si la guarda bien, si no la guarda bien también.
 
-4 - Añadir esa Pantalla a los métodos getPantalla(), setPantalla() y resetPantalla() y a la lista de Booleanos de pantallas del PantallasService.
-
-5 - Añadir esa Pantalla al app-routes.
+4 - Añadir esa Pantalla al app-routes.
             
             

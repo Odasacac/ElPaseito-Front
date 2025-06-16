@@ -95,6 +95,10 @@ export class AloneComponent
           
           break;
 
+        case 20:
+          this.irAPantalla22();
+          break;
+
         case 21:
           this.irAPantalla12Desde21();
           break;
@@ -227,6 +231,14 @@ export class AloneComponent
     this.pantallasService.resetPantalla(19);
     this.pantallasService.setPantalla(20);
     this.router.navigate(['/game/20']);
+  }
+
+  
+  irAPantalla22()
+  {
+    this.pantallasService.resetPantalla(20);
+    this.pantallasService.setPantalla(22);
+    this.router.navigate(['/game/22']);
   } 
   
     

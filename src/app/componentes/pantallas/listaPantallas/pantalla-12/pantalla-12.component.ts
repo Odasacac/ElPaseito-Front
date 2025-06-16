@@ -15,7 +15,7 @@ export class Pantalla12Component
   pantallasService = inject(PantallasService);
   personajeService = inject(PersonajeService);
 
-  pantallaActual: Number = 12;
+  pantallaActual: number = 12;
 
   ngOnInit()
   {
@@ -35,19 +35,19 @@ export class Pantalla12Component
       switch (this.personajeService.getNumeroDeImpactos())
       {
         case 0:
-          this.personajeService.setTranquilidad(3);
+          this.personajeService.aumentarTranquilidadEn(3);
           break;
 
         case 1:
-          this.personajeService.setTranquilidad(2);
+          this.personajeService.aumentarTranquilidadEn(2);
           break;
 
         case 2:
-          this.personajeService.setTranquilidad(1);
+          this.personajeService.aumentarTranquilidadEn(1);
           break;
 
         default:
-          this.personajeService.setTranquilidad(5);
+          this.personajeService.aumentarTranquilidadEn(5);
           break;
       }
     }

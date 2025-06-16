@@ -17,7 +17,7 @@ export class Pantalla16Component
 
   estadoBotellaPlaya: number =0;
   
-  pantallaActual: Number = 16;
+  pantallaActual: number = 16;
   
   ngOnInit()
   {
@@ -62,15 +62,15 @@ export class Pantalla16Component
 
     //SETTEAR VALORES DEL PERSONAJE
 
-    if(this.personajeService.getNivelDeTranquilidad() < 3)
+    if(this.personajeService.getNivelDeTranquilidad() < 2)
     {
-      this.personajeService.setTranquilidad(2);
+      this.personajeService.aumentarTranquilidadEn(2);
     }
    
     
     if(this.estadoBotellaPlaya === 0)
     {
-      this.personajeService.setEstadoBotellaPlaya(1);
+      this.personajeService.setEstadoBotellaPlaya(1); //1 Cogemos la botella
     }
   }
 

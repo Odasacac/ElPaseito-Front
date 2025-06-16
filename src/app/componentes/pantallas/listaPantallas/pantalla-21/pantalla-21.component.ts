@@ -1,17 +1,18 @@
 import { Component, inject } from '@angular/core';
 import { PantallasService } from '../../../../servicios/pantallas.service';
+import { AloneComponent } from "../../basePantallas/alone/alone.component";
 
 @Component({
   selector: 'app-pantalla-21',
   standalone: true,
-  imports: [],
+  imports: [AloneComponent],
   templateUrl: './pantalla-21.component.html',
   styleUrl: './pantalla-21.component.css'
 })
 export class Pantalla21Component 
 {
     pantallasService = inject(PantallasService);  
-    pantallaActual: Number = 21;
+    pantallaActual: number = 21;
   
     ngOnInit()
     {

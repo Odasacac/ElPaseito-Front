@@ -23,7 +23,7 @@ export class Pantalla0Component
   configuracionService = inject(ConfiguracionService);
   apiService = inject(ApiService);
   router = inject(Router);
-  pantallaActual: Number = 0;
+  pantallaActual: number = 0;
 
   opcionesCampoMiedo = this.configuracionService.getCamposMiedo();
   opcionesCampoOlvido = this.configuracionService.getCamposOlvido();

@@ -43,6 +43,9 @@ export class BifurcacionComponent
           case 13:
               this.seleccionEnPantalla13(indice);
               break;
+          case 22:
+              this.seleccionEnPantalla22(indice);
+              break;
 
 
 
@@ -145,6 +148,31 @@ export class BifurcacionComponent
   }
 
 
+  seleccionEnPantalla22(imagen: Number)
+  {
+    this.pantallasService.resetPantalla(22);
+
+    switch (imagen)
+    {
+      case 0:
+        this.irAPantalla23();
+        break;
+
+      case 1:
+        this.irAPantalla24();
+        break; 
+        
+      case 2:
+        this.irAPantalla21();
+        break;
+    
+      default:
+        this.irARutaNoPermitida(); 
+        break;
+    }
+  }
+
+
 
 
   //-----------------------
@@ -228,9 +256,27 @@ export class BifurcacionComponent
       {
         this.pantallasService.setPantalla(18);
         this.router.navigate(['/game/18']);
-      }    
+      }
 
+      irAPantalla21()
+      {
+        this.pantallasService.setPantalla(21);
+        this.router.navigate(['/game/21']);
+      }  
 
+      irAPantalla23()
+      {
+        this.pantallasService.setPantalla(23);
+        this.router.navigate(['/game/23']);
+      }  
+
+      irAPantalla24()
+      {
+        this.pantallasService.setPantalla(24);
+        this.router.navigate(['/game/24']);
+      }  
+
+ 
 
 
   //-----------------------

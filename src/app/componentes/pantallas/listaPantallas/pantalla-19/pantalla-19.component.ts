@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { PantallasService } from '../../../../servicios/pantallas.service';
 import { EstadoJuegoService } from '../../../../servicios/estado-juego.service';
 import { AloneComponent } from "../../basePantallas/alone/alone.component";
+import { PersonajeService } from '../../../../servicios/personaje.service';
 
 @Component({
   selector: 'app-pantalla-19',
@@ -14,10 +15,11 @@ export class Pantalla19Component
 {
   pantallasService = inject(PantallasService);
   estadoDelJuegoService = inject (EstadoJuegoService);
-  
+  personajeService = inject (PersonajeService);
+
   caminoDespejado: boolean = false;
     
-  pantallaActual: Number = 19;
+  pantallaActual: number = 19;
     
   ngOnInit()
   {
@@ -63,6 +65,9 @@ export class Pantalla19Component
         paraTexto.push(linea3);
         const linea4: String = "Es más, ¿qué haces aquí? ¿No deberías estar buscando a Kyum?"
         paraTexto.push(linea4);
+
+        this.personajeService.aumentarExploracion(1);
+        this.personajeService.aumentarMiedoEn(1);
       }
       
       this.pantallasService.setTextos(paraTexto);
