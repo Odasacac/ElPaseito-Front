@@ -30,17 +30,17 @@ export class Pantalla10Component
       const rutasImagenes: String[]=[];
       const textoImagenes: String []=[];
 
-      const rutaImagen1: String = "/images/9.png";
+      const rutaImagen1: String = "/images/11.png";
       rutasImagenes.push(rutaImagen1);
-      const linea1: String = "Ir a la pradera."
+      const linea1: String = "Ir a la zona con menos pendiente."
       textoImagenes.push(linea1);
 
-      const rutaImagen2: String = "/images/10.png";
+      const rutaImagen2: String = "/images/17.png";
       rutasImagenes.push(rutaImagen2);
-      const linea2: String = "Ir a la zona con menos pendiente."
+      const linea2: String = "Ir a la pradera."
       textoImagenes.push(linea2);
 
-      const rutaImagen3: String = "/images/11.png";
+      const rutaImagen3: String = "/images/18.png";
       rutasImagenes.push(rutaImagen3);
       const linea3: String = "Ir a la zona más escarpada."
       textoImagenes.push(linea3);

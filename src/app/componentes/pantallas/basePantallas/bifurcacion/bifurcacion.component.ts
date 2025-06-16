@@ -37,8 +37,12 @@ export class BifurcacionComponent
         //-----------------------
 
 
-
-
+          case 10:
+              this.seleccionEnPantalla10(indice);
+              break;
+          case 13:
+              this.seleccionEnPantalla13(indice);
+              break;
 
 
 
@@ -79,10 +83,66 @@ export class BifurcacionComponent
   //-----------------------
 
 
+  seleccionEnPantalla10(imagen: Number)
+  {
+    this.pantallasService.resetPantalla(10);
+
+    switch (imagen)
+    {
+      case 0:
+        this.irAPantalla11();
+        break;
+
+      case 1:
+        this.irAPantalla17();
+        break; 
+        
+      case 2:
+        this.irAPantalla18();
+        break;
+
+      case 3:
+        this.irAPantalla12();
+        break;
+                    
+      default:
+        this.irARutaNoPermitida(); 
+        break;
+    }
+  }
 
 
+  seleccionEnPantalla13(imagen: Number)
+  {
+    this.pantallasService.resetPantalla(13);
 
+    switch (imagen)
+    {
+      case 0:
+        this.irAPantalla9();
+        break;
 
+      case 1:
+        this.irAPantalla14();
+        break; 
+        
+      case 2:
+        this.irAPantalla15();
+        break;
+
+      case 3:
+        this.irAPantalla16();
+        break;
+
+      case 4:
+        this.irAPantallaRendirse();
+        break;
+                    
+      default:
+        this.irARutaNoPermitida(); 
+        break;
+    }
+  }
 
 
 
@@ -106,10 +166,69 @@ export class BifurcacionComponent
 
 
 
+      irAPantalla9()
+      {
+        this.pantallasService.setPantalla(9);
+        this.router.navigate(['/game/9']);
+      }
+
+      
+      irAPantalla10()
+      {
+        this.pantallasService.setPantalla(10);
+        this.router.navigate(['/game/10']);
+      }    
+
+      
+      irAPantalla11()
+      {
+        this.pantallasService.setPantalla(11);
+        this.router.navigate(['/game/11']);
+      }    
+
+      
+      irAPantalla12()
+      {
+        this.pantallasService.setPantalla(12);
+        this.router.navigate(['/game/12']);
+      }    
+
+      irAPantalla13()
+      {
+        this.pantallasService.setPantalla(13);
+        this.router.navigate(['/game/13']);
+      }
+
+       irAPantalla14()
+      {
+        this.pantallasService.setPantalla(14);
+        this.router.navigate(['/game/14']);
+      }    
+
+       irAPantalla15()
+      {
+        this.pantallasService.setPantalla(15);
+        this.router.navigate(['/game/15']);
+      }    
+
+       irAPantalla16()
+      {
+        this.pantallasService.setPantalla(16);
+        this.router.navigate(['/game/16']);
+      }    
 
 
+      irAPantalla17()
+      {
+        this.pantallasService.setPantalla(17);
+        this.router.navigate(['/game/17']);
+      }    
 
-
+      irAPantalla18()
+      {
+        this.pantallasService.setPantalla(18);
+        this.router.navigate(['/game/18']);
+      }    
 
 
 

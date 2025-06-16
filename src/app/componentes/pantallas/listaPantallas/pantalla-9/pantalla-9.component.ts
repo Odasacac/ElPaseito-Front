@@ -30,15 +30,15 @@ export class Pantalla9Component
     
       //SETTEAR TEXTOS
       const paraTexto: String []=[];
-      const linea1: String = "Te encuentras con una señal, tienes cuatro opciones:"
+      const linea1: String = "Te acercas a las montañas y te encuentras con una señal que indica cuatro caminos:"
       paraTexto.push(linea1);
-      const linea2: String = "1 - Puedes seguir recto hacia el norte y entrarás en la pradera."
+      const linea2: String = "Puedes seguir recto hacia el norte y entrarás en la pradera."
       paraTexto.push(linea2);
-      const linea3: String = "2 - Puedes bordear la pradera por el oeste y llegar al extremo de las montañas donde la pendiente es menos pronunciada."
+      const linea3: String = "Puedes bordear la pradera por el oeste y llegar al extremo de las montañas donde la pendiente es menos pronunciada."
       paraTexto.push(linea3);
-      const linea4: String = "3 - Puedes bordear la pradera por el este y llegar al extremo que parece más escarpado, ahí se ve que está la torre."
+      const linea4: String = "Puedes bordear la pradera por el este y llegar al extremo que parece más escarpado, ahí se puede ver que está la torre."
       paraTexto.push(linea4);
-      const linea5: String = "4 - Puedes ir al sur a la aldea."
+      const linea5: String = "También puedes ir al sur a la aldea."
       paraTexto.push(linea5);
     
       this.pantallasService.setTextos(paraTexto);

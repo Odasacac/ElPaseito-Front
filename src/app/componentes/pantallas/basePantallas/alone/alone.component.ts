@@ -68,7 +68,9 @@ export class AloneComponent
           this.irAPantalla10();
           break;
 
-
+        case 12:
+          this.irAPantalla13();
+          break;
 
 
         //-----------------------
@@ -153,6 +155,14 @@ export class AloneComponent
     this.pantallasService.resetPantalla(9);
     this.pantallasService.setPantalla(10);
     this.router.navigate(['/game/10']);
+  } 
+
+  
+  irAPantalla13()
+  {
+    this.pantallasService.resetPantalla(12);
+    this.pantallasService.setPantalla(13);
+    this.router.navigate(['/game/13']);
   } 
 
 
