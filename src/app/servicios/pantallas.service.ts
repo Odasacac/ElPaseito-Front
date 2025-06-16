@@ -212,6 +212,11 @@ export class PantallasService
   pantalla14: boolean = false;
   pantalla15: boolean = false;
   pantalla16: boolean = false;
+  pantalla17: boolean = false;
+  pantalla18: boolean = false;
+  pantalla19: boolean = false;
+  pantalla20: boolean = false;
+  pantalla21: boolean = false;
 
 
 
@@ -273,7 +278,16 @@ export class PantallasService
         return this.pantalla15;
       case 16:
         return this.pantalla16;
-
+      case 17:
+        return this.pantalla17;
+      case 18:
+        return this.pantalla18;
+      case 19:
+        return this.pantalla19;
+      case 20:
+        return this.pantalla20;
+      case 21:
+        return this.pantalla21;
             
 
 
@@ -359,6 +373,22 @@ export class PantallasService
       case 16:
         this.pantalla16 = true;
         break;
+      case 17:
+        this.pantalla17 = true;
+        break;
+      case 18:
+        this.pantalla18 = true;
+        break;
+      case 19:
+        this.pantalla19 = true;
+        break;
+      case 20:
+        this.pantalla20 = true;
+        break;
+      case 21:
+        this.pantalla21 = true;
+        break;
+
 
             
 
@@ -443,8 +473,21 @@ export class PantallasService
       case 16:
         this.pantalla16 = false;
         break;
-
-            
+      case 17:
+        this.pantalla17 = false;
+        break;
+      case 18:
+        this.pantalla18 = false;
+        break;
+      case 19:
+        this.pantalla19 = false;
+        break;
+      case 20:
+        this.pantalla20 = false;
+        break;
+      case 21:
+        this.pantalla21 = false;
+        break;
 
 
 

@@ -27,30 +27,7 @@ export class Pantalla12Component
 
   prepararPantalla()
   {
-    //SETTEAR RUTA IMAGEN
-    this.pantallasService.setRutaImagen("/images/12.png");
-    
-    //SETTEAR TEXTOS
-    const paraTexto: String []=[];
-    const linea1: String = "Vuelves a la aldea y aprovechas para descansar y recuperar fuerzas."
-    paraTexto.push(linea1);
-    const linea2: String = "Te sientes mejor, ¿qué harás ahora?"
-    paraTexto.push(linea2);
-    const linea3: String = "Al norte están las montañas."
-    paraTexto.push(linea3);
-    const linea4: String = "Al este, los acantilados rocosos que bordean la playa."
-    paraTexto.push(linea4);
-    const linea5: String = "Al oeste, el camino que lleva a la aldea más cercana."
-    paraTexto.push(linea5);
-    const linea6: String = "Y al sur, el mar."
-    paraTexto.push(linea6);
-    const linea7: String = "También puedes abandonar, quizás Kyum acabe regresando."
-    paraTexto.push(linea7);
-
-    this.pantallasService.setTextos(paraTexto);
-
-
-    //SETTEAR VALORES DEL PERSONAJE
+     //SETTEAR VALORES DEL PERSONAJE
 
     if(this.personajeService.getNivelDeTranquilidad() < 3)
     {    
@@ -74,5 +51,43 @@ export class Pantalla12Component
           break;
       }
     }
+
+    //SETTEAR RUTA IMAGEN
+    this.pantallasService.setRutaImagen("/images/12.png");
+    
+    //SETTEAR TEXTOS
+    const paraTexto: String []=[];
+    const linea1: String = "Vuelves a la aldea y aprovechas para descansar y recuperar fuerzas."
+    paraTexto.push(linea1);
+    if(this.personajeService.getNivelDeTranquilidad() >= 3)
+    {   
+      const linea2: String = "Te sientes mejor, ¿qué harás ahora?"
+      paraTexto.push(linea2);
+    }
+    else if (this.personajeService.getNivelDeTranquilidad() === 0)
+    {
+      const linea2: String = "¿Qué harás ahora?"
+      paraTexto.push(linea2);
+    }
+    else
+    {
+      const linea2: String = "Pero no llegas a sentirte del todo aliviado, ¿qué harás ahora?"
+      paraTexto.push(linea2);
+    }
+
+    const linea3: String = "Al norte están las montañas."
+    paraTexto.push(linea3);
+    const linea4: String = "Al este, los acantilados rocosos que bordean la playa."
+    paraTexto.push(linea4);
+    const linea5: String = "Al oeste, el camino que lleva a la aldea más cercana."
+    paraTexto.push(linea5);
+    const linea6: String = "Y al sur, el mar."
+    paraTexto.push(linea6);
+    const linea7: String = "También puedes abandonar, quizás Kyum acabe regresando."
+    paraTexto.push(linea7);
+
+    this.pantallasService.setTextos(paraTexto);
+
+
   }
 }

@@ -28,6 +28,11 @@ import { Pantalla13Component } from './componentes/pantallas/listaPantallas/pant
 import { Pantalla14Component } from './componentes/pantallas/listaPantallas/pantalla-14/pantalla-14.component';
 import { Pantalla15Component } from './componentes/pantallas/listaPantallas/pantalla-15/pantalla-15.component';
 import { Pantalla16Component } from './componentes/pantallas/listaPantallas/pantalla-16/pantalla-16.component';
+import { Pantalla17Component } from './componentes/pantallas/listaPantallas/pantalla-17/pantalla-17.component';
+import { Pantalla18Component } from './componentes/pantallas/listaPantallas/pantalla-18/pantalla-18.component';
+import { Pantalla19Component } from './componentes/pantallas/listaPantallas/pantalla-19/pantalla-19.component';
+import { Pantalla20Component } from './componentes/pantallas/listaPantallas/pantalla-20/pantalla-20.component';
+import { Pantalla21Component } from './componentes/pantallas/listaPantallas/pantalla-21/pantalla-21.component';
 
 
 export const routes: Routes = 
@@ -74,6 +79,11 @@ export const routes: Routes =
             { path: "14", component: Pantalla14Component },
             { path: "15", component: Pantalla15Component },
             { path: "16", component: Pantalla16Component },
+            { path: "17", component: Pantalla17Component },
+            { path: "18", component: Pantalla18Component },
+            { path: "19", component: Pantalla19Component },
+            { path: "20", component: Pantalla20Component },
+            { path: "21", component: Pantalla21Component },
 
 
 

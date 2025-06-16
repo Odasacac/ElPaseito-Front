@@ -32,13 +32,13 @@ export class Pantalla7Component
           
       //SETTEAR TEXTOS
       const paraTexto: String []=[];
-      const linea1: String = "La torre es muy similar a la que se encuentra en las montañas del valle."
+      const linea1: String = "La torre es muy similar a la que se encuentra en las montañas que rodean tu aldea."
       paraTexto.push(linea1);
-      const linea2: String = "Solo que el entorno es bastante distinto."
+      const linea2: String = "Solo que el entorno es bastante distinto al del sueño."
       paraTexto.push(linea2);
-      const linea3: String = "No está prohibido subir a esa zona, pero hace años que nadie lo hace."
+      const linea3: String = "No está prohibido subir donde está la torre, pero hace años que nadie lo hace y hasta donde sabes, está abandonada"
       paraTexto.push(linea3);
-      const linea4: String = "Hasta donde sabes la torre está abandonada, pero piensas que es un buen lugar desde el cual comenzar a buscar y te acercas."
+      const linea4: String = "Piensas que puede ser un buen lugar desde el cual comenzar a buscar y sales en esa dirección."
       paraTexto.push(linea4);
           
       this.pantallasService.setTextos(paraTexto);

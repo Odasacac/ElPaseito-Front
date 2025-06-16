@@ -30,9 +30,9 @@ export class Pantalla16Component
   prepararPantalla()
   {
 
-    //SETTER ESTADO DE LA BOTELLA
-
+    //SETTEAR ESTADO DE LA BOTELLA
     this.estadoBotellaPlaya = this.personajeService.getEstadoBotellaPlaya();
+
     //SETTEAR RUTA IMAGEN
     this.pantallasService.setRutaImagen("/images/16.png");
       

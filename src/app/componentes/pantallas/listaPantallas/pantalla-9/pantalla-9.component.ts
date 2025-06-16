@@ -38,7 +38,7 @@ export class Pantalla9Component
       paraTexto.push(linea3);
       const linea4: String = "Puedes bordear la pradera por el este y llegar al extremo que parece más escarpado, ahí se puede ver que está la torre."
       paraTexto.push(linea4);
-      const linea5: String = "También puedes ir al sur a la aldea."
+      const linea5: String = "También puedes ir al sur, a la aldea."
       paraTexto.push(linea5);
     
       this.pantallasService.setTextos(paraTexto);

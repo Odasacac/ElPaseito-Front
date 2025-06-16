@@ -27,6 +27,7 @@ export class ContinuarComponent
   opcionesCampoMiedo = this.configuracionService.getCamposMiedo();
 
   textoError: String ="";
+   pulsado: Boolean = false;
 
   camposFormulario =
   {
@@ -53,6 +54,7 @@ export class ContinuarComponent
     if(this.formulario.valid)
     {
       this.textoError="";
+      this.pulsado=true;
 
       const datosFormulario = this.formulario.value;
 
@@ -74,15 +76,41 @@ export class ContinuarComponent
 
               switch (capitulo)
               {
+
+              /*
+                Aqui ir poniendo: 
+                  case A:
+                    this.pantallasService.setPantalla(B);
+                    this.router.navigate(['/game/B']);
+                    break;
+
+              */
+
+              //------------------
+              
+    
                 case 1:
                   this.pantallasService.setPantalla(1);
                   this.router.navigate(['/game/1']);
                   break;
 
-                case 2:
-                  this.pantallasService.setPantalla(19);
-                  this.router.navigate(['/game/19']);
-                  break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  
+              //------------------
 
                 default:
                   this.pantallasService.setVisible(false);
@@ -94,6 +122,7 @@ export class ContinuarComponent
             error: (error: any) =>
             {
               this.textoError = "No se ha podido recuperar esta historia." ;
+              this.pulsado = false;
             }
         }
 
@@ -113,7 +142,7 @@ export class ContinuarComponent
       {
         if (nombreControl.hasError("required"))
         {
-          this.textoError = "El nombre es obligatorio.";
+          this.textoError = "Indicar tu nombre es obligatorio.";
         }
 
         else if (nombreControl.hasError("minlength") || nombreControl.hasError("maxlength"))
