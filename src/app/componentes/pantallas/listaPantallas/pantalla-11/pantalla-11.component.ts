@@ -27,15 +27,15 @@ export class Pantalla11Component
     prepararPantalla()
     {
       //SETTEAR RUTA IMAGEN
-      this.pantallasService.setRutaImagen("/images/11.png");
+      this.pantallasService.setRutaImagen("/images/"+this.pantallaActual+".png");
       
       //SETTEAR TEXTOS
       const paraTexto: String []=[];
       const linea1: String = "La ruta que lleva hasta el extremo oeste de la montaña es larga."
       paraTexto.push(linea1);
-      const linea2: String = "Discurre entre matorrales y algunos árboles."
+      const linea2: String = "Discurre entre matorrales y algunos árboles, aunque parece que más adelante cobran protagonismo."
       paraTexto.push(linea2);
-      const linea3: String = "Y es agradable cómo el sendero discurre entre el paisaje."
+      const linea3: String = "Es agradable cómo el sendero te hace pasear entre el paisaje."
       paraTexto.push(linea3);
 
       

@@ -139,6 +139,11 @@ export class AloneComponent
           this.irAPantalla9Desde33();
           break;
 
+        case 34:
+          this.irAPantalla12Desde34();
+          break;
+
+
         case 37:
           this.irAPantalla24Desde37();
           break;

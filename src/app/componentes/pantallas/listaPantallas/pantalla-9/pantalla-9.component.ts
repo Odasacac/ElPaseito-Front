@@ -26,7 +26,7 @@ export class Pantalla9Component
     prepararPantalla()
     {
       //SETTEAR RUTA IMAGEN
-      this.pantallasService.setRutaImagen("/images/t4.png");
+      this.pantallasService.setRutaImagen("/images/"+this.pantallaActual+".png");
     
       //SETTEAR TEXTOS
       const paraTexto: String []=[];

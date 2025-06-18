@@ -53,7 +53,7 @@ export class Pantalla12Component
     }
 
     //SETTEAR RUTA IMAGEN
-    this.pantallasService.setRutaImagen("/images/12.png");
+    this.pantallasService.setRutaImagen("/images/"+this.pantallaActual+".png");
     
     //SETTEAR TEXTOS
     const paraTexto: String []=[];

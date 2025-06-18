@@ -22,6 +22,7 @@ export class BifurcacionComponent
   clickEn(indice: Number)
   {
     let pantallaActiva = this.pantallasService.getPantallaActiva()();
+    
 
     switch (pantallaActiva)
     {
@@ -37,17 +38,29 @@ export class BifurcacionComponent
         //-----------------------
 
 
-          case 10:
-              this.seleccionEnPantalla10(indice);
-              break;
-          case 13:
-              this.seleccionEnPantalla13(indice);
-              break;
-          case 22:
-              this.seleccionEnPantalla22(indice);
-              break;
+      case 10:
+        this.seleccionEnPantalla10(indice);
+        break;
 
+      case 13:
+        this.seleccionEnPantalla13(indice);
+        break;
 
+      case 22:
+        this.seleccionEnPantalla22(indice);
+        break;
+
+      case 25:
+        this.seleccionEnPantalla25(indice);
+        break;
+
+      case 27:
+        this.seleccionEnPantalla27(indice);
+        break;
+
+      case 31:
+        this.seleccionEnPantalla31(indice);
+        break;
 
 
 
@@ -93,19 +106,19 @@ export class BifurcacionComponent
     switch (imagen)
     {
       case 0:
-        this.irAPantalla11();
+        this.irAPantalla(11);
         break;
 
       case 1:
-        this.irAPantalla17();
+        this.irAPantalla(17);
         break; 
         
       case 2:
-        this.irAPantalla18();
+        this.irAPantalla(18);
         break;
 
       case 3:
-        this.irAPantalla12();
+        this.irAPantalla(12);
         break;
                     
       default:
@@ -122,19 +135,19 @@ export class BifurcacionComponent
     switch (imagen)
     {
       case 0:
-        this.irAPantalla9();
+        this.irAPantalla(9);
         break;
 
       case 1:
-        this.irAPantalla14();
+        this.irAPantalla(14);
         break; 
         
       case 2:
-        this.irAPantalla15();
+        this.irAPantalla(15);
         break;
 
       case 3:
-        this.irAPantalla16();
+        this.irAPantalla(16);
         break;
 
       case 4:
@@ -155,15 +168,15 @@ export class BifurcacionComponent
     switch (imagen)
     {
       case 0:
-        this.irAPantalla23();
+        this.irAPantalla(23);
         break;
 
       case 1:
-        this.irAPantalla24();
+        this.irAPantalla(24);
         break; 
         
       case 2:
-        this.irAPantalla21();
+        this.irAPantalla(21);
         break;
     
       default:
@@ -172,114 +185,80 @@ export class BifurcacionComponent
     }
   }
 
+  seleccionEnPantalla25(imagen: Number)
+  {
+    this.pantallasService.resetPantalla(25);
+
+    switch (imagen)
+    {
+      case 0:
+        this.irAPantalla(26);
+        break;
+
+      case 1:
+        this.irAPantalla(29);
+        break; 
+        
+      default:
+        this.irARutaNoPermitida(); 
+        break;
+    }
+  }
 
 
+  seleccionEnPantalla27(imagen: Number)
+  {
+    this.pantallasService.resetPantalla(27);
 
-  //-----------------------
+    switch (imagen)
+    {
+      case 0:
+        this.irAPantalla(28);
+        break;
 
+      case 1:
+        this.irAPantalla(9);
+        break; 
+        
+      default:
+        this.irARutaNoPermitida(); 
+        break;
+    }
+  }
 
+  seleccionEnPantalla31(imagen: Number)
+  {
+    this.pantallasService.resetPantalla(31);
 
-  /*
-    Ir poniendo aquí los:
+    switch (imagen)
+    {
+      case 0:
+        this.irAPantalla(35);
+        break;
 
-      irAPantallaB()
-      {
-        this.pantallasService.setPantalla(B);
-        this.router.navigate(['/game/B']);
-      }            
-  
-    */
+      case 1:
+        this.irAPantalla(34);
+        break; 
 
-  //-----------------------
-
-
-
-      irAPantalla9()
-      {
-        this.pantallasService.setPantalla(9);
-        this.router.navigate(['/game/9']);
-      }
-
-      
-      irAPantalla10()
-      {
-        this.pantallasService.setPantalla(10);
-        this.router.navigate(['/game/10']);
-      }    
-
-      
-      irAPantalla11()
-      {
-        this.pantallasService.setPantalla(11);
-        this.router.navigate(['/game/11']);
-      }    
-
-      
-      irAPantalla12()
-      {
-        this.pantallasService.setPantalla(12);
-        this.router.navigate(['/game/12']);
-      }    
-
-      irAPantalla13()
-      {
-        this.pantallasService.setPantalla(13);
-        this.router.navigate(['/game/13']);
-      }
-
-       irAPantalla14()
-      {
-        this.pantallasService.setPantalla(14);
-        this.router.navigate(['/game/14']);
-      }    
-
-       irAPantalla15()
-      {
-        this.pantallasService.setPantalla(15);
-        this.router.navigate(['/game/15']);
-      }    
-
-       irAPantalla16()
-      {
-        this.pantallasService.setPantalla(16);
-        this.router.navigate(['/game/16']);
-      }    
-
-
-      irAPantalla17()
-      {
-        this.pantallasService.setPantalla(17);
-        this.router.navigate(['/game/17']);
-      }    
-
-      irAPantalla18()
-      {
-        this.pantallasService.setPantalla(18);
-        this.router.navigate(['/game/18']);
-      }
-
-      irAPantalla21()
-      {
-        this.pantallasService.setPantalla(21);
-        this.router.navigate(['/game/21']);
-      }  
-
-      irAPantalla23()
-      {
-        this.pantallasService.setPantalla(23);
-        this.router.navigate(['/game/23']);
-      }  
-
-      irAPantalla24()
-      {
-        this.pantallasService.setPantalla(24);
-        this.router.navigate(['/game/24']);
-      }  
-
- 
-
+      case 2:
+        this.irAPantalla(32);
+        break; 
+        
+      default:
+        this.irARutaNoPermitida(); 
+        break;
+    }
+  }
 
   //-----------------------
+
+
+
+  irAPantalla(numeroPantalla: number)
+  {
+    this.pantallasService.setPantalla(numeroPantalla);
+    this.router.navigate(['/game/'+numeroPantalla]);
+  }  
 
 
   irARutaNoPermitida()

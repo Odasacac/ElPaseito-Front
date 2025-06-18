@@ -34,6 +34,27 @@ import { Pantalla19Component } from './componentes/pantallas/listaPantallas/pant
 import { Pantalla20Component } from './componentes/pantallas/listaPantallas/pantalla-20/pantalla-20.component';
 import { Pantalla21Component } from './componentes/pantallas/listaPantallas/pantalla-21/pantalla-21.component';
 import { Pantalla22Component } from './componentes/pantallas/listaPantallas/pantalla-22/pantalla-22.component';
+import { Pantalla23Component } from './componentes/pantallas/listaPantallas/pantalla-23/pantalla-23.component';
+import { Pantalla24Component } from './componentes/pantallas/listaPantallas/pantalla-24/pantalla-24.component';
+import { Pantalla25Component } from './componentes/pantallas/listaPantallas/pantalla-25/pantalla-25.component';
+import { Pantalla26Component } from './componentes/pantallas/listaPantallas/pantalla-26/pantalla-26.component';
+import { Pantalla27Component } from './componentes/pantallas/listaPantallas/pantalla-27/pantalla-27.component';
+import { Pantalla28Component } from './componentes/pantallas/listaPantallas/pantalla-28/pantalla-28.component';
+import { Pantalla29Component } from './componentes/pantallas/listaPantallas/pantalla-29/pantalla-29.component';
+import { Pantalla30Component } from './componentes/pantallas/listaPantallas/pantalla-30/pantalla-30.component';
+import { Pantalla31Component } from './componentes/pantallas/listaPantallas/pantalla-31/pantalla-31.component';
+import { Pantalla32Component } from './componentes/pantallas/listaPantallas/pantalla-32/pantalla-32.component';
+import { Pantalla33Component } from './componentes/pantallas/listaPantallas/pantalla-33/pantalla-33.component';
+import { Pantalla34Component } from './componentes/pantallas/listaPantallas/pantalla-34/pantalla-34.component';
+import { Pantalla35Component } from './componentes/pantallas/listaPantallas/pantalla-35/pantalla-35.component';
+import { Pantalla36Component } from './componentes/pantallas/listaPantallas/pantalla-36/pantalla-36.component';
+import { Pantalla37Component } from './componentes/pantallas/listaPantallas/pantalla-37/pantalla-37.component';
+import { Pantalla38Component } from './componentes/pantallas/listaPantallas/pantalla-38/pantalla-38.component';
+import { Pantalla39Component } from './componentes/pantallas/listaPantallas/pantalla-39/pantalla-39.component';
+import { Pantalla40Component } from './componentes/pantallas/listaPantallas/pantalla-40/pantalla-40.component';
+import { Pantalla41Component } from './componentes/pantallas/listaPantallas/pantalla-41/pantalla-41.component';
+import { Pantalla42Component } from './componentes/pantallas/listaPantallas/pantalla-42/pantalla-42.component';
+import { Pantalla43Component } from './componentes/pantallas/listaPantallas/pantalla-43/pantalla-43.component';
 
 
 export const routes: Routes = 
@@ -86,7 +107,27 @@ export const routes: Routes =
             { path: "20", component: Pantalla20Component },
             { path: "21", component: Pantalla21Component },
             { path: "22", component: Pantalla22Component },
-
+            { path: "23", component: Pantalla23Component },
+            { path: "24", component: Pantalla24Component },
+            { path: "25", component: Pantalla25Component },
+            { path: "26", component: Pantalla26Component },
+            { path: "27", component: Pantalla27Component },
+            { path: "28", component: Pantalla28Component },
+            { path: "29", component: Pantalla29Component },
+            { path: "30", component: Pantalla30Component },
+            { path: "31", component: Pantalla31Component },
+            { path: "32", component: Pantalla32Component },
+            { path: "33", component: Pantalla33Component },
+            { path: "34", component: Pantalla34Component },
+            { path: "35", component: Pantalla35Component },
+            { path: "36", component: Pantalla36Component },
+            { path: "37", component: Pantalla37Component },
+            { path: "38", component: Pantalla38Component },
+            { path: "39", component: Pantalla39Component },
+            { path: "40", component: Pantalla40Component },
+            { path: "41", component: Pantalla41Component },
+            { path: "42", component: Pantalla42Component },
+            { path: "43", component: Pantalla43Component },
 
 
 

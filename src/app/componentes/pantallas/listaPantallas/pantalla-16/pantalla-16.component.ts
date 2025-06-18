@@ -34,7 +34,7 @@ export class Pantalla16Component
     this.estadoBotellaPlaya = this.personajeService.getEstadoBotellaPlaya();
 
     //SETTEAR RUTA IMAGEN
-    this.pantallasService.setRutaImagen("/images/16.png");
+    this.pantallasService.setRutaImagen("/images/"+this.pantallaActual+".png");
       
     //SETTEAR TEXTOS
     const paraTexto: String []=[];

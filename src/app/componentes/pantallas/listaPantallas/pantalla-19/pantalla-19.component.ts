@@ -42,7 +42,7 @@ export class Pantalla19Component
       if (this.caminoDespejado)
       {
         //SETTEAR RUTA IMAGEN
-        this.pantallasService.setRutaImagen("/images/19t.png");
+        this.pantallasService.setRutaImagen("/images/"+this.pantallaActual+"t.png");
 
         
         //SETTEAR TEXTOS
@@ -56,7 +56,7 @@ export class Pantalla19Component
       else
       {
         //SETTEAR RUTA IMAGEN
-        this.pantallasService.setRutaImagen("/images/19f.png");
+        this.pantallasService.setRutaImagen("/images/"+this.pantallaActual+"f.png");
 
         //SETTEAR TEXTOS
         const linea1: String = "El camino acaba convirtiéndose en un desfiladero."
