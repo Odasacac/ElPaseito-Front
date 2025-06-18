@@ -32,10 +32,12 @@ export class Pantalla15Component
       const paraTexto: String []=[];
       const linea1: String = "Decides tomar el camino en dirección a la otra aldea."
       paraTexto.push(linea1);
-      const linea2:String = "Es una zona muy despejada y oyes animales a lo lejos.";
+      const linea2:String = "Es una zona muy despejada y consigues oir animales en la lejanía.";
       paraTexto.push(linea2);
       const linea3:String = "A tu espalda queda tu aldea y aún puedes oler el salado del mar.";
       paraTexto.push(linea3);
+      const linea4:String = "Parece que el camino se estrecha a lo lejos.";
+      paraTexto.push(linea4);
       this.pantallasService.setTextos(paraTexto);
     }
 

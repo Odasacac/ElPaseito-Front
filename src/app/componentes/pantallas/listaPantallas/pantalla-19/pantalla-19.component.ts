@@ -32,9 +32,11 @@ export class Pantalla19Component
 
   prepararPantalla()
   {
-    //SETTEAR ESTADO DEL CAMINO
+      //SETTEAR ESTADO DEL CAMINO
       this.caminoDespejado = this.estadoDelJuegoService.getCaminoDespejado();
 
+      this.caminoDespejado = true;
+      
       const paraTexto: String []=[];
 
       if (this.caminoDespejado)
@@ -68,6 +70,7 @@ export class Pantalla19Component
 
         this.personajeService.aumentarExploracion(1);
         this.personajeService.aumentarMiedoEn(1);
+        this.estadoDelJuegoService.setBandidosVistosEnElDesfiladero(true);
       }
       
       this.pantallasService.setTextos(paraTexto);

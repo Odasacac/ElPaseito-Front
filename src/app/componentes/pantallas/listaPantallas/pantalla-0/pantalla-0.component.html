@@ -30,11 +30,6 @@
 
 <p>{{textoError}}</p>
 
-@if(formularioInvalido)
-{
-  <button (click)="irAMenu()">Volver</button>)
-}
-
 @if (verNoConexion)
 {
   <p>{{textoContinuarSinGuardado}}</p>
@@ -42,3 +37,7 @@
   <button (click)="irAMenu()">No</button>
 }
 
+@if(!verNoConexion || formularioInvalido)
+{
+  <button (click)="irAMenu()">Volver</button>
+}
