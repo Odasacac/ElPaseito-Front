@@ -27,9 +27,20 @@ export class PersonajeService
   inventario: Inventario =
   (
     {
-      botellaPlaya: 0 
+      botellaPlaya: 0,
+      estatuillaBosque: 0
     }
   )
+
+  getEstadoEstatuillaBosque(): number
+  {
+    return this.inventario.estatuillaBosque;
+  }
+
+  setEstadoEstatuillaBosque(estado: number)
+  {
+    this.inventario.estatuillaBosque = estado;
+  }
 
   getEstadoBotellaPlaya(): number
   {

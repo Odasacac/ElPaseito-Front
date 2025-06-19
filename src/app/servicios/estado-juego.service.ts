@@ -7,6 +7,17 @@ export class EstadoJuegoService
 {
   caminoDespejado: boolean = false;
   bandidosVistosEnElDesfiladero: boolean = false;
+  a35Desde36: boolean = false;
+
+  getA35Desde36(): boolean
+  {
+    return this.a35Desde36;
+  }
+
+  setA35Desde36(valor: boolean)
+  {
+    this.a35Desde36=valor;
+  }
 
   getBandidosVistosEnElDesfiladero(): boolean
   {

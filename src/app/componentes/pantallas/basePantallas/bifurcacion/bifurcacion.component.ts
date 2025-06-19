@@ -233,15 +233,15 @@ export class BifurcacionComponent
     switch (imagen)
     {
       case 0:
-        this.irAPantalla(35);
+        this.irAPantalla(34);
         break;
 
       case 1:
-        this.irAPantalla(34);
+        this.irAPantalla(32);
         break; 
 
       case 2:
-        this.irAPantalla(32);
+        this.irAPantalla(35);
         break; 
         
       default:

@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { PantallasService } from '../../../../servicios/pantallas.service';
 import { Router } from '@angular/router';
 import { EstadoJuegoService } from '../../../../servicios/estado-juego.service';
+import { PersonajeService } from '../../../../servicios/personaje.service';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class AloneComponent
   router = inject(Router);
   pantallasService = inject(PantallasService);
   estadoDelJuegoService = inject (EstadoJuegoService);
+  personajeService = inject(PersonajeService);
 
   rutaImagen = this.pantallasService.getRutaImagen();
   textos = this.pantallasService.getTextos();
@@ -136,13 +138,20 @@ export class AloneComponent
           break;
 
         case 33:
-          this.irAPantalla9Desde33();
+          if (this.personajeService.getEstadoEstatuillaBosque() === 0)
+          {
+            this.irAPantalla44();
+          }
+          else
+          {
+            this.irAPantalla45Desde33();
+          }
+          
           break;
 
         case 34:
           this.irAPantalla12Desde34();
           break;
-
 
         case 37:
           this.irAPantalla24Desde37();
@@ -158,6 +167,14 @@ export class AloneComponent
 
         case 40:
           this.irAPantalla25();
+          break;
+
+        case 44:
+          this.irAPantalla45Desde44()
+          break;
+
+        case 45:
+          this.irAPantalla9Desde45()
           break;
 
         //-----------------------
@@ -237,9 +254,9 @@ export class AloneComponent
     this.router.navigate(['/game/8']);
   } 
 
-  irAPantalla9Desde33()
+  irAPantalla9Desde45()
   {
-    this.pantallasService.resetPantalla(33);
+    this.pantallasService.resetPantalla(45);
     this.pantallasService.setPantalla(9);
     this.router.navigate(['/game/9']);
   } 
@@ -386,7 +403,26 @@ export class AloneComponent
     this.router.navigate(['/game/41']);
   } 
   
+  irAPantalla44()
+  {
+    this.pantallasService.resetPantalla(33);
+    this.pantallasService.setPantalla(44);
+    this.router.navigate(['/game/44']);
+  }
+
+  irAPantalla45Desde33()
+  {
+    this.pantallasService.resetPantalla(33);
+    this.pantallasService.setPantalla(45);
+    this.router.navigate(['/game/45']);
+  }
     
+  irAPantalla45Desde44()
+  {
+    this.pantallasService.resetPantalla(44);
+    this.pantallasService.setPantalla(45);
+    this.router.navigate(['/game/45']);
+  }
   //-----------------------
 
 

@@ -4,18 +4,18 @@ import { PantallasService } from '../../../../servicios/pantallas.service';
 import { PersonajeService } from '../../../../servicios/personaje.service';
 
 @Component({
-  selector: 'app-pantalla-32',
+  selector: 'app-pantalla-44',
   standalone: true,
   imports: [AloneComponent],
-  templateUrl: './pantalla-32.component.html',
-  styleUrl: './pantalla-32.component.css'
+  templateUrl: './pantalla-44.component.html',
+  styleUrl: './pantalla-44.component.css'
 })
-export class Pantalla32Component 
+export class Pantalla44Component 
 {
   pantallasService = inject(PantallasService);
   personajeService = inject(PersonajeService);
       
-  pantallaActual: number = 32;
+  pantallaActual: number = 44;
     
   ngOnInit()
   {
@@ -27,22 +27,23 @@ export class Pantalla32Component
     
   prepararPantalla()
   {
-    //SETTEAR PERSONAJE
-    this.personajeService.aumentarTranquilidadEn(1);
+ 
+    this.personajeService.setEstadoEstatuillaBosque(1); //Cogemos la estatuilla
+    this.personajeService.aumentarExploracion(1);
+    this.personajeService.aumentarMiedoEn(1);
+
 
     //SETTEAR RUTA IMAGEN
     this.pantallasService.setRutaImagen("/images/"+this.pantallaActual+".png");
         
     //SETTEAR TEXTOS
     const paraTexto: String []=[];
-    const linea1: String = "Un río tranquilo pasa por esta zona del bosque."
+    const linea1: String = "Estando más cerca, la estatua te da un poco de impresión."
     paraTexto.push(linea1);
-    const linea2: String = "Se respira calma y el sonido del río te relaja."
+    const linea2: String = "Ves que en el interior de su boca hay otra estatuilla igual, pero más pequeña."
     paraTexto.push(linea2);
-    const linea3: String = "El bosque es tan denso que apenas penetran los rayos del sol."
+    const linea3: String = "La coges y sigues el sendero."
     paraTexto.push(linea3);
-    const linea4: String = "Te dispones a cruzar al otro lado."
-    paraTexto.push(linea4);
   
     this.pantallasService.setTextos(paraTexto);
   }

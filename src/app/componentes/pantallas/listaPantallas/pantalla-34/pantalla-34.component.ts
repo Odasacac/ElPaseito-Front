@@ -32,14 +32,10 @@ export class Pantalla34Component
       const paraTexto: String []=[];
       const linea1: String = "Pareces haber salido del bosque."
       paraTexto.push(linea1);
-      const linea2: String = "Te dio la sensación de que fuese más profundo y extenso."
+      const linea2: String = "No muy lejos puedes ver tu aldea y el mar."
       paraTexto.push(linea2);
-      const linea3: String = "¿Te habrás perdido?"
+      const linea3: String = "Dejas el bosque atrás y te diriges hacia allí."
       paraTexto.push(linea3);
-      const linea4: String = "Quizás sólo cruzaste por un extremo."
-      paraTexto.push(linea4);
-      const linea5: String = "Contemplas el mar y tu aldea y decides volver a descansar un poco."
-      paraTexto.push(linea5);
     
       this.pantallasService.setTextos(paraTexto);
     }

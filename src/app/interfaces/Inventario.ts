@@ -1,6 +1,7 @@
 export interface Inventario
 {
     botellaPlaya: number;
+    estatuillaBosque: number;
 }
 
 

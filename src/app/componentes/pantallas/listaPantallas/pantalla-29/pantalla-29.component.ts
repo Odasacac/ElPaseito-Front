@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { PantallasService } from '../../../../servicios/pantallas.service';
 import { AloneComponent } from "../../basePantallas/alone/alone.component";
+import { EstadoJuegoService } from '../../../../servicios/estado-juego.service';
 
 @Component({
   selector: 'app-pantalla-29',
@@ -12,11 +13,13 @@ import { AloneComponent } from "../../basePantallas/alone/alone.component";
 export class Pantalla29Component 
 {
   pantallasService = inject(PantallasService);
-    
+  estadoJuegoService = inject(EstadoJuegoService);
+      
   pantallaActual: number = 29;
     
   ngOnInit()
   {
+    this.estadoJuegoService.setA35Desde36(false);
     if(this.pantallasService.prepararPantalla(this.pantallaActual))
     {
       this.prepararPantalla();
@@ -30,13 +33,13 @@ export class Pantalla29Component
         
     //SETTEAR TEXTOS
     const paraTexto: String []=[];
-    const linea1: String = "Te adentras en el bosque y andas durante un buen rato."
+    const linea1: String = "Te adentras en el bosque y te sumerges en su espesura."
     paraTexto.push(linea1);
-    const linea2: String = "Oyes los pájaros y algún que otro jabalí, pero nada más."
+    const linea2: String = "Oyes los pájaros y agua por alguna parte, pero nada más."
     paraTexto.push(linea2);
     const linea3: String = "Finalmente llegas a un claro, donde a la derecha, el camino se vuelve algo más siniestro."
     paraTexto.push(linea3);
-    const linea4: String = "Si sigues recto, parece que el bosque llega a su fin y ves tu aldea a lo lejos."
+    const linea4: String = "Recto, parece que el bosque llega a su fin y ves tu aldea a lo lejos."
     paraTexto.push(linea4);
     const linea5: String = "Y hacia tu izquierda oyes el discurrir del agua y ves un puente."
     paraTexto.push(linea5);

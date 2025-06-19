@@ -55,6 +55,8 @@ import { Pantalla40Component } from './componentes/pantallas/listaPantallas/pant
 import { Pantalla41Component } from './componentes/pantallas/listaPantallas/pantalla-41/pantalla-41.component';
 import { Pantalla42Component } from './componentes/pantallas/listaPantallas/pantalla-42/pantalla-42.component';
 import { Pantalla43Component } from './componentes/pantallas/listaPantallas/pantalla-43/pantalla-43.component';
+import { Pantalla44Component } from './componentes/pantallas/listaPantallas/pantalla-44/pantalla-44.component';
+import { Pantalla45Component } from './componentes/pantallas/listaPantallas/pantalla-45/pantalla-45.component';
 
 
 export const routes: Routes = 
@@ -128,8 +130,8 @@ export const routes: Routes =
             { path: "41", component: Pantalla41Component },
             { path: "42", component: Pantalla42Component },
             { path: "43", component: Pantalla43Component },
-
-
+            { path: "44", component: Pantalla44Component },
+            { path: "45", component: Pantalla45Component },
 
 
 

@@ -30,7 +30,7 @@ export class Pantalla9Component
     
       //SETTEAR TEXTOS
       const paraTexto: String []=[];
-      const linea1: String = "Te acercas a las montañas y te encuentras con una señal que indica cuatro caminos:"
+      const linea1: String = "Una señal indica cuatro caminos:"
       paraTexto.push(linea1);
       const linea2: String = "Puedes seguir recto hacia el norte y entrarás en la pradera que hay a las faldas de la montaña."
       paraTexto.push(linea2);

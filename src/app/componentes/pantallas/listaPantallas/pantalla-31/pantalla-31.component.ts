@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { BifurcacionComponent } from "../../basePantallas/bifurcacion/bifurcacion.component";
 import { PantallasService } from '../../../../servicios/pantallas.service';
+import { EstadoJuegoService } from '../../../../servicios/estado-juego.service';
 
 @Component({
   selector: 'app-pantalla-31',
@@ -12,28 +13,24 @@ import { PantallasService } from '../../../../servicios/pantallas.service';
 export class Pantalla31Component 
 {
     pantallasService = inject(PantallasService);
+    estadoJuegoService = inject(EstadoJuegoService);
   
     pantallaActual: number = 31;
   
-      ngOnInit()
+    ngOnInit()
+    {
+      if(this.pantallasService.prepararPantalla(this.pantallaActual))
       {
-        if(this.pantallasService.prepararPantalla(this.pantallaActual))
-        {
-            this.prepararPantalla();
-        }
+        this.prepararPantalla();
       }
+    }
   
       prepararPantalla()
       {
         //SETTEAR RUTA IMAGENES CON SU TEXTO
   
         const rutasImagenes: String[]=[];
-        const textoImagenes: String []=[];
-  
-        const rutaImagen1: String = "/images/35.png";
-        rutasImagenes.push(rutaImagen1);
-        const linea1: String = "Ir por el camino siniestro."
-        textoImagenes.push(linea1);
+        const textoImagenes: String []=[];       
   
         const rutaImagen2: String = "/images/34.png";
         rutasImagenes.push(rutaImagen2);
@@ -44,6 +41,14 @@ export class Pantalla31Component
         rutasImagenes.push(rutaImagen3);
         const linea3: String = "Ir hacia el puente."
         textoImagenes.push(linea3);
+
+        if(!this.estadoJuegoService.getA35Desde36())
+        {
+          const rutaImagen1: String = "/images/35.png";
+          rutasImagenes.push(rutaImagen1);
+          const linea1: String = "Ir por el camino siniestro."
+          textoImagenes.push(linea1);
+        }
 
         this.pantallasService.setRutasParaBifurcacion(rutasImagenes);
         this.pantallasService.setTextos(textoImagenes);

@@ -34,7 +34,7 @@ export class Pantalla40Component
     paraTexto.push(linea1);
     const linea2: String = "Parece bastante frondoso y notas cómo algo se mueve dentro de él."
     paraTexto.push(linea2);
-    const linea3: String = "El camino se bifurca, invitando a la entrada."
+    const linea3: String = "El camino se bifurca, invitándote a entrar."
     paraTexto.push(linea3);
     
     this.pantallasService.setTextos(paraTexto);
